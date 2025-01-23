@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/cpseclabwebsite/static/css/main.9419efbc.css",
+    "main.js": "/cpseclabwebsite/static/js/main.4bee34fe.js",
+    "static/media/fa-solid-900.ttf": "/cpseclabwebsite/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
+    "static/media/CPSEC-logo.png": "/cpseclabwebsite/static/media/CPSEC-logo.1a754b98d3a6a942f6bb.png",
+    "static/media/fa-brands-400.ttf": "/cpseclabwebsite/static/media/fa-brands-400.1815e00441357e01619e.ttf",
+    "static/media/fa-solid-900.woff2": "/cpseclabwebsite/static/media/fa-solid-900.2463b90d9a316e4e5294.woff2",
+    "static/media/cpsec_logo_2-removebg-preview.png": "/cpseclabwebsite/static/media/cpsec_logo_2-removebg-preview.b08e660f1e39d4efcfd2.png",
+    "static/media/fa-brands-400.woff2": "/cpseclabwebsite/static/media/fa-brands-400.c210719e60948b211a12.woff2",
+    "static/media/fa-regular-400.ttf": "/cpseclabwebsite/static/media/fa-regular-400.914997e1bdfc990d0897.ttf",
+    "static/media/fa-regular-400.woff2": "/cpseclabwebsite/static/media/fa-regular-400.89999bdf5d835c012025.woff2",
+    "static/media/fa-v4compatibility.ttf": "/cpseclabwebsite/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
+    "static/media/fa-v4compatibility.woff2": "/cpseclabwebsite/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
+    "index.html": "/cpseclabwebsite/index.html",
+    "main.9419efbc.css.map": "/cpseclabwebsite/static/css/main.9419efbc.css.map",
+    "main.4bee34fe.js.map": "/cpseclabwebsite/static/js/main.4bee34fe.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9419efbc.css",
+    "static/js/main.4bee34fe.js"
+  ]
+}
