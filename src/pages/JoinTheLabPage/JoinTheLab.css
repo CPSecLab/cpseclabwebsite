@@ -1,0 +1,135 @@
+/* General Styling */
+.join-the-lab {
+  font-family: "Balsamiq Sans", sans-serif;
+  padding-top: 3rem;
+}
+
+/* Common container for sections with a fixed width */
+.section-container {
+  max-width: 1200px; /* Center alignment with fixed width */
+  margin: 0 auto; /* Center horizontally */
+  padding: 0 6rem; /* Uniform padding for left and right */
+}
+
+/* Introduction Section */
+.intro-section {
+  display: flex;
+  justify-content: space-between; /* Align content and logo */
+  align-items: center; /* Vertical alignment */
+  gap: 2rem; /* Space between text and logo */
+  margin-bottom: 3rem;
+}
+
+.intro-text {
+  flex: 1;
+  max-width: 600px;
+  text-align: left; /* Align text to the left */
+}
+
+.intro-text h1 {
+  font-size: 1.4rem;
+  color: #000;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.intro-text h2 {
+  font-size: 2.35rem;
+  color: #0e8feb;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.intro-text p {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+.lab-logo {
+  max-width: 450px;
+  flex-shrink: 0;
+  border-radius: 15px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Positions Section */
+.positions-section {
+  background-color: #1c1c2e; /* Black background */
+  color: #fff;
+  padding: 4rem 0; /* Vertical padding */
+  text-align: center;
+}
+
+/* Orange lines */
+.positions-line {
+  border: none;
+  height: 2px;
+  background-color: #e16938;
+  width: 100%; /* Full width of the container */
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.positions-section .section-container {
+  padding: 0; /* Remove extra padding within this section */
+}
+
+.positions-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.positions-grid {
+  display: flex;
+  justify-content: center;
+  gap: 3.5rem;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  align-items: stretch; /* Ensure all cards have equal height */
+}
+
+.position-card {
+  background-color: #2b2b5a;
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 300px;
+  height: 325px;
+  display: flex;
+  flex-direction: column; /* Stack items */
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.position-card h4 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #ff9244;
+}
+
+.position-card p {
+  font-size: 1 rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-grow: 1; /* Fill available space */
+}
+
+.apply-form-btn {
+  background-color: #e16938;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.apply-form-btn:hover {
+  background-color: #c34717;
+  transform: scale(1.05);
+}

@@ -1,0 +1,136 @@
+/* Navbar container */
+
+.navbar-logo {
+  cursor: pointer;
+  margin-right: 1rem; /* Space between logo and navbar items */
+}
+
+.navbar-logo img {
+  max-height: 50px; /* Adjust size of the logo */
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo img:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+.navbar {
+  display: flex;
+  align-items: center; /* Align logo and items vertically */
+  justify-content: space-evenly; /* Spread logo and items across the navbar */
+  background-color: #f8f8f8;
+  padding: 0.5rem 2rem;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky; /* Keeps navbar visible during scrolling */
+  top: 0; /* Sticks to the top of the viewport */
+  z-index: 1000; /* Ensures it stays above other content */
+}
+
+/* Navbar list */
+.navbar-list {
+  display: flex;
+  list-style: none;
+  gap: 5.5rem;
+}
+
+/* Navbar items */
+.navbar-item {
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #000000d0;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s, text-shadow 0.3s;
+  font-weight: bold;
+}
+
+.navbar-item:hover {
+  color: #030315ba;
+}
+
+.navbar-item.selected {
+  color: #3885bd;
+}
+
+/* Animated Underline */
+.navbar-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Distance between text and underline */
+  width: 0;
+  height: 2px; /* Thickness of the underline */
+  background-color: #3885bd; /* Color of the underline */
+  transition: width 0.3s ease-in-out; /* Smooth underline animation */
+}
+
+.navbar-item:hover::after {
+  width: 100%; /* Full-width underline on hover */
+}
+
+.navbar-item.selected::after {
+  width: 100%; /* Full underline for selected item */
+}
+
+/* Dropdown menu */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 1.7rem;
+  left: -95px;
+  background-color: #f8f8f8;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 0.5rem;
+  width: 350px;
+  text-shadow: none;
+}
+
+.dropdown-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-list li {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #3885bd;
+  transition: color 0.3s;
+}
+
+.dropdown-list li:hover {
+  color: #000001d0;
+}
+
+.navbar-item:hover .dropdown {
+  display: block;
+}
+
+/* Join the Lab button */
+.join-lab-btn {
+  background-color: #3885bd;
+  color: #fff;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Balsamiq Sans", sans-serif;
+  font-weight: bold;
+  transition: color 0.3s, background-color 0.3s, transform 0.2s;
+}
+
+.join-lab-btn:hover {
+  transform: scale(1.05);
+}
+
+.join-lab-btn.selected {
+  background-color: #fff;
+  color: #3885bd;
+  padding: 8px 15px;
+  border: 1.5px solid #3885bd;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Balsamiq Sans", sans-serif;
+  font-weight: bold;
+}

@@ -1,0 +1,190 @@
+/* Publications Page */
+.publications-page {
+  font-family: "Arial", sans-serif;
+  padding: 2rem;
+  max-width: 1050px;
+  margin: auto;
+  margin-bottom: 5rem;
+  background: linear-gradient(
+    to bottom,
+    #ffffff,
+    #eef1f6
+  ); /* Gradient background */
+  border-radius: 16px; /* adds smooth edges */
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1); /* adds depth */
+}
+
+/* Header */
+.publications-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.publications-header h1 {
+  font-size: 2.5rem;
+  color: #3885bd;
+  font-weight: bold;
+}
+
+.publications-header p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.publications-header a {
+  color: #3885bd; /* Blue color for the links */
+  text-decoration: none; /*removes the initial underline*/
+  transition: border-bottom 0.3s ease-in-out;
+  border-bottom: 2px solid transparent;
+}
+
+.publications-header a:hover {
+  border-bottom: 1.5px solid #3885bd; /* Show underline on hover */
+}
+
+/* Year Header */
+.year-header {
+  font-size: 2.5rem;
+  color: #e16938;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #e16938;
+  padding-bottom: 0.5rem;
+  margin-top: 2rem;
+}
+
+/* Publication Card */
+.publication-card {
+  position: relative; /* Added for award placement */
+  background: #f9f9f9;
+  padding: 1.5rem;
+  margin: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.publication-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.publication-authors,
+.publication-conference {
+  margin: 0.2rem 0;
+  color: #555;
+}
+
+/* Award Sticker */
+.award-sticker {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  font-size: 2rem;
+  color: #fee001; /* Gold color for the medal */
+  background: #f86327;
+  border: 2px solid #fee001; /* Outline for the medal */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.award-details {
+  display: block;
+  position: absolute;
+  top: 50px;
+  right: -18px;
+  background-color: #fff;
+  color: tomato;
+  padding: 0.5rem;
+  border: 1px solid tomato;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Publication Actions */
+.publication-actions {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.view-paper-btn,
+.bibtex-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.view-paper-btn {
+  background-color: #3885bd;
+  color: #fff;
+  text-decoration: none;
+}
+
+.bibtex-btn {
+  background-color: #e16938;
+  color: #fff;
+}
+
+.bibtex-btn:hover,
+.view-paper-btn:hover {
+  opacity: 0.9;
+}
+
+/* Bibtex Popup */
+.bibtex-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.bibtex-content {
+  text-align: center;
+}
+
+.bibtex-content pre {
+  background: #f4f4f4;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.copy-btn,
+.close-btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  margin: 0rem 1rem;
+}
+
+.copy-btn {
+  background-color: #e16938;
+  color: #fff;
+}
+
+.close-btn {
+  background-color: #ccc;
+  color: #000;
+}

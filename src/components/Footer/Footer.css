@@ -1,0 +1,77 @@
+/* Footer Container */
+.footer {
+  /* background-color: #090083b1; Background color */
+  background: linear-gradient(270deg, #3885bd 0%, #223984 100%);
+  color: #fff;
+  padding: 2rem 10rem;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Footer Logo Section */
+.footer-logo {
+  text-align: center;
+  flex: 1;
+}
+
+.footer-logo img {
+  max-width: 300px;
+  margin-bottom: 1rem;
+  border-radius: 15px;
+  /* box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.7); */
+}
+
+.footer-logo p {
+  font-size: 1rem;
+  margin: 0;
+  align-items: center;
+}
+
+/* Mailing Address Section */
+.footer-address,
+.footer-contact,
+.footer-social {
+  text-align: left;
+  flex: 1;
+}
+
+.footer-address h4,
+.footer-contact h4,
+.footer-social h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+.footer-address p,
+.footer-contact p {
+  margin: 0.2rem 0;
+  font-size: 0.9rem;
+}
+
+/* Social Links Section */
+.footer-social .social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.footer-social .social-icons a {
+  color: #fff; /* Default icon color */
+  font-size: 1.5rem; /* Icon size */
+  text-decoration: none;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.footer-social .social-icons a:hover {
+  color: #f0e68c; /* Change icon color on hover */
+  transform: scale(1.1); /* Will slightly enlarge the icon on hover */
+}
