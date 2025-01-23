@@ -19,7 +19,7 @@ const JoinTheLabPage = () => {
             cybersecurity inside and outside the lab. If you love exploring
             Infrastructure & Hardware Security, Autonomous Systems Security, or
             IoT Security & Privacy, please join our team! We celebrate diversity
-            of people and ideas — all backgrounds welcome!
+            of people and ideas - all backgrounds welcome!
           </p>
         </div>
         <img src={labLogo} alt="CPSEC Lab Logo" className="lab-logo" />
