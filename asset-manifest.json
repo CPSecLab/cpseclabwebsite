@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/cpseclabwebsite/static/css/main.9419efbc.css",
-    "main.js": "/cpseclabwebsite/static/js/main.4bee34fe.js",
+    "main.css": "/cpseclabwebsite/static/css/main.2b0b1799.css",
+    "main.js": "/cpseclabwebsite/static/js/main.2f8cfd9f.js",
     "static/media/fa-solid-900.ttf": "/cpseclabwebsite/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
     "static/media/CPSEC-logo.png": "/cpseclabwebsite/static/media/CPSEC-logo.1a754b98d3a6a942f6bb.png",
     "static/media/fa-brands-400.ttf": "/cpseclabwebsite/static/media/fa-brands-400.1815e00441357e01619e.ttf",
@@ -13,11 +13,11 @@
     "static/media/fa-v4compatibility.ttf": "/cpseclabwebsite/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
     "static/media/fa-v4compatibility.woff2": "/cpseclabwebsite/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/cpseclabwebsite/index.html",
-    "main.9419efbc.css.map": "/cpseclabwebsite/static/css/main.9419efbc.css.map",
-    "main.4bee34fe.js.map": "/cpseclabwebsite/static/js/main.4bee34fe.js.map"
+    "main.2b0b1799.css.map": "/cpseclabwebsite/static/css/main.2b0b1799.css.map",
+    "main.2f8cfd9f.js.map": "/cpseclabwebsite/static/js/main.2f8cfd9f.js.map"
   },
   "entrypoints": [
-    "static/css/main.9419efbc.css",
-    "static/js/main.4bee34fe.js"
+    "static/css/main.2b0b1799.css",
+    "static/js/main.2f8cfd9f.js"
   ]
 }
