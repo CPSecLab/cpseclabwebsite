@@ -91,6 +91,15 @@ const Navbar = () => {
               >
                 IoT Security & Privacy
               </li>
+              <li
+                onClick={() =>
+                  handleNavigation(
+                    "/research-areas/critical-infrastructure-privacy"
+                  )
+                }
+              >
+                Critical Infrastructure Privacy
+              </li>
             </ul>
           </div>
         </li>

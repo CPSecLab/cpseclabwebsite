@@ -48,7 +48,7 @@
 }
 
 .navbar-item.selected {
-  color: #3885bd;
+  color: #006eb9;
 }
 
 /* Animated Underline */
@@ -59,7 +59,7 @@
   bottom: -5px; /* Distance between text and underline */
   width: 0;
   height: 2px; /* Thickness of the underline */
-  background-color: #3885bd; /* Color of the underline */
+  background-color: #006eb9; /* Color of the underline */
   transition: width 0.3s ease-in-out; /* Smooth underline animation */
 }
 
@@ -75,13 +75,13 @@
 .dropdown {
   display: none;
   position: absolute;
-  top: 1.7rem;
-  left: -95px;
+  top: 2rem;
+  left: -130px;
   background-color: #f8f8f8;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   padding: 0.5rem;
-  width: 350px;
+  width: 420px;
   text-shadow: none;
 }
 
@@ -95,7 +95,7 @@
   padding: 0.5rem 1rem;
   font-size: 1rem;
   cursor: pointer;
-  color: #3885bd;
+  color: #006eb9;
   transition: color 0.3s;
 }
 
@@ -109,13 +109,12 @@
 
 /* Join the Lab button */
 .join-lab-btn {
-  background-color: #3885bd;
+  background-color: #006eb9;
   color: #fff;
   padding: 8px 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-family: "Balsamiq Sans", sans-serif;
   font-weight: bold;
   transition: color 0.3s, background-color 0.3s, transform 0.2s;
 }
@@ -128,9 +127,8 @@
   background-color: #fff;
   color: #3885bd;
   padding: 8px 15px;
-  border: 1.5px solid #3885bd;
+  border: 1.5px solid #006eb9;
   border-radius: 5px;
   cursor: pointer;
-  font-family: "Balsamiq Sans", sans-serif;
   font-weight: bold;
 }

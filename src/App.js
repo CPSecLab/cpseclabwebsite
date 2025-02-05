@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import "./App.css";
@@ -28,6 +33,7 @@ function App() {
             <Route path="/news-awards" element={<NewsAwardsPage />} />
             <Route path="/join-lab" element={<JoinLabPage />} />
             <Route path="/application-form" element={<ApplicationFormPage />} />
+            <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </main>
         <Footer />

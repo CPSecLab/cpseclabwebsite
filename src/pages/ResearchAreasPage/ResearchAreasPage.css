@@ -1,0 +1,54 @@
+.research-area-page {
+  font-family: "Arial", sans-serif;
+  padding: 2rem;
+  max-width: 1150px;
+  margin: auto;
+  background: #fff;
+}
+
+.research-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.research-header h1 {
+  font-size: 2.5rem;
+  color: #3885bd;
+  font-weight: bold;
+}
+
+.research-header p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.research-images {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.research-images img {
+  width: 250px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.projects-section {
+  margin-top: 2rem;
+}
+
+.project-card {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.publication-card {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #eef1f6;
+  border-radius: 5px;
+}

@@ -1,134 +1,45 @@
 import React, { useState, useEffect } from "react";
+import Papa from "papaparse";
 import "./PublicationsPage.css";
 
-const publications = [
-  {
-    year: 2024,
-    title: "Advanced Neural Models for Autonomous Navigation",
-    authors: "Jane Doe, John Doe, Sara Rampazzi",
-    conference: "In Proceedings of the AI Symposium, 2024",
-    paperLink: "https://example.com/autonomous-navigation",
-    bibtex: `@inproceedings{autonav2024,
-      title={Advanced Neural Models for Autonomous Navigation},
-      author={Doe, Jane and Smith, John and Rampazzi, Sara},
-      booktitle={AI Symposium},
-      year={2024}
-    }`,
-  },
-  {
-    year: 2024,
-    title: "Enhancing AI Safety in IoT Systems",
-    authors: "Alice Green, Sara Rampazzi",
-    conference: "In IEEE Transactions on IoT Systems, 2024",
-    paperLink: "https://example.com/ai-safety",
-    bibtex: `@article{aiiot2024,
-      title={Enhancing AI Safety in IoT Systems},
-      author={Green, Alice and Rampazzi, Sara},
-      journal={IEEE Transactions on IoT Systems},
-      year={2024}
-    }`,
-    award: "Best IoT Research Award",
-  },
-  {
-    year: 2024,
-    title: "Enhancing AI Safety in IoT Systems",
-    authors: "Alice Green, Sara Rampazzi",
-    conference: "In IEEE Transactions on IoT Systems, 2024",
-    paperLink: "https://example.com/ai-safety",
-    bibtex: `@article{aiiot2024,
-      title={Enhancing AI Safety in IoT Systems},
-      author={Green, Alice and Rampazzi, Sara},
-      journal={IEEE Transactions on IoT Systems},
-      year={2024}
-    }`,
-  },
-  {
-    year: 2024,
-    title: "Enhancing AI Safety in IoT Systems",
-    authors: "Alice Green, Sara Rampazzi",
-    conference: "In IEEE Transactions on IoT Systems, 2024",
-    paperLink: "https://example.com/ai-safety",
-    bibtex: `@article{aiiot2024,
-      title={Enhancing AI Safety in IoT Systems},
-      author={Green, Alice and Rampazzi, Sara},
-      journal={IEEE Transactions on IoT Systems},
-      year={2024}
-    }`,
-  },
-  // Adding more papers for 2024, 2023, and 2022
-  {
-    year: 2023,
-    title:
-      "Deep Note: Can Acoustic Interference Damage the Availability of Hard Disk Storage?",
-    authors: "Jennifer Sheldon, Sara Rampazzi",
-    conference: "In Proceedings of ACM Storage Systems, 2023",
-    paperLink: "https://example.com/deepnote-paper",
-    bibtex: `@inproceedings{deepnote2023,
-      title={Deep Note: Acoustic Interference Damage},
-      author={Sheldon, Jennifer and Rampazzi, Sara},
-      booktitle={ACM Storage Systems},
-      year={2023}
-    }`,
-  },
-  {
-    year: 2023,
-    title:
-      "Deep Note: Can Acoustic Interference Damage the Availability of Hard Disk Storage?",
-    authors: "Jennifer Sheldon, Sara Rampazzi",
-    conference: "In Proceedings of ACM Storage Systems, 2023",
-    paperLink: "https://example.com/deepnote-paper",
-    bibtex: `@inproceedings{deepnote2023,
-      title={Deep Note: Acoustic Interference Damage},
-      author={Sheldon, Jennifer and Rampazzi, Sara},
-      booktitle={ACM Storage Systems},
-      year={2023}
-    }`,
-  },
-  {
-    year: 2023,
-    title:
-      "Deep Note: Can Acoustic Interference Damage the Availability of Hard Disk Storage?",
-    authors: "Jennifer Sheldon, Sara Rampazzi",
-    conference: "In Proceedings of ACM Storage Systems, 2023",
-    paperLink: "https://example.com/deepnote-paper",
-    bibtex: `@inproceedings{deepnote2023,
-      title={Deep Note: Acoustic Interference Damage},
-      author={Sheldon, Jennifer and Rampazzi, Sara},
-      booktitle={ACM Storage Systems},
-      year={2023}
-    }`,
-  },
-  {
-    year: 2022,
-    title: "Shimware: Toward Practical Security Retrofitting",
-    authors: "Eric Gustafson, Sara Rampazzi, Kevin Fu",
-    conference: "In Research in Attacks, Intrusions, and Defenses, 2022",
-    paperLink: "https://example.com/shimware",
-    bibtex: `@inproceedings{shimware2022,
-      title={Shimware: Toward Practical Security Retrofitting},
-      author={Gustafson, Eric and Rampazzi, Sara and Fu, Kevin},
-      booktitle={Research in Attacks, Intrusions, and Defenses},
-      year={2022}
-    }`,
-  },
-  {
-    year: 2022,
-    title: "Shimware: Toward Practical Security Retrofitting",
-    authors: "Eric Gustafson, Sara Rampazzi, Kevin Fu",
-    conference: "In Research in Attacks, Intrusions, and Defenses, 2022",
-    paperLink: "https://example.com/shimware",
-    bibtex: `@inproceedings{shimware2022,
-      title={Shimware: Toward Practical Security Retrofitting},
-      author={Gustafson, Eric and Rampazzi, Sara and Fu, Kevin},
-      booktitle={Research in Attacks, Intrusions, and Defenses},
-      year={2022}
-    }`,
-  },
-];
+const SHEET_URL = process.env.REACT_APP_SPREADSHEET_URL;
 
 const PublicationsPage = () => {
+  const [publications, setPublications] = useState([]);
   const [activeBibtex, setActiveBibtex] = useState(null);
   const [copied, setCopied] = useState(false);
+
+  const fetchPublications = async () => {
+    try {
+      const cacheBustingURL = `${SHEET_URL}&timestamp=${Date.now()}`;
+      const response = await fetch(cacheBustingURL);
+      const csvData = await response.text();
+
+      // console.log(response);
+      // console.log("Response :" + csvData);
+      // Parse the CSV data
+      Papa.parse(csvData, {
+        header: true,
+        skipEmptyLines: true,
+        complete: (results) => {
+          console.log("Parsed Data:", results.data);
+          setPublications(results.data); // Update state with new data
+        },
+      });
+    } catch (error) {
+      console.error("Error fetching spreadsheet data:", error);
+    }
+  };
+
+  useEffect(() => {
+    // Initial fetch
+    fetchPublications();
+
+    // Set up polling to refetch data every 10 seconds
+    const intervalId = setInterval(fetchPublications, 10000); // 10 seconds
+
+    return () => clearInterval(intervalId); // Cleanup interval on component unmount
+  }, []);
 
   const handleCopy = (bibtex) => {
     navigator.clipboard.writeText(bibtex);
@@ -166,51 +77,85 @@ const PublicationsPage = () => {
 
       {/* Publications List */}
       <div className="publications-list">
-        {[...new Set(publications.map((paper) => paper.year))]
+        {[...new Set(publications.map((paper) => paper.Year))]
           .sort((a, b) => b - a)
           .map((year) => (
             <div key={year} className="year-section">
               {/* Year Header */}
               <h2 className="year-header">{year}</h2>
               {publications
-                .filter((paper) => paper.year === year)
+                .filter((paper) => paper.Year === year)
                 .map((paper, index) => (
                   <div className="publication-card" key={index}>
-                    {paper.award && (
-                      <div className="award-sticker">
-                        <i className="fas fa-medal"></i>
-                        <span className="award-details">{paper.award}</span>
+                    {/* Award Badge */}
+                    {paper.Award && (
+                      <div class="award-container">
+                        <div class="award-sticker">
+                          <i class="fas fa-medal"></i>
+                        </div>
+                        <span class="award-details">{paper.Award}</span>
                       </div>
                     )}
-                    <h3 className="publication-title">{paper.title}</h3>
+
+                    {/* Title */}
+                    <h3 className="publication-title">{paper.Title}</h3>
+
+                    {/* Authors */}
                     <p className="publication-authors">
-                      {paper.authors.split(", ").map((author, i) => (
+                      {paper.Authors.split(", ").map((author, i) => (
                         <span key={i}>
                           {author.includes("Sara Rampazzi") ? (
                             <strong>{author}</strong>
                           ) : (
                             author
                           )}
-                          {i < paper.authors.split(", ").length - 1 && ", "}
+                          {i < paper.Authors.split(", ").length - 1 && ", "}
                         </span>
                       ))}
                     </p>
-                    <p className="publication-conference">{paper.conference}</p>
+
+                    {/* Conference */}
+                    <p className="publication-conference">{paper.Conference}</p>
+
+                    {/* Research Area Tag */}
+                    {paper["Research Area"] && (
+                      <div className="research-area-tag">
+                        {paper["Research Area"]}
+                      </div>
+                    )}
+
+                    {/* Actions */}
                     <div className="publication-actions">
+                      {/* View Paper Button */}
                       <a
-                        href={paper.paperLink}
+                        href={paper.Paper}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="view-paper-btn"
                       >
                         View Paper
                       </a>
+
+                      {/* BibTeX Button */}
                       <button
                         className="bibtex-btn"
-                        onClick={() => setActiveBibtex(paper.bibtex)}
+                        onClick={() => setActiveBibtex(paper.BibTeX)}
                       >
-                        View Bibtex
+                        View BibTeX
                       </button>
+
+                      {/* Project Button */}
+                      {paper["Project Website"] &&
+                        paper["Project Website"].trim() !== "" && (
+                          <a
+                            href={paper["Project Website"]}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="project-btn"
+                          >
+                            View Project
+                          </a>
+                        )}
                     </div>
                   </div>
                 ))}
