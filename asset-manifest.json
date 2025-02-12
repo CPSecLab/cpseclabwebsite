@@ -1,23 +1,28 @@
 {
   "files": {
-    "main.css": "/cpseclabwebsite/static/css/main.2b0b1799.css",
-    "main.js": "/cpseclabwebsite/static/js/main.7512be51.js",
+    "main.css": "/cpseclabwebsite/static/css/main.4ad4a0cf.css",
+    "main.js": "/cpseclabwebsite/static/js/main.1679ddc2.js",
+    "static/media/critical_infrastructures.png": "/cpseclabwebsite/static/media/critical_infrastructures.4da0cee7919bc4e2d5f6.png",
+    "static/media/autonomous_system_area.png": "/cpseclabwebsite/static/media/autonomous_system_area.3d6c52dda615d4d31614.png",
     "static/media/fa-solid-900.ttf": "/cpseclabwebsite/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
     "static/media/CPSEC-logo.png": "/cpseclabwebsite/static/media/CPSEC-logo.1a754b98d3a6a942f6bb.png",
     "static/media/fa-brands-400.ttf": "/cpseclabwebsite/static/media/fa-brands-400.1815e00441357e01619e.ttf",
     "static/media/fa-solid-900.woff2": "/cpseclabwebsite/static/media/fa-solid-900.2463b90d9a316e4e5294.woff2",
     "static/media/cpsec_logo_2-removebg-preview.png": "/cpseclabwebsite/static/media/cpsec_logo_2-removebg-preview.b08e660f1e39d4efcfd2.png",
+    "static/media/Side_channel.png": "/cpseclabwebsite/static/media/Side_channel.dffc4cc29676c15ce680.png",
+    "static/media/iot.png": "/cpseclabwebsite/static/media/iot.69a942b4622aecb21708.png",
     "static/media/fa-brands-400.woff2": "/cpseclabwebsite/static/media/fa-brands-400.c210719e60948b211a12.woff2",
+    "static/media/Healthcare_area.png": "/cpseclabwebsite/static/media/Healthcare_area.a8dc303740150e1dc9af.png",
     "static/media/fa-regular-400.ttf": "/cpseclabwebsite/static/media/fa-regular-400.914997e1bdfc990d0897.ttf",
     "static/media/fa-regular-400.woff2": "/cpseclabwebsite/static/media/fa-regular-400.89999bdf5d835c012025.woff2",
     "static/media/fa-v4compatibility.ttf": "/cpseclabwebsite/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
     "static/media/fa-v4compatibility.woff2": "/cpseclabwebsite/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/cpseclabwebsite/index.html",
-    "main.2b0b1799.css.map": "/cpseclabwebsite/static/css/main.2b0b1799.css.map",
-    "main.7512be51.js.map": "/cpseclabwebsite/static/js/main.7512be51.js.map"
+    "main.4ad4a0cf.css.map": "/cpseclabwebsite/static/css/main.4ad4a0cf.css.map",
+    "main.1679ddc2.js.map": "/cpseclabwebsite/static/js/main.1679ddc2.js.map"
   },
   "entrypoints": [
-    "static/css/main.2b0b1799.css",
-    "static/js/main.7512be51.js"
+    "static/css/main.4ad4a0cf.css",
+    "static/js/main.1679ddc2.js"
   ]
 }
