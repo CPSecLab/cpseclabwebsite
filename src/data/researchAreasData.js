@@ -1,36 +1,38 @@
+import healthcareImage from "./images/Healthcare_area.png";
+import sideChannelImage from "./images/Side_channel.png";
+import autonomousImage from "./images/autonomous_system_area.png";
+import iotImage from "./images/iot.png";
+import criticalInfraImage from "./images/critical_infrastructures.png";
+
 const researchAreasData = {
-  "iot-security-privacy": {
-    name: "IoT Security & Privacy",
+  "healthcare-security-privacy": {
+    name: "Healthcare Security & Privacy",
     description:
-      "This research focuses on securing IoT devices and ensuring privacy in smart environments. We explore vulnerabilities in connected systems and develop mitigation strategies.",
-    images: ["/images/iot-security-1.jpg", "/images/iot-security-2.jpg"],
+      "Our work reveals identifying vulnerabilities that adversaries could exploit to remotely manipulate critical health equipment. By enhancing device resilience we contribute to patients' well-being, and safe clinical protocols.",
+    images: [healthcareImage],
   },
-  "healthcare-systems-security": {
-    name: "Healthcare Security & Safety",
+  "oversensing-side-channels": {
+    name: "Oversensing & Side Channels",
     description:
-      "Our Work reveals vulnerabilities that adversaries could exploit to remotely manipulate critical health equipment. By enhancing device resilience, we contribute to patients' well-being, and safe clinical protocols.",
-    images: [
-      "/images/healthcare-security-1.jpg",
-      "/images/healthcare-security-2.jpg",
-    ],
-  },
-  "hardware-infrastructure-security": {
-    name: "Hardware & Infrastructure Security",
-    description:
-      "The backbone of modern society relies on critical infrastructure such as power grids, cloud infrastructures, and underwater communication systems. We analyze software and hardware vulnerabilities to ensure resilience against cyberattacks and safeguard public welfare.",
-    images: [
-      "/images/hardware-security-1.jpg",
-      "/images/hardware-security-2.jpg",
-    ],
+      "Sensors, ubiquitous in mobile devices, IOT networks, and smart homes, often perceive more than their intended purpose. We investigate oversensing phenomena and unintended information leakage to prevent unauthorized access and data compromise.",
+    images: [sideChannelImage],
   },
   "autonomous-systems-security": {
     name: "Autonomous Systems Security",
     description:
-      "As autonomous systems become pervasive in our lives, we develop methodologies to protect self-driving cars, drone, and space systems from malicious attacks which use light, sound, and electromagnetic interference to disrupt perception.",
-    images: [
-      "/images/autonomous-security-1.jpg",
-      "/images/autonomous-security-2.jpg",
-    ],
+      "An autonomous systems become pervasive in our lives, we develop methodologies to protect self-driving cars, drones, and space systems from malicious attacks which use light, sound, and electromagnetic interference to disrupt perception.",
+    images: [autonomousImage],
+  },
+  "iot-security-privacy": {
+    name: "IoT Security & Privacy",
+    description: "Need Description here",
+    images: [iotImage],
+  },
+  "critical-infrastructure-security": {
+    name: "Critical Infrastructure Security",
+    description:
+      "The backbone of modern society relies on critical infrastructures such as power grids, cloud infrastructures, and underwater communication systems. We analyze software and hardware vulnerabilities to ensure resilience against cyberattacks and safeguard public welfare.",
+    images: [criticalInfraImage],
   },
 };
 

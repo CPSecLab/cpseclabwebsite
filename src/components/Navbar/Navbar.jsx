@@ -60,20 +60,18 @@ const Navbar = () => {
               <li
                 onClick={() =>
                   handleNavigation(
-                    "/research-areas/healthcare-systems-security"
+                    "/research-areas/healthcare-security-privacy"
                   )
                 }
               >
-                Healthcare Systems Security & Safety
+                Healthcare Security & Privacy
               </li>
               <li
                 onClick={() =>
-                  handleNavigation(
-                    "/research-areas/hardware-infrastructure-security"
-                  )
+                  handleNavigation("/research-areas/oversensing-side-channels")
                 }
               >
-                Hardware & Infrastructure Security
+                Oversensing & Side Channels
               </li>
               <li
                 onClick={() =>
@@ -94,11 +92,11 @@ const Navbar = () => {
               <li
                 onClick={() =>
                   handleNavigation(
-                    "/research-areas/critical-infrastructure-privacy"
+                    "/research-areas/critical-infrastructure-security"
                   )
                 }
               >
-                Critical Infrastructure Privacy
+                Critical Infrastructure Security
               </li>
             </ul>
           </div>

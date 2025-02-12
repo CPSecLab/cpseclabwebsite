@@ -2,16 +2,12 @@
 .publications-page {
   font-family: "Arial", sans-serif;
   padding: 2rem;
-  max-width: 1150px;
+  max-width: 1100px;
   margin: auto;
   margin-bottom: 5rem;
-  background: linear-gradient(
-    to bottom,
-    #ffffff,
-    #eef1f6
-  ); /* Gradient background */
-  border-radius: 16px; /* adds smooth edges */
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1); /* adds depth */
+  background: linear-gradient(to bottom, #ffffff, #eef1f6);
+  border-radius: 16px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Header */
@@ -32,14 +28,14 @@
 }
 
 .publications-header a {
-  color: #006eb9; /* Blue color for the links */
-  text-decoration: none; /*removes the initial underline*/
+  color: #006eb9;
+  text-decoration: none;
   transition: border-bottom 0.3s ease-in-out;
   border-bottom: 2px solid transparent;
 }
 
 .publications-header a:hover {
-  border-bottom: 1.5px solid #006eb9; /* Show underline on hover */
+  border-bottom: 1.5px solid #006eb9;
 }
 
 /* Year Header */
@@ -55,9 +51,9 @@
 
 /* Publication Card */
 .publication-card {
-  position: relative; /* Added for award placement */
+  position: relative;
   background: #f9f9f9;
-  padding: 1.5rem 3rem;
+  padding: 1rem 3rem 1rem 2rem;
   margin: 2rem;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -89,9 +85,9 @@
 
 .award-sticker {
   font-size: 2rem;
-  color: #fee001; /* Gold color for the medal */
+  color: #fee001;
   background: #f86327;
-  border: 2px solid #fee001; /* Outline for the medal */
+  border: 2px solid #fee001;
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -102,7 +98,7 @@
 }
 
 .award-details {
-  margin-top: 2px; /* Space between sticker and details */
+  margin-top: 2px;
   background-color: #fff;
   color: tomato;
   padding: 0.5rem;
@@ -201,7 +197,7 @@
   font-size: 0.9rem;
   border: none;
   border-radius: 4px;
-  background-color: #4faa6d; /* Green color */
+  background-color: #4faa6d;
   color: #fff;
   text-decoration: none;
   cursor: pointer;

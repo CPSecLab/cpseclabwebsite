@@ -35,16 +35,15 @@ const PublicationsPage = () => {
     // Initial fetch
     fetchPublications();
 
-    // Set up polling to refetch data every 10 seconds
     const intervalId = setInterval(fetchPublications, 10000); // 10 seconds
 
-    return () => clearInterval(intervalId); // Cleanup interval on component unmount
+    return () => clearInterval(intervalId);
   }, []);
 
   const handleCopy = (bibtex) => {
     navigator.clipboard.writeText(bibtex);
     setCopied(true);
-    setTimeout(() => setCopied(false), 2000); // Reset "copied" message after 2 seconds
+    setTimeout(() => setCopied(false), 2000);
   };
 
   const closePopup = () => setActiveBibtex(null);
@@ -77,7 +76,13 @@ const PublicationsPage = () => {
 
       {/* Publications List */}
       <div className="publications-list">
-        {[...new Set(publications.map((paper) => paper.Year))]
+        {[
+          ...new Set(
+            publications
+              .filter((paper) => paper.Year)
+              .map((paper) => paper.Year)
+          ),
+        ]
           .sort((a, b) => b - a)
           .map((year) => (
             <div key={year} className="year-section">
@@ -153,7 +158,7 @@ const PublicationsPage = () => {
                             rel="noopener noreferrer"
                             className="project-btn"
                           >
-                            View Project
+                            View Project Website
                           </a>
                         )}
                     </div>
