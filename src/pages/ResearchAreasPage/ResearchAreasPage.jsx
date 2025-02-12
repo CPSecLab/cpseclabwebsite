@@ -4,7 +4,8 @@ import Papa from "papaparse";
 import researchAreasData from "../../data/researchAreasData";
 import "./ResearchAreasPage.css";
 
-const SHEET_URL = process.env.REACT_APP_SPREADSHEET_URL;
+// const SHEET_URL = process.env.REACT_APP_SPREADSHEET_URL;
+const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQH3NbRdgO0YGlWcf1kxF_kwE5qKel5P7jXbk1En4mepLXlwvLJswPQzP8aOgEdSIAyHIeRMofmOxYn/pub?output=csv";
 
 const areaMappings = {
   "healthcare security & privacy": "healthcare-security-privacy",

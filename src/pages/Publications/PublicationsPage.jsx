@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import Papa from "papaparse";
 import "./PublicationsPage.css";
 
-const SHEET_URL = process.env.REACT_APP_SPREADSHEET_URL;
+// const SHEET_URL = process.env.REACT_APP_SPREADSHEET_URL;
+const SHEET_URL =
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQH3NbRdgO0YGlWcf1kxF_kwE5qKel5P7jXbk1En4mepLXlwvLJswPQzP8aOgEdSIAyHIeRMofmOxYn/pub?output=csv";
 
 const PublicationsPage = () => {
   const [publications, setPublications] = useState([]);
