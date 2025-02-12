@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/cpseclabwebsite/static/css/main.4ad4a0cf.css",
-    "main.js": "/cpseclabwebsite/static/js/main.1679ddc2.js",
+    "main.js": "/cpseclabwebsite/static/js/main.cf1b7ff2.js",
     "static/media/critical_infrastructures.png": "/cpseclabwebsite/static/media/critical_infrastructures.4da0cee7919bc4e2d5f6.png",
     "static/media/autonomous_system_area.png": "/cpseclabwebsite/static/media/autonomous_system_area.3d6c52dda615d4d31614.png",
     "static/media/fa-solid-900.ttf": "/cpseclabwebsite/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
@@ -19,10 +19,10 @@
     "static/media/fa-v4compatibility.woff2": "/cpseclabwebsite/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/cpseclabwebsite/index.html",
     "main.4ad4a0cf.css.map": "/cpseclabwebsite/static/css/main.4ad4a0cf.css.map",
-    "main.1679ddc2.js.map": "/cpseclabwebsite/static/js/main.1679ddc2.js.map"
+    "main.cf1b7ff2.js.map": "/cpseclabwebsite/static/js/main.cf1b7ff2.js.map"
   },
   "entrypoints": [
     "static/css/main.4ad4a0cf.css",
-    "static/js/main.1679ddc2.js"
+    "static/js/main.cf1b7ff2.js"
   ]
 }
