@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Papa from "papaparse";
 import "./PublicationsPage.css";
 
@@ -6,10 +7,19 @@ import "./PublicationsPage.css";
 const SHEET_URL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vQH3NbRdgO0YGlWcf1kxF_kwE5qKel5P7jXbk1En4mepLXlwvLJswPQzP8aOgEdSIAyHIeRMofmOxYn/pub?output=csv";
 
+const areaMappings = {
+  "healthcare security & privacy": "healthcare-security-privacy",
+  "oversensing & side channels": "oversensing-side-channels",
+  "autonomous systems security": "autonomous-systems-security",
+  "iot security & privacy": "iot-security-privacy",
+  "critical infrastructure security": "critical-infrastructure-security",
+};
+
 const PublicationsPage = () => {
   const [publications, setPublications] = useState([]);
   const [activeBibtex, setActiveBibtex] = useState(null);
   const [copied, setCopied] = useState(false);
+  const navigate = useNavigate();
 
   const fetchPublications = async () => {
     try {
@@ -17,15 +27,12 @@ const PublicationsPage = () => {
       const response = await fetch(cacheBustingURL);
       const csvData = await response.text();
 
-      // console.log(response);
-      // console.log("Response :" + csvData);
-      // Parse the CSV data
       Papa.parse(csvData, {
         header: true,
         skipEmptyLines: true,
         complete: (results) => {
           console.log("Parsed Data:", results.data);
-          setPublications(results.data); // Update state with new data
+          setPublications(results.data);
         },
       });
     } catch (error) {
@@ -37,7 +44,7 @@ const PublicationsPage = () => {
     // Initial fetch
     fetchPublications();
 
-    const intervalId = setInterval(fetchPublications, 10000); // 10 seconds
+    const intervalId = setInterval(fetchPublications, 1000);
 
     return () => clearInterval(intervalId);
   }, []);
@@ -45,7 +52,7 @@ const PublicationsPage = () => {
   const handleCopy = (bibtex) => {
     navigator.clipboard.writeText(bibtex);
     setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    setTimeout(() => setCopied(false), 1000);
   };
 
   const closePopup = () => setActiveBibtex(null);
@@ -55,25 +62,6 @@ const PublicationsPage = () => {
       {/* Page Header */}
       <header className="publications-header">
         <h1>RELEVANT PUBLICATIONS</h1>
-        <p>
-          The complete list is available in my{" "}
-          <a
-            href="https://sararampazzi.com/CV/CV_Sara_Rampazzi.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            latest updated CV
-          </a>{" "}
-          or{" "}
-          <a
-            href="https://scholar.google.com/citations?hl=it&user=I9d0CrAAAAAJ"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Google Scholar
-          </a>
-          .
-        </p>
       </header>
 
       {/* Publications List */}
@@ -126,9 +114,24 @@ const PublicationsPage = () => {
 
                     {/* Research Area Tag */}
                     {paper["Research Area"] && (
-                      <div className="research-area-tag">
+                      <span
+                        className="research-area-tag"
+                        onClick={() => {
+                          // Convert the CSV value to lowercase and trim it
+                          const researchAreaLower = paper["Research Area"]
+                            .trim()
+                            .toLowerCase();
+                          // Use the mapping to get the URL slug
+                          const mappedArea =
+                            areaMappings[researchAreaLower] ||
+                            encodeURIComponent(researchAreaLower);
+                          // Navigate to the research area route
+                          navigate(`/research-areas/${mappedArea}`);
+                        }}
+                        style={{ cursor: "pointer" }}
+                      >
                         {paper["Research Area"]}
-                      </div>
+                      </span>
                     )}
 
                     {/* Actions */}

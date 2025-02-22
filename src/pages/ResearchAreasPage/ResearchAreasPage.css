@@ -1,3 +1,4 @@
+/* Base Research Area Page */
 .research-area-page {
   font-family: "Arial", sans-serif;
   padding: 2rem;
@@ -9,6 +10,19 @@
 .research-header {
   text-align: center;
   margin-bottom: 1rem;
+}
+
+.research-header h1 {
+  font-size: 2.5rem;
+  color: #4a79b3;
+  font-weight: bold;
+  text-align: center;
+}
+
+.research-header p {
+  font-size: 1.2rem;
+  color: #555;
+  align-items: center;
 }
 
 .research-content-wrapper {
@@ -40,19 +54,6 @@
   border-radius: 5px;
 }
 
-.research-header h1 {
-  font-size: 2.5rem;
-  color: #4a79b3;
-  font-weight: bold;
-  text-align: center;
-}
-
-.research-header p {
-  font-size: 1.2rem;
-  align-items: center;
-  color: #555;
-}
-
 /* Projects Section */
 .projects-section {
   margin-top: 2rem;
@@ -79,19 +80,28 @@
   margin-bottom: 0.5rem;
 }
 
-/* Project Images */
+/* Updated Project Images - Dynamically display one or more images using flex-wrap */
 .project-images {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
   margin-top: 1rem;
 }
 
+/* For small/medium screens, two images per row */
 .project-images img {
-  width: 48%;
-  height: auto;
+  width: calc(50% - 0.5rem);
+  max-width: 300px;
   border-radius: 5px;
   object-fit: cover;
+}
+
+/* For larger screens, allow three images per row */
+@media (min-width: 768px) {
+  .project-images img {
+    width: calc(33.33% - 0.66rem);
+  }
 }
 
 /* Award Badge */
@@ -104,7 +114,7 @@
   border-radius: 15px;
   font-weight: bold;
   margin-top: 0.5rem;
-  border: #f86327 2px solid;
+  border: 2px solid #f86327;
 }
 
 .award-badge i {
@@ -114,7 +124,6 @@
 /* Paper Titles */
 .papers-list a {
   color: #4a79b3;
-  text-decoration: underline;
   font-weight: bold;
   display: inline-block;
   transition: color 0.2s ease-in-out;
@@ -136,23 +145,10 @@
 }
 
 .publication-card h4 {
-  text-decoration: underline;
   color: #4a79b3;
 }
 
 .publication-card h4:hover {
+  text-decoration: underline;
   color: #2e5c8a;
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-  .research-content-wrapper,
-  .project-images {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .project-images img {
-    width: 100%;
-  }
 }

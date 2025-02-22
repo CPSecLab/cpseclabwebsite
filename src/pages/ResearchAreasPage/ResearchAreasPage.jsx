@@ -4,8 +4,8 @@ import Papa from "papaparse";
 import researchAreasData from "../../data/researchAreasData";
 import "./ResearchAreasPage.css";
 
-// const SHEET_URL = process.env.REACT_APP_SPREADSHEET_URL;
-const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQH3NbRdgO0YGlWcf1kxF_kwE5qKel5P7jXbk1En4mepLXlwvLJswPQzP8aOgEdSIAyHIeRMofmOxYn/pub?output=csv";
+const SHEET_URL =
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQH3NbRdgO0YGlWcf1kxF_kwE5qKel5P7jXbk1En4mepLXlwvLJswPQzP8aOgEdSIAyHIeRMofmOxYn/pub?output=csv";
 
 const areaMappings = {
   "healthcare security & privacy": "healthcare-security-privacy",
@@ -32,6 +32,7 @@ const ResearchAreaPage = () => {
           complete: (results) => {
             const allPapers = results.data;
 
+            // Find the matching research area using area mappings
             const normalizedArea = Object.keys(areaMappings).find(
               (key) => areaMappings[key] === area.toLowerCase()
             );
@@ -42,6 +43,7 @@ const ResearchAreaPage = () => {
               return;
             }
 
+            // Filter papers that match the normalized research area
             const filteredPapers = allPapers.filter((paper) => {
               return (
                 (paper["Research Area"] || "").trim().toLowerCase() ===
@@ -49,15 +51,26 @@ const ResearchAreaPage = () => {
               );
             });
 
+            // Group the filtered papers by project title
             const projectsByTitle = {};
             filteredPapers.forEach((paper) => {
               const projectTitle = (
                 paper["Project Title"] || "Miscellaneous"
               ).trim();
+
               if (!projectsByTitle[projectTitle]) {
                 projectsByTitle[projectTitle] = [];
               }
               projectsByTitle[projectTitle].push(paper);
+            });
+
+            // **🔹 Sorting Papers by Year (Descending Order)**
+            Object.keys(projectsByTitle).forEach((title) => {
+              projectsByTitle[title].sort((a, b) => {
+                const yearA = parseInt(a["Year"] || "0", 10);
+                const yearB = parseInt(b["Year"] || "0", 10);
+                return yearB - yearA; // Sort descending (newest first)
+              });
             });
 
             setResearchProjects(projectsByTitle);
@@ -99,8 +112,9 @@ const ResearchAreaPage = () => {
       </div>
 
       <div className="projects-section">
-        <h2>Projects in {researchInfo.name}</h2>
-
+        {/* {Object.keys(researchProjects).length > 0 && (
+          <h2>Projects in {researchInfo.name}</h2>
+        )} */}
         {loading ? (
           <p>Loading projects...</p>
         ) : Object.keys(researchProjects).length > 0 ? (
@@ -109,23 +123,34 @@ const ResearchAreaPage = () => {
 
             return (
               <div key={index} className="project-card">
-                <h3>{projectTitle}</h3>
-
+                <h3>Project : {projectTitle}</h3>
                 <div className="project-images">
-                  {project.slice(0, 2).map((paper, idx) => (
-                    <img
-                      key={idx}
-                      src={paper["Image"]}
-                      alt={paper["Title"]}
-                      onClick={() =>
-                        handlePaperClick(
-                          paper["Project Website"],
-                          paper["Paper Link"]
+                  {(() => {
+                    const imageUrls = Array.from(
+                      new Set(
+                        project.flatMap((paper) =>
+                          paper["Image"] && paper["Image"].trim() !== ""
+                            ? paper["Image"].split(",").map((url) => url.trim())
+                            : []
                         )
-                      }
-                      style={{ cursor: "pointer" }}
-                    />
-                  ))}
+                      )
+                    );
+                    return imageUrls.map((url, idx) => (
+                      <img
+                        key={idx}
+                        src={url}
+                        alt={`Image ${idx + 1} for ${projectTitle}`}
+                        onClick={() => {
+                          // Use the first paper's website/link for redirection on image click
+                          handlePaperClick(
+                            project[0]["Project Website"],
+                            project[0]["Paper Link"]
+                          );
+                        }}
+                        style={{ cursor: "pointer" }}
+                      />
+                    ));
+                  })()}
                 </div>
 
                 <div className="papers-list">
@@ -141,7 +166,9 @@ const ResearchAreaPage = () => {
                       }
                       style={{ cursor: "pointer" }}
                     >
-                      <h4>{paper.Title}</h4>
+                      <h4>
+                        {paper.Title} ({paper.Year})
+                      </h4>
                       {paper.Award && (
                         <div className="award-badge">
                           <i className="fas fa-medal"></i> {paper.Award}
