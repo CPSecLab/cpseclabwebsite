@@ -1,51 +1,63 @@
-import React, { useRef } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import {
+  Navigation,
+  Pagination,
+  EffectCoverflow,
+  Autoplay,
+} from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/effect-coverflow";
+import "swiper/css/autoplay";
 import "./ImageCarousel.css";
 
 const ImageCarousel = ({ images }) => {
-  const sliderRef = useRef(null);
-
-  const settings = {
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    speed: 800,
-    dots: true,
-    arrows: false,
-    centerMode: true, // Ensures center slide is in focus
-    centerPadding: "0px", // Avoids unnecessary spacing
-    appendDots: (dots) => (
-      <div className="slider-navigation">
-        <div
-          className="custom-arrow prev"
-          onClick={() => sliderRef.current.slickPrev()}
-        > 
-          &#10094;
-        </div>
-        <div className="dots-container">{dots}</div>
-        <div
-          className="custom-arrow next"
-          onClick={() => sliderRef.current.slickNext()}
-        >
-          &#10095;
-        </div>
-      </div>
-    ),
-  };
-
   return (
     <div className="slider-wrapper">
-      <Slider ref={sliderRef} {...settings}>
+      <Swiper
+        effect={"coverflow"}
+        grabCursor={true}
+        centeredSlides={true}
+        loop={true}
+        slidesPerView={3}
+        loopAdditionalSlides={2}
+        coverflowEffect={{
+          rotate: 0,
+          stretch: 30,
+          depth: 130,
+          modifier: 2.5,
+          slideShadows: false,
+        }}
+        pagination={{ el: ".swiper-pagination", clickable: true }}
+        navigation={{
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+          clickable: true,
+        }}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
+        className="swiper_container"
+      >
         {images.map((src, index) => (
-          <div key={index} className="slide">
+          <SwiperSlide key={index} className="slide">
             <img src={src} alt={`Slide ${index}`} className="slide-image" />
-          </div>
+          </SwiperSlide>
         ))}
-      </Slider>
+        <div className="slider-controller">
+          <div className="swiper-button-prev slider-arrow">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+          </div>
+          <div className="swiper-pagination"></div>
+          <div className="swiper-button-next slider-arrow">
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </div>
+        </div>
+      </Swiper>
     </div>
   );
 };
