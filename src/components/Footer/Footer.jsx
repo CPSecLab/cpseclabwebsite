@@ -17,7 +17,7 @@ const Footer = () => {
         <div className="footer-address">
           <h4>MAILING ADDRESS</h4>
           <p>CPSEC Lab, UF</p>
-          <p>4136 Malachowsky Hall,</p>
+          <p>1015 Malachowsky Hall,</p>
           <p>1889 Museum Rd,</p>
           <p>Gainesville, FL 32606, USA</p>
         </div>

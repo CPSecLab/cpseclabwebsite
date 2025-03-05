@@ -1,0 +1,224 @@
+/* TeamMemberInfoPage.css */
+:root {
+  --tmp-primary: #2a2d3b;
+  --tmp-accent: #4a90e2;
+  --tmp-light: #f8f9fc;
+  --tmp-dark: #e16938;
+  --tmp-success: #e16938;
+  --tmp-gradient: linear-gradient(135deg, #4a90e2 0%, #662d8c 100%);
+}
+
+.tmp-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  font-family: "Inter", system-ui, sans-serif;
+  color: var(--tmp-primary);
+}
+
+.tmp-back-btn {
+  background: var(--tmp-light);
+  border: 2px solid var(--tmp-primary);
+  color: var(--tmp-primary);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+}
+
+.tmp-back-btn:hover {
+  background: var(--tmp-primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(74, 144, 226, 0.15);
+}
+
+.tmp-profile-card {
+  display: grid;
+  grid-template-columns: minmax(300px, 400px) 1fr;
+  gap: 3rem;
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.tmp-image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.tmp-profile-image {
+  width: 100%;
+  object-fit: cover;
+  transform: scale(1.05);
+  height: 350px;
+}
+
+.tmp-content-wrapper {
+  padding: 3rem 2rem 3rem 0;
+}
+
+.tmp-profile-header {
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.tmp-profile-name {
+  font-size: 2.75rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  background: var(--tmp-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tmp-profile-title {
+  font-size: 1.25rem;
+  color: var(--tmp-primary);
+  opacity: 0.8;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.tmp-accent-line {
+  width: 60px;
+  height: 4px;
+  background: var(--tmp-gradient);
+  border-radius: 2px;
+}
+
+.tmp-profile-section {
+  margin-bottom: 3rem;
+}
+
+.tmp-section-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tmp-section-number {
+  width: 40px;
+  height: 40px;
+  background: var(--tmp-light);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--tmp-accent);
+}
+
+.tmp-bio-text {
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: rgba(42, 45, 59, 0.9);
+  max-width: 75ch;
+  text-align: justify;
+}
+
+.tmp-research-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.tmp-research-card {
+  background: var(--tmp-light);
+  padding: 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  transition: transform 0.3s ease;
+}
+
+.tmp-research-icon-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.tmp-research-dot {
+  width: 20px;
+  height: 20px;
+  background: var(--tmp-accent);
+  border-radius: 50%;
+  opacity: 0.2;
+  position: relative;
+}
+
+.tmp-research-text {
+  font-weight: 525;
+  color: var(--tmp-dark);
+  text-align: center;
+}
+
+.tmp-social-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.tmp-social-link {
+  background: var(--tmp-light);
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: var(--tmp-accent);
+}
+
+.tmp-social-link:hover {
+  background: var(--tmp-accent);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(74, 144, 226, 0.15);
+}
+
+.tmp-social-icon {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 1200px) {
+  .tmp-profile-card {
+    grid-template-columns: 1fr;
+  }
+
+  .tmp-image-container {
+    height: 400px;
+  }
+
+  .tmp-content-wrapper {
+    padding: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tmp-profile-name {
+    font-size: 2rem;
+  }
+
+  .tmp-section-heading {
+    font-size: 1.25rem;
+  }
+
+  .tmp-research-grid {
+    grid-template-columns: 1fr;
+  }
+}

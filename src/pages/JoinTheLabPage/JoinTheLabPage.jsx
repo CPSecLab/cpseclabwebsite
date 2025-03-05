@@ -1,6 +1,6 @@
 import React from "react";
 import "./JoinTheLab.css";
-import labLogo from "../../assets/images/CPSEC-logo.png";
+import labLogo from "../../assets/images/cpsec_logo_2-removebg-preview.png";
 
 const JoinTheLabPage = () => {
   return (

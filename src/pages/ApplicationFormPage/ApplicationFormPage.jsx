@@ -94,7 +94,7 @@ const ApplicationForm = () => {
       <div className="application-header-container">
         <div className="header-row">
           <a href="/join-lab" className="back-button">
-            &#8592; BACK TO JOIN THE LAB
+            <i className="fa-solid fa-arrow-left"></i> BACK TO JOIN THE LAB
           </a>
         </div>
         <h1 className="application-form-header">APPLICATION FORM</h1>

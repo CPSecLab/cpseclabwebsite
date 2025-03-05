@@ -15,6 +15,7 @@ import NewsAwardsPage from "./pages/NewsAwardsPage/NewsAwardsPage";
 import JoinLabPage from "./pages/JoinTheLabPage/JoinTheLabPage";
 import ApplicationFormPage from "./pages/ApplicationFormPage/ApplicationFormPage";
 import PublicationsPage from "./pages/Publications/PublicationsPage";
+import TeamMemberInfo from "./pages/TeamMemberInfoPage/TeamMemberInfoPage";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             <Route path="/news-awards" element={<NewsAwardsPage />} />
             <Route path="/join-lab" element={<JoinLabPage />} />
             <Route path="/application-form" element={<ApplicationFormPage />} />
+            <Route path="/profile/:id" element={<TeamMemberInfo />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </main>

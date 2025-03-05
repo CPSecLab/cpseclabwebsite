@@ -1,0 +1,136 @@
+/* Homepage Container */
+.homepage-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  gap: 5px;
+  padding: 20px;
+}
+
+/* Lab Logo Container */
+.lab-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0 3rem;
+  width: 450px;
+}
+
+.homepage-lab-logo {
+  max-width: 450px;
+  height: auto;
+}
+
+.lab-logo {
+  max-width: 450px;
+}
+
+.carousel-container {
+  /* animation: fadeIn 1.2s ease-in-out; */
+  width: 100%;
+  max-width: 1000px;
+}
+
+.homepage-section-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+/* Section Heading */
+.section-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #003d6b;
+  text-align: center;
+  margin: 3rem auto 3rem;
+  border: 2px solid #e16938;
+  padding: 0.5rem 1.5rem;
+  display: inline-block;
+  background-color: #fff;
+}
+
+/* Introduction Section */
+/* .about-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  gap: 2rem;
+}
+
+.about-text {
+  flex: 1;
+  max-width: 1000px;
+  text-align: justify;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  line-height: 1.4;
+}
+
+.intro-text p {
+  font-size: 1.7rem;
+  color: #9c1313;
+  line-height: 1.4;
+} */
+
+/* About Section */
+.about-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  position: relative; /* For overlapping effect */
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Text Content */
+.about-text {
+  flex: 1.5;
+  text-align: justify;
+  font-size: 1.3rem;
+  color: #fff;
+  line-height: 1.6;
+  z-index: 2;
+  background-color: #003470;
+  padding: 1.5rem;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Image Container */
+.about-image-container {
+  flex: 1;
+  position: relative;
+}
+
+.about-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.about-text {
+  margin-right: -70px; /* Overlap text slightly onto the image */
+}
+
+.about-image-container::after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  border-radius: inherit;
+}
+
+/* Research Area Section */
+.research-header {
+  font-size: inherit;
+}
+
+.research-area-section {
+  width: 100%;
+}

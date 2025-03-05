@@ -19,37 +19,51 @@
 /* Header Section */
 .application-header-container {
   margin-bottom: 2rem;
-  text-align: center; /* Center-align the entire container */
+  text-align: center;
 }
 
 /* Row for the back button */
 .header-row {
   display: flex;
-  justify-content: flex-start; /* Align items to the left */
+  justify-content: flex-start;
   margin-bottom: 1rem;
 }
 
 /* Back Button */
 .back-button {
-  color: black; /* Make text color black */
-  text-decoration: none; /* Remove underline */
-  font-size: 1.05rem;
-  font-weight: bold;
-  margin-left: 1rem; /* Add spacing to the left */
-  transition: transform 0.3s ease;
+  background: var(--tmp-light);
+  border: 2px solid var(--tmp-primary);
+  text-decoration: none;
+  color: var(--tmp-primary);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+  backdrop-filter: blur(4px);
 }
 
 .back-button:hover {
-  transform: scale(1.05); /* Slight zoom on hover */
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  background: var(--tmp-primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(74, 144, 226, 0.15);
 }
 
 /* Application Form Label */
 .application-form-header {
-  color: #e16938; /* Orange color */
   font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 1rem;
+  color: #003d6b;
+  text-align: center;
+  margin: 2rem auto 3rem;
+  border: 2px solid #e16938;
+  padding: 0.5rem 1.5rem;
+  display: inline-block;
+  background-color: #fff;
 }
 
 /* Description below header */
@@ -58,7 +72,7 @@
   font-weight: bold;
   color: #333;
   margin: 0 auto;
-  max-width: 700px; /* Limiting the width for better readability */
+  max-width: 700px;
 }
 
 /* Application Form */
@@ -75,14 +89,14 @@
   margin-bottom: 1.5rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Ensure alignment starts from the left */
+  align-items: flex-start;
 }
 
 .form-group label {
   margin-bottom: 0.5rem;
   font-weight: bold;
   color: #333;
-  padding-left: 0rem; /* Matches the padding inside the input */
+  padding-left: 0rem;
 }
 
 .form-group input,
@@ -99,7 +113,7 @@
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: #aaa; /* Matches the lighter placeholder color */
+  color: #aaa;
 }
 
 .form-group input:focus,
@@ -155,7 +169,7 @@
   align-items: center;
   color: #888;
   z-index: 5;
-  pointer-events: none; /* Prevent interference with input */
+  pointer-events: none;
 }
 
 .upload-icon {

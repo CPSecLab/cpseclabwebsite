@@ -1,0 +1,95 @@
+.research-area-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 1100px;
+  margin: 30px 0;
+}
+
+/* Title Styling */
+.research-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #006eb9;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.research-title-link {
+  text-decoration: none;
+  color: #006eb9;
+  cursor: pointer;
+}
+
+.research-title-link:hover {
+  text-decoration: underline;
+}
+
+/* Left Section */
+.left-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.research-image {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.research-summary {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #333;
+  text-align: justify;
+}
+
+/* Right Section */
+.right-section {
+  flex: 2;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background-color: #f0f0f0;
+  color: #333;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.tab-button.active {
+  background-color: #006eb9;
+  color: white;
+}
+
+.tab-button:hover {
+  background-color: #004a7c;
+  color: #f0f0f0;
+}
+
+/* Tab Content */
+.tab-content {
+  margin-top: 15px;
+  text-align: lefts;
+}
+
+/* No Content Styling */
+.no-content {
+  background: #f8f8f8;
+  padding: 10px;
+  text-align: left;
+  border-radius: 4px;
+}

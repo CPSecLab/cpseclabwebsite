@@ -1,54 +1,66 @@
 /* Navbar container */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f8f8;
+  padding: 0.5rem 2rem;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #006eb9;
+}
+
+.navbar-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1200px;
+}
 
 .navbar-logo {
   cursor: pointer;
-  margin-right: 1rem; /* Space between logo and navbar items */
+  margin-right: 1rem;
 }
 
 .navbar-logo img {
-  max-height: 50px; /* Adjust size of the logo */
+  height: 65px;
   transition: transform 0.3s ease;
 }
 
 .navbar-logo img:hover {
   transform: scale(1.1); /* Slight zoom on hover */
 }
-.navbar {
-  display: flex;
-  align-items: center; /* Align logo and items vertically */
-  justify-content: space-evenly; /* Spread logo and items across the navbar */
-  background-color: #f8f8f8;
-  padding: 0.5rem 2rem;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  position: sticky; /* Keeps navbar visible during scrolling */
-  top: 0; /* Sticks to the top of the viewport */
-  z-index: 1000; /* Ensures it stays above other content */
-}
 
 /* Navbar list */
 .navbar-list {
   display: flex;
   list-style: none;
-  gap: 5.5rem;
+  gap: 3rem;
+  align-items: center;
 }
 
 /* Navbar items */
 .navbar-item {
   font-size: 1rem;
   text-transform: uppercase;
-  color: #000000d0;
+  color: #fff;
   cursor: pointer;
   position: relative;
   transition: color 0.3s, text-shadow 0.3s;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
-.navbar-item:hover {
-  color: #030315ba;
-}
+/* .navbar-item:hover {
+  color: #f8981f;
+} */
 
 .navbar-item.selected {
-  color: #006eb9;
+  color: #fff;
 }
 
 /* Animated Underline */
@@ -56,61 +68,71 @@
   content: "";
   position: absolute;
   left: 0;
-  bottom: -5px; /* Distance between text and underline */
+  bottom: -5px;
   width: 0;
-  height: 2px; /* Thickness of the underline */
-  background-color: #006eb9; /* Color of the underline */
-  transition: width 0.3s ease-in-out; /* Smooth underline animation */
+  height: 3px;
+  background-color: #e16938;
+  transition: width 0.3s ease-in-out;
 }
 
 .navbar-item:hover::after {
-  width: 100%; /* Full-width underline on hover */
+  width: 100%;
 }
 
 .navbar-item.selected::after {
-  width: 100%; /* Full underline for selected item */
+  width: 100%;
 }
 
 /* Dropdown menu */
+.navbar-item.dropdown-container {
+  position: relative;
+  height: 100%; /* Ensure full height for proper positioning */
+}
+/* Dropdown menu */
 .dropdown {
-  display: none;
+  margin: 0.25rem 0;
   position: absolute;
-  top: 2rem;
-  left: -130px;
-  background-color: #f8f8f8;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  border-radius: 20px;
-  padding: 0.5rem;
-  width: 420px;
-  text-shadow: none;
+  top: calc(100% + 1rem);
+  left: -20px;
+  background-color: #164679;
+  width: 400px;
+  padding-left: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease 0.1s, visibility 0.2s ease 0.1s;
 }
 
+.dropdown.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Dropdown list */
 .dropdown-list {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 10px 0;
 }
 
 .dropdown-list li {
-  padding: 0.5rem 1rem;
+  padding: 10px 15px;
   font-size: 1rem;
   cursor: pointer;
-  color: #006eb9;
-  transition: color 0.3s;
+  color: #fff;
+  transition: color 0.3s, background-color 0.3s;
+  border-radius: 5px;
+  text-align: left;
 }
 
 .dropdown-list li:hover {
-  color: #000001d0;
-}
-
-.navbar-item:hover .dropdown {
-  display: block;
+  color: white;
+  text-decoration: underline;
 }
 
 /* Join the Lab button */
 .join-lab-btn {
-  background-color: #006eb9;
-  color: #fff;
+  background-color: #fff;
+  color: #006eb9;
   padding: 8px 15px;
   border: none;
   border-radius: 5px;
@@ -121,13 +143,14 @@
 
 .join-lab-btn:hover {
   transform: scale(1.05);
+  color: #e16938;
 }
 
 .join-lab-btn.selected {
   background-color: #fff;
-  color: #3885bd;
+  color: #e16938;
   padding: 8px 15px;
-  border: 1.5px solid #006eb9;
+  border: 1.5px solid #fff;
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
