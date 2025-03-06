@@ -41,7 +41,7 @@
 .team-cards-row {
   display: flex;
   flex-direction: row;
-  gap: 50px;
+  gap: 30px;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -54,7 +54,7 @@
   overflow: hidden;
   text-align: center;
   transition: transform 0.3s ease-in-out;
-  width: 290px;
+  width: 260px;
   height: 390px;
 }
 
