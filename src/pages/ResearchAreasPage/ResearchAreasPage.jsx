@@ -64,12 +64,12 @@ const ResearchAreaPage = () => {
               projectsByTitle[projectTitle].push(paper);
             });
 
-            // **🔹 Sorting Papers by Year (Descending Order)**
+            // **Sorting Papers by Year (Descending Order)**
             Object.keys(projectsByTitle).forEach((title) => {
               projectsByTitle[title].sort((a, b) => {
                 const yearA = parseInt(a["Year"] || "0", 10);
                 const yearB = parseInt(b["Year"] || "0", 10);
-                return yearB - yearA; // Sort descending (newest first)
+                return yearB - yearA;
               });
             });
 
@@ -139,9 +139,8 @@ const ResearchAreaPage = () => {
                       <img
                         key={idx}
                         src={url}
-                        alt={`Image ${idx + 1} for ${projectTitle}`}
+                        alt={`${idx + 1} for ${projectTitle}`}
                         onClick={() => {
-                          // Use the first paper's website/link for redirection on image click
                           handlePaperClick(
                             project[0]["Project Website"],
                             project[0]["Paper Link"]

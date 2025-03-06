@@ -5,7 +5,6 @@ import slide_image_4 from "../../assets/images/20230709_104338.jpg";
 import slide_image_5 from "../../assets/images/20230709_210216.jpg";
 import slide_image_6 from "../../assets/images/20230709_210756.jpg";
 import slide_image_7 from "../../assets/images/20230710_142148.jpg";
-import slide_image_8 from "../../assets/images/PXL_20250117_155437579.jpg";
 
 const ImagesData = [
   slide_image_1,
@@ -15,7 +14,6 @@ const ImagesData = [
   slide_image_5,
   slide_image_6,
   slide_image_7,
-  // slide_image_8,
 ];
 
 export default ImagesData;
