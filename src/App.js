@@ -1,10 +1,12 @@
 import React from "react";
 import {
-  HashRouter as Router,
+  BrowserRouter,
+  HashRouter,
   Routes,
   Route,
   Navigate,
 } from "react-router-dom";
+
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import "./App.css";
@@ -17,7 +19,11 @@ import ApplicationFormPage from "./pages/ApplicationFormPage/ApplicationFormPage
 import PublicationsPage from "./pages/Publications/PublicationsPage";
 import TeamMemberInfo from "./pages/TeamMemberInfoPage/TeamMemberInfoPage";
 
+const isGitHubPages = window.location.hostname === "cpseclab.github.io";
+
 function App() {
+  const Router = isGitHubPages ? HashRouter : BrowserRouter;
+
   return (
     <Router>
       <div className="App">
