@@ -35,6 +35,15 @@ const TeamMemberInfoPage = () => {
     );
   };
 
+  // Check if any social links exist
+  const hasSocials =
+    member.socials &&
+    (member.socials.email ||
+      member.socials.linkedin ||
+      member.socials.github ||
+      member.socials.googleScholar ||
+      member.socials.website);
+
   return (
     <div className="tmp-container">
       <button className="tmp-back-btn" onClick={() => navigate(-1)}>
@@ -84,39 +93,41 @@ const TeamMemberInfoPage = () => {
             </section>
           )}
 
-          <section className="tmp-profile-section">
-            <h2 className="tmp-section-heading">
-              <span className="tmp-section-number">03</span>
-              Connect
-            </h2>
-            <div className="tmp-social-grid">
-              {member.socials.email && (
-                <a
-                  href={`mailto:${member.socials.email}`}
-                  className="tmp-social-link"
-                  aria-label={`${member.name}'s Email`}
-                >
-                  <FontAwesomeIcon
-                    icon={faEnvelope}
-                    className="tmp-social-icon"
-                  />
-                  <span className="tmp-social-text">Email</span>
-                </a>
-              )}
-              {renderSocialLink(
-                "LinkedIn",
-                member.socials.linkedin,
-                faLinkedin
-              )}
-              {renderSocialLink("GitHub", member.socials.github, faGithub)}
-              {renderSocialLink(
-                "Google Scholar",
-                member.socials.googleScholar,
-                faGoogle
-              )}
-              {renderSocialLink("Website", member.socials.website, faGlobe)}
-            </div>
-          </section>
+          {hasSocials && (
+            <section className="tmp-profile-section">
+              <h2 className="tmp-section-heading">
+                <span className="tmp-section-number">03</span>
+                Connect
+              </h2>
+              <div className="tmp-social-grid">
+                {member.socials.email && (
+                  <a
+                    href={`mailto:${member.socials.email}`}
+                    className="tmp-social-link"
+                    aria-label={`${member.name}'s Email`}
+                  >
+                    <FontAwesomeIcon
+                      icon={faEnvelope}
+                      className="tmp-social-icon"
+                    />
+                    <span className="tmp-social-text">Email</span>
+                  </a>
+                )}
+                {renderSocialLink(
+                  "LinkedIn",
+                  member.socials.linkedin,
+                  faLinkedin
+                )}
+                {renderSocialLink("GitHub", member.socials.github, faGithub)}
+                {renderSocialLink(
+                  "Google Scholar",
+                  member.socials.googleScholar,
+                  faGoogle
+                )}
+                {renderSocialLink("Website", member.socials.website, faGlobe)}
+              </div>
+            </section>
+          )}
         </div>
       </article>
     </div>

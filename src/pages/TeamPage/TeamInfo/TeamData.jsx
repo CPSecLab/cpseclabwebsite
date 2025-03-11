@@ -17,11 +17,7 @@ const teamData = [
       linkedin: "",
       github: null,
     },
-    researchInterests: [
-      "Cyber-Physical Systems Security",
-      "Healthcare Security",
-      "Autonomous Systems Security",
-    ],
+    researchInterests: [],
     papers: [
       {
         title:
