@@ -50,7 +50,7 @@
   width: 3.5rem;
   height: 3.5rem;
   cursor: pointer;
-  color: #e64f13;
+  color: #2825da;
   font-size: x-large;
 }
 
@@ -60,7 +60,7 @@
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #2825da !important;
+  background-color: #e64f13 !important;
 }
 
 .swiper-pagination {

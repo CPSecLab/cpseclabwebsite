@@ -14,7 +14,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 2rem 0 3rem;
+  margin: 0.5rem 0 3rem;
   width: 450px;
 }
 
@@ -39,43 +39,74 @@
   padding: 0 2rem;
 }
 
-/* Section Heading */
 .section-heading {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #003d6b;
+  font-size: 2.4rem;
+  font-weight: 600;
   text-align: center;
   margin: 3rem auto 3rem;
-  border: 2px solid #e16938;
-  padding: 0.5rem 1.5rem;
+  color: #003d6b;
+  position: relative;
+  padding: 1rem 2rem;
   display: inline-block;
-  background-color: #fff;
 }
 
-/* Introduction Section */
-/* .about-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0;
-  gap: 2rem;
+.section-heading::before,
+.section-heading::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 3px solid #e16938;
+  transition: all 0.4s ease;
 }
 
-.about-text {
-  flex: 1;
-  max-width: 1000px;
-  text-align: justify;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
-  line-height: 1.4;
+.section-heading::before {
+  top: 0;
+  left: 0;
+  border-right: 0;
+  border-bottom: 0;
 }
 
-.intro-text p {
-  font-size: 1.7rem;
-  color: #9c1313;
-  line-height: 1.4;
+.section-heading::after {
+  bottom: 0;
+  right: 0;
+  border-left: 0;
+  border-top: 0;
+}
+
+/* 
+.section-heading {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #003d6b;
+  text-align: center;
+  margin: 2rem 0 1.5rem;
+  padding-bottom: 0.5rem;
+  position: relative;
+  line-height: 1.3;
+}
+
+.section-heading::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 3px;
+  background-color: #e16938;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
 } */
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .section-heading {
+    font-size: 1.8rem;
+  }
+
+  .section-heading::after {
+    width: 40px;
+    height: 2px;
+  }
+}
 
 /* About Section */
 .about-section {
@@ -83,7 +114,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
-  position: relative; /* For overlapping effect */
+  position: relative;
   max-width: 1200px;
   margin: auto;
 }
@@ -98,7 +129,7 @@
   z-index: 2;
   background-color: #003470;
   padding: 1.5rem;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Image Container */
@@ -113,7 +144,12 @@
 }
 
 .about-text {
-  margin-right: -70px; /* Overlap text slightly onto the image */
+  margin-right: -70px;
+}
+
+.highlight {
+  color: #e16938;
+  font-weight: bold;
 }
 
 .about-image-container::after {

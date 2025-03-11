@@ -1,5 +1,5 @@
 import directorImage from "./TeamImages/Dr_Sara_Rampazzi.jpg";
-import hrushiImage from "./TeamImages/Hrushikesh.jpg";
+import hrushiImage from "./TeamImages/HrushikeshProfile.jpg";
 import jenniferImage from "./TeamImages/Jennifer.jpeg";
 import weidongImage from "./TeamImages/Weidong.jpg";
 import carsonImage from "./TeamImages/Carson.jpg";
@@ -12,9 +12,11 @@ const teamData = [
     image: directorImage,
     description:
       "Dr. Sara Rampazzi leads the CPSEC Lab, focusing on cyber-physical systems security and privacy.",
-    linkedin: "",
-    github: null,
-    email: "",
+    socials: {
+      email: "",
+      linkedin: "",
+      github: null,
+    },
     researchInterests: [
       "Cyber-Physical Systems Security",
       "Healthcare Security",
@@ -36,14 +38,19 @@ const teamData = [
     designation: "Research Assistant",
     image: hrushiImage,
     description:
-      "Hrushikesh is currently pursuing his Ph.D. under Dr. Sara Rampazzi. He works on securing sensors and cyber-physical systems as part of the Cyber-physical Systems Security (CPSec) Lab and the Florida Institute for Cybersecurity (FICS) Research. In particular, he studies the vulnerabilities in sensors used in autonomous systems. He then builds solutions to mitigate the consequences of these vulnerabilities on the safety of such systems. Aside from his research, he loves traveling, reading and listening to music.",
-    linkedin: "justtrial.com",
-    github: "",
-    email: "bhupathirajus@ufl.edu",
+      "Hrushikesh is currently pursuing his Ph.D. under Dr. Sara Rampazzi. He works on securing sensors and cyber-physical systems with a particular emphasis on autonomous systems. As part of his research, he uncovers and studies new vulnerabilities in sensors and perception systems used in autonomous vehicles and effective countermeasures against them using sensor characteristics, contextual information, and machine learning.",
+    socials: {
+      email: "bhupathirajus@ufl.edu",
+      website: "https://hrushivb.github.io/hrush/",
+      googleScholar:
+        "https://scholar.google.com/citations?user=703SGbEAAAAJ&hl=en",
+      linkedin: "",
+      github: "",
+    },
     researchInterests: [
       "Cyber-Physical system security",
       "Adversarial Machine Learning",
-      "Autonomous Systems",
+      "Autonomous Sytems",
       "Physical Sensor Attacks",
     ],
     papers: [],
@@ -57,38 +64,51 @@ const teamData = [
     image: jenniferImage,
     description:
       "Jennifer Sheldon is currently pursuing her Ph.D. under the supervision of Dr. Sara Rampazzi. She graduated with a B.S. from the University of Florida in 2020.",
-    linkedin: null,
-    github: null,
-    email: "jsheldon@ufl.edu",
+    socials: {
+      email: "jsheldon@ufl.edu",
+      website: "",
+      googleScholar: "",
+      linkedin: "",
+      github: "",
+    },
     researchInterests: ["Cyber-Physical system security and signal injection"],
     papers: [],
     awards: [],
     hierarchy: 2,
   },
   {
+    id: 4,
     name: "Weidong Zhu",
     designation: "Research Assistant",
     image: weidongImage,
     description:
-      "Weidong is pursuing Ph.D. under the supervision of Dr. Sara Rampazzi and Dr. Butler at the University of Florida. He got his B.S. degree from Huazhong University of Science and Technology and M.S. degree from Xiamen University. His current projects include combining Intel's Software Guard Extensions (SGX) and solid-state drives (SSD's) for defending against encryption ransomware and secure deletion with emerging non-volatile memory. His hobbies include basketball, swimming, watching movies, and traveling.",
-    linkedin: null,
-    github: null,
-    email: "weidong.zhu@ufl.edu",
+      "Weidong is pursuing a Ph.D. under the supervision of Dr. Sara Rampazzi and Dr. Butler at the University of Florida. He got his B.S. degree from Huazhong University of Science and Technology and M.S. degree from Xiamen University. His current projects include combining Intel's Software Guard Extensions (SGX) and solid-state drives (SSD's) for defending against encryption ransomware and secure deletion with emerging non-volatile memory.",
+    socials: {
+      email: "weidong.zhu@ufl.edu",
+      website: "",
+      googleScholar: "",
+      linkedin: "",
+      github: "",
+    },
     researchInterests: ["System Security", "Storage System"],
     papers: [],
     awards: [],
     hierarchy: 2,
   },
   {
-    id: 4,
+    id: 5,
     name: "Carson Stillman",
     designation: "Research Assistant",
     image: carsonImage,
     description:
-      "Carson is currently pursuing his Ph.D. under the supervision of Dr. Sara Rampazzi and Dr. Kevin Butler at the University of Florida. He earned his bachelor's degree from William & Mary in Williamsburg, Virginia. His current projects include signal analysis for Electromagnetic control-flow attestation. His hobbies include watching movies, reading, cooking, and hiking.",
-    linkedin: null,
-    github: null,
-    email: "carson.stillman@ufl.edu",
+      "Carson is currently pursuing his Ph.D. under the supervision of Dr. Sara Rampazzi and Dr. Kevin Butler at the University of Florida. He earned his bachelor's degree from William & Mary in Williamsburg, Virginia. His current projects include signal analysis for Electromagnetic control-flow attestation.",
+    socials: {
+      email: "carson.stillman@ufl.edu",
+      website: "",
+      googleScholar: "",
+      linkedin: "",
+      github: "",
+    },
     researchInterests: [
       "Embedded Systems Security",
       "Electromagnetic Side-Channels Analysis",

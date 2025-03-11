@@ -23,10 +23,6 @@ const TeamPage = () => {
       <div className="lab-logo-container">
         <img src={labLogo} alt="CPSEC Lab Logo" className="homepage-lab-logo" />
       </div>
-      {/* Page Header */}
-      <div className="team-header">
-        <h1>Our Team</h1>
-      </div>
 
       {/* Group Sections by Designation */}
       {Object.keys(groupedTeamData).map((designation, idx) => (

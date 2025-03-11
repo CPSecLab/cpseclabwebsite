@@ -120,33 +120,20 @@ const HomePage = () => {
         <ImageCarousel images={imagesData} />
       </div>
 
-      {/* About Section */}
-      {/* <section className="homepage-section-container">
-        <h2 className="section-heading">About CPSec Lab</h2>
-        <div className="about-section">
-          <div className="about-text">
-            <p>
-              The Cyber-Physical Security Lab investigates the intricate world
-              of cyber-physical systems security & privacy, where the digital
-              and physical realms intersect. We focus on safeguarding critical
-              systems and infrastructures, ensuring their reliability,
-              trustworthiness, and resiliency against malicious threats from the
-              physical world.
-            </p>
-          </div>
-        </div>
-      </section> */}
       <section className="homepage-section-container">
         <h2 className="section-heading">About CPSec Lab</h2>
         <div className="about-section">
           <div className="about-text">
             <p>
-              The Cyber-Physical Security Lab investigates the intricate world
-              of cyber-physical systems security & privacy, where the digital
-              and physical realms intersect. We focus on safeguarding critical
-              systems and infrastructures, ensuring their reliability,
-              trustworthiness, and resiliency against malicious threats from the
-              physical world.
+              The <span className="highlight">Cyber-Physical Security Lab</span>{" "}
+              investigates the intricate world of{" "}
+              <span className="highlight">
+                cyber-physical systems security & privacy
+              </span>
+              , where the digital and physical realms intersect. We focus on
+              safeguarding critical systems and infrastructures, ensuring their
+              reliability, trustworthiness, and resiliency against malicious
+              threats from the physical world.
             </p>
           </div>
           <div className="about-image-container">
