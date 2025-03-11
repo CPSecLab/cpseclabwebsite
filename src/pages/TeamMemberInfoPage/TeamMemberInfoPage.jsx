@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -17,6 +17,10 @@ const TeamMemberInfoPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { member } = location.state;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // Helper function: Only renders a social link if the URL is provided.
   const renderSocialLink = (platform, url, icon) => {
