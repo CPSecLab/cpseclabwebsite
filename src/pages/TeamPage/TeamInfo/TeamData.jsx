@@ -68,7 +68,7 @@ const teamData = [
       email: "jsheldon@ufl.edu",
       website: "",
       googleScholar: "",
-      linkedin: "",
+      linkedin: "https://www.linkedin.com/in/jennifer-sheldon-01039a2ba/",
       github: "",
     },
     researchInterests: ["Cyber-Physical system security and signal injection"],
