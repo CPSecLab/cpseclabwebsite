@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -18,11 +18,18 @@ const TeamMemberInfoPage = () => {
   const navigate = useNavigate();
   const { member } = location.state;
 
+  const [sectionCount, setSectionCount] = useState(1);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Helper function: Only renders a social link if the URL is provided.
+  // format section numbers with leading zero
+  const formatSectionNumber = (num) => {
+    return num.toString().padStart(2, "0");
+  };
+
+  // Only renders a social link if the URL is provided.
   const renderSocialLink = (platform, url, icon) => {
     if (!url) return null;
     return (
@@ -47,6 +54,11 @@ const TeamMemberInfoPage = () => {
       member.socials.github ||
       member.socials.googleScholar ||
       member.socials.website);
+
+  // Reset section counter before rendering
+  useEffect(() => {
+    setSectionCount(1);
+  }, [member.id]);
 
   return (
     <div className="tmp-container">
@@ -74,7 +86,9 @@ const TeamMemberInfoPage = () => {
 
           <section className="tmp-profile-section">
             <h2 className="tmp-section-heading">
-              <span className="tmp-section-number">01</span>
+              <span className="tmp-section-number">
+                {formatSectionNumber(1)}
+              </span>
               Biography
             </h2>
             <p className="tmp-bio-text">{member.description}</p>
@@ -83,13 +97,14 @@ const TeamMemberInfoPage = () => {
           {member.researchInterests && member.researchInterests.length > 0 && (
             <section className="tmp-profile-section">
               <h2 className="tmp-section-heading">
-                <span className="tmp-section-number">02</span>
+                <span className="tmp-section-number">
+                  {formatSectionNumber(2)}
+                </span>
                 Research Focus
               </h2>
               <div className="tmp-research-grid">
                 {member.researchInterests.map((interest, index) => (
                   <div key={index} className="tmp-research-card">
-                    <div className="tmp-research-icon-wrapper"></div>
                     <p className="tmp-research-text">{interest}</p>
                   </div>
                 ))}
@@ -100,7 +115,14 @@ const TeamMemberInfoPage = () => {
           {hasSocials && (
             <section className="tmp-profile-section">
               <h2 className="tmp-section-heading">
-                <span className="tmp-section-number">03</span>
+                <span className="tmp-section-number">
+                  {formatSectionNumber(
+                    member.researchInterests &&
+                      member.researchInterests.length > 0
+                      ? 3
+                      : 2
+                  )}
+                </span>
                 Connect
               </h2>
               <div className="tmp-social-grid">
