@@ -5,11 +5,7 @@ import "./TeamPage.css";
 import labLogo from "../../assets/images/cpsec_logo_2-removebg-preview.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import {
-  faLinkedin,
-  faGithub,
-  faGoogle,
-} from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 const TeamPage = () => {
   const navigate = useNavigate();

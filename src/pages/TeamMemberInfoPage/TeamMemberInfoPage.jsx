@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -17,8 +17,6 @@ const TeamMemberInfoPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { member } = location.state;
-
-  const [sectionCount, setSectionCount] = useState(1);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -54,11 +52,6 @@ const TeamMemberInfoPage = () => {
       member.socials.github ||
       member.socials.googleScholar ||
       member.socials.website);
-
-  // Reset section counter before rendering
-  useEffect(() => {
-    setSectionCount(1);
-  }, [member.id]);
 
   return (
     <div className="tmp-container">
