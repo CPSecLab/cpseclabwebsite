@@ -10,18 +10,22 @@ import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 const TeamPage = () => {
   const navigate = useNavigate();
 
-  // Filter active members and alumni by hierarchy
+  // Active members (hierarchy 1 and 2)
   const activeMembers = teamData.filter((member) => member.hierarchy <= 2);
-  const mastersAlumni = teamData.filter((member) => member.hierarchy === 3);
-  const undergradAlumni = teamData.filter((member) => member.hierarchy === 4);
+
+  // Combine alumni (masters: hierarchy 3 & undergraduate: hierarchy 4)
+  const alumni = teamData.filter(
+    (member) => member.hierarchy === 3 || member.hierarchy === 4
+  );
+
+  // Visiting students (hierarchy 5)
   const visitingStudents = teamData.filter((member) => member.hierarchy === 5);
 
-  // Function to navigate to social links
   const handleSocialLink = (url) => {
     if (url) window.open(url, "_blank", "noopener noreferrer");
   };
 
-  // Grouping active team members by designation
+  // Group active members by designation
   const groupedActiveMembers = activeMembers.reduce((groups, member) => {
     const designation = member.designation;
     if (!groups[designation]) {
@@ -37,7 +41,6 @@ const TeamPage = () => {
       <div className="lab-logo-container">
         <img src={labLogo} alt="CPSEC Lab Logo" className="homepage-lab-logo" />
       </div>
-
       {/* Active Members Section */}
       {Object.keys(groupedActiveMembers).map((designation, idx) => (
         <section key={idx} className="designation-group">
@@ -74,166 +77,123 @@ const TeamPage = () => {
         </section>
       ))}
 
-      {/* Alumni Section Container */}
-      <section className="alumni-container">
-        {/* Masters Alumni */}
-        {mastersAlumni.length > 0 && (
+      {/* Alumni Section */}
+      {alumni.length > 0 && (
+        <section className="alumni-container">
           <div className="alumni-section">
-            <h2 className="designation-title">ALUMNI (MASTER'S)</h2>
+            <h2 className="designation-title">ALUMNI</h2>
             <div className="alumni-row">
-              {mastersAlumni.map((alumnus) => (
+              {alumni.map((alumnus) => (
                 <div key={alumnus.id} className="alumni-card">
-                  <div className="alumni-info">
-                    <h3 className="alumni-name">{alumnus.name}</h3>
-                    <p className="alumni-designation">Master's Graduate</p>
-                  </div>
-                  <div className="alumni-social-icons">
-                    {alumnus.socials.email && (
-                      <span
-                        className="social-icon-wrapper"
-                        onClick={() =>
-                          handleSocialLink(`mailto:${alumnus.socials.email}`)
-                        }
-                        aria-label={`Email ${alumnus.name}`}
-                      >
-                        <FontAwesomeIcon icon={faEnvelope} />
-                      </span>
-                    )}
-                    {alumnus.socials.website && (
-                      <span
-                        className="social-icon-wrapper"
-                        onClick={() =>
-                          handleSocialLink(alumnus.socials.website)
-                        }
-                        aria-label={`${alumnus.name}'s website`}
-                      >
-                        <FontAwesomeIcon icon={faGlobe} />
-                      </span>
-                    )}
-                    {alumnus.socials.linkedin && (
-                      <span
-                        className="social-icon-wrapper"
-                        onClick={() =>
-                          handleSocialLink(alumnus.socials.linkedin)
-                        }
-                        aria-label={`${alumnus.name}'s LinkedIn profile`}
-                      >
-                        <FontAwesomeIcon icon={faLinkedin} />
-                      </span>
-                    )}
+                  <div className="alumni-header">
+                    <div className="alumni-info">
+                      <h3 className="alumni-name">{alumnus.name}</h3>
+                      <p className="alumni-degree">
+                        {alumnus.hierarchy === 3
+                          ? "Master's Graduate"
+                          : "Undergraduate Graduate"}
+                      </p>
+                    </div>
+                    <div className="alumni-social-icons-stack">
+                      {alumnus.socials.email && (
+                        <span
+                          className="social-icon-wrapper"
+                          onClick={() =>
+                            handleSocialLink(`mailto:${alumnus.socials.email}`)
+                          }
+                          aria-label={`Email ${alumnus.name}`}
+                        >
+                          <FontAwesomeIcon icon={faEnvelope} />
+                        </span>
+                      )}
+                      {alumnus.socials.website && (
+                        <span
+                          className="social-icon-wrapper"
+                          onClick={() =>
+                            handleSocialLink(alumnus.socials.website)
+                          }
+                          aria-label={`${alumnus.name}'s website`}
+                        >
+                          <FontAwesomeIcon icon={faGlobe} />
+                        </span>
+                      )}
+                      {alumnus.socials.linkedin && (
+                        <span
+                          className="social-icon-wrapper"
+                          onClick={() =>
+                            handleSocialLink(alumnus.socials.linkedin)
+                          }
+                          aria-label={`${alumnus.name}'s LinkedIn profile`}
+                        >
+                          <FontAwesomeIcon icon={faLinkedin} />
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-        )}
+        </section>
+      )}
 
-        {/* Undergraduate Alumni */}
-        {undergradAlumni.length > 0 && (
-          <div className="alumni-section">
-            <h2 className="designation-title">ALUMNI (UNDERGRADUATE)</h2>
-            <div className="alumni-row">
-              {undergradAlumni.map((alumnus) => (
-                <div key={alumnus.id} className="alumni-card">
-                  <div className="alumni-info">
-                    <h3 className="alumni-name">{alumnus.name}</h3>
-                    <p className="alumni-designation">
-                      Undergraduate Researcher
-                    </p>
-                  </div>
-                  <div className="alumni-social-icons">
-                    {alumnus.socials.email && (
-                      <span
-                        className="social-icon-wrapper"
-                        onClick={() =>
-                          handleSocialLink(`mailto:${alumnus.socials.email}`)
-                        }
-                        aria-label={`Email ${alumnus.name}`}
-                      >
-                        <FontAwesomeIcon icon={faEnvelope} />
-                      </span>
-                    )}
-                    {alumnus.socials.website && (
-                      <span
-                        className="social-icon-wrapper"
-                        onClick={() =>
-                          handleSocialLink(alumnus.socials.website)
-                        }
-                        aria-label={`${alumnus.name}'s website`}
-                      >
-                        <FontAwesomeIcon icon={faGlobe} />
-                      </span>
-                    )}
-                    {alumnus.socials.linkedin && (
-                      <span
-                        className="social-icon-wrapper"
-                        onClick={() =>
-                          handleSocialLink(alumnus.socials.linkedin)
-                        }
-                        aria-label={`${alumnus.name}'s LinkedIn profile`}
-                      >
-                        <FontAwesomeIcon icon={faLinkedin} />
-                      </span>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Visiting Students */}
-        {visitingStudents.length > 0 && (
+      {/* Visiting Students Section */}
+      {visitingStudents.length > 0 && (
+        <section className="alumni-container">
           <div className="alumni-section">
             <h2 className="designation-title">VISITING STUDENTS</h2>
             <div className="alumni-row">
               {visitingStudents.map((student) => (
                 <div key={student.id} className="alumni-card">
-                  <div className="alumni-info">
-                    <h3 className="alumni-name">{student.name}</h3>
-                    <p className="alumni-designation">Visiting Student</p>
-                  </div>
-                  <div className="alumni-social-icons">
-                    {student.socials.email && (
-                      <span
-                        className="social-icon-wrapper"
-                        onClick={() =>
-                          handleSocialLink(`mailto:${student.socials.email}`)
-                        }
-                        aria-label={`Email ${student.name}`}
-                      >
-                        <FontAwesomeIcon icon={faEnvelope} />
-                      </span>
-                    )}
-                    {student.socials.website && (
-                      <span
-                        className="social-icon-wrapper"
-                        onClick={() =>
-                          handleSocialLink(student.socials.website)
-                        }
-                        aria-label={`${student.name}'s website`}
-                      >
-                        <FontAwesomeIcon icon={faGlobe} />
-                      </span>
-                    )}
-                    {student.socials.linkedin && (
-                      <span
-                        className="social-icon-wrapper"
-                        onClick={() =>
-                          handleSocialLink(student.socials.linkedin)
-                        }
-                        aria-label={`${student.name}'s LinkedIn profile`}
-                      >
-                        <FontAwesomeIcon icon={faLinkedin} />
-                      </span>
-                    )}
+                  <div className="alumni-header">
+                    <div className="alumni-info">
+                      <h3 className="alumni-name">{student.name}</h3>
+                      {student.university && (
+                        <p className="alumni-degree">{student.university}</p>
+                      )}
+                    </div>
+                    <div className="alumni-social-icons-stack">
+                      {student.socials.email && (
+                        <span
+                          className="social-icon-wrapper"
+                          onClick={() =>
+                            handleSocialLink(`mailto:${student.socials.email}`)
+                          }
+                          aria-label={`Email ${student.name}`}
+                        >
+                          <FontAwesomeIcon icon={faEnvelope} />
+                        </span>
+                      )}
+                      {student.socials.website && (
+                        <span
+                          className="social-icon-wrapper"
+                          onClick={() =>
+                            handleSocialLink(student.socials.website)
+                          }
+                          aria-label={`${student.name}'s website`}
+                        >
+                          <FontAwesomeIcon icon={faGlobe} />
+                        </span>
+                      )}
+                      {student.socials.linkedin && (
+                        <span
+                          className="social-icon-wrapper"
+                          onClick={() =>
+                            handleSocialLink(student.socials.linkedin)
+                          }
+                          aria-label={`${student.name}'s LinkedIn profile`}
+                        >
+                          <FontAwesomeIcon icon={faLinkedin} />
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-        )}
-      </section>
+        </section>
+      )}
     </div>
   );
 };

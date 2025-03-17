@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./JoinTheLab.css";
 import labLogo from "../../assets/images/cpsec_logo_2-removebg-preview.png";
 
@@ -35,43 +36,31 @@ const JoinTheLabPage = () => {
               <h4>PhD Students</h4>
               <p>
                 Pursue advanced, semester-based research in cyber-physical
-                system security. Shape the future—apply for the next intake!
+                system security.
               </p>
-              <a
-                href={`/application-form?degree=PhD`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Link to={`/application-form?degree=PhD`}>
                 <button className="apply-form-btn">APPLY TODAY</button>
-              </a>
+              </Link>
             </div>
             <div className="position-card">
               <h4>Masters Students</h4>
               <p>
                 Enhance your cybersecurity skills through hands-on projects.
-                Gain advanced expertise—apply today!
+                Gain advanced expertise.
               </p>
-              <a
-                href={`/application-form?degree=Masters`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Link to={`/application-form?degree=Masters`}>
                 <button className="apply-form-btn">APPLY TODAY</button>
-              </a>
+              </Link>
             </div>
             <div className="position-card">
               <h4>Undergraduate Students</h4>
               <p>
                 Build a strong foundation in cybersecurity and systems
-                engineering. Start your journey—apply today!
+                engineering. Start your journey.
               </p>
-              <a
-                href={`/application-form?degree=Undergraduate`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Link to={`/application-form?degree=Undergraduate`}>
                 <button className="apply-form-btn">APPLY TODAY</button>
-              </a>
+              </Link>
             </div>
           </div>
           <hr className="positions-line" />

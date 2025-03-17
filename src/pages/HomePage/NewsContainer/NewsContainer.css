@@ -5,7 +5,7 @@
   --card-bg: #fff;
   --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   --border-radius: 15px;
-  --card-spacing: 20px;
+  --card-spacing: 25px;
 }
 
 /* Main container */
@@ -21,7 +21,7 @@
 .news-container {
   width: 100%;
   position: relative;
-  margin-bottom: 60px;
+  margin-bottom: 10px;
 }
 
 .news-viewport {

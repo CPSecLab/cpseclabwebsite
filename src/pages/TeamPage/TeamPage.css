@@ -139,11 +139,19 @@
   gap: 0.75rem;
 }
 
+/* Alumni Header: Holds info at left and stacked icons at right */
+.alumni-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 /* Alumni Info */
 .alumni-info {
   text-align: left;
 }
 
+/* Alumni Name */
 .alumni-name {
   color: #003d6b;
   font-size: 1.2rem;
@@ -151,18 +159,24 @@
   font-weight: 600;
 }
 
-.alumni-designation {
+/* Alumni Degree or Extra Info */
+.alumni-degree {
   color: #666;
   font-size: 0.9rem;
   margin: 0;
 }
 
-/* Social Icons */
-.alumni-social-icons {
+/* Social Icons: stacked vertically in a column */
+.alumni-social-icons-stack {
   display: flex;
+  flex-direction: column;
   gap: 0.75rem;
 }
 
+/* If you prefer to re-use the same wrapper name, you could rename the
+  existing .alumni-social-icons class to .alumni-social-icons-stack. */
+
+/* Social Icon Wrapper */
 .social-icon-wrapper {
   width: 32px;
   height: 32px;

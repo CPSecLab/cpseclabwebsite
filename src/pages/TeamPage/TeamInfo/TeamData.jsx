@@ -11,23 +11,22 @@ const teamData = [
     designation: "Lab Director",
     image: directorImage,
     description:
-      "Dr. Sara Rampazzi leads the CPSEC Lab, focusing on cyber-physical systems security and privacy.",
+      "Sara Rampazzi, Ph.D., is an assistant professor at the University of Florida since 2021. She is a member of the Florida Institute for Cybersecurity Research (FICS), Warren B. Nelms Institute, and Florida Institute for National Security (FINS). Several media outlets covered her works on injecting inaudible and invisible light commands into smart home devices and protecting underwater datacenters from acoustic attacks. She is currently Associate Chair of IEEE Security & Privacy 2025 and 2026, and Program Co-Chair of the USENIX VehicleSec Symposium 2025. She also chaired the 2023 IEEE Workshop on Offensive Technologies (WOOT’23) and the 2nd Annual Embedded Security Workshop (EmSec 2020). Dr. Rampazzi received the Medtronic Outstanding Research Contributor Recognition for medical device security in 2020. Her work is sponsored by NSF, ONR, Meta, and Toyota Info Tech Lab. More info: https://scholar.google.com/citations?user=I9d0CrAAAAAJ&hl=eng",
     socials: {
       email: "",
-      linkedin: "asasasasasas",
-      github: null,
+      website: "",
+      googleScholar:
+        "https://scholar.google.com/citations?user=I9d0CrAAAAAJ&hl=eng",
+      linkedin: "",
+      github: "",
     },
     researchInterests: [],
-    papers: [
-      {
-        title:
-          "Deep Note: Can Acoustic Interference Damage the Availability of Hard Disk Storage?",
-        link: "https://www.hotsos.org/paper-link",
-      },
-    ],
-    awards: ["SK Hynix Best Paper Award"],
+    papers: [],
+    awards: [],
     hierarchy: 1,
   },
+
+  //Research Assistant ( Hierarchy : 2)
   {
     id: 2,
     name: "Sri Hrushikesh Varma Bhupathiraju",
@@ -78,10 +77,10 @@ const teamData = [
     designation: "Research Assistant",
     image: weidongImage,
     description:
-      "Weidong is pursuing a Ph.D. under the supervision of Dr. Sara Rampazzi and Dr. Butler at the University of Florida. He got his B.S. degree from Huazhong University of Science and Technology and M.S. degree from Xiamen University. His current projects include combining Intel's Software Guard Extensions (SGX) and solid-state drives (SSD's) for defending against encryption ransomware and secure deletion with emerging non-volatile memory.",
+      " Weidong is a Ph.D. candidate under supervision of Dr. Kevin Butler and Dr. Sara Rampazzi at the University of Florida. He got his B.S. degree from Huazhong University of Science and Technology and M.S. degree from Xiamen University. His research focus is system security and cyber physical security related with I/O stack. His hobbies include basketball, swimming, watching movie and traveling.",
     socials: {
       email: "weidong.zhu@ufl.edu",
-      website: "",
+      website: "https://cise.ufl.edu/~weidong/",
       googleScholar: "",
       linkedin: "",
       github: "",
@@ -97,18 +96,15 @@ const teamData = [
     designation: "Research Assistant",
     image: carsonImage,
     description:
-      "Carson is currently pursuing his Ph.D. under the supervision of Dr. Sara Rampazzi and Dr. Kevin Butler at the University of Florida. He earned his bachelor's degree from William & Mary in Williamsburg, Virginia. His current projects include signal analysis for Electromagnetic control-flow attestation.",
+      "Carson is currently pursuing his Ph.D. under the supervision of Dr. Kevin Butler at the University of Florida. He earned his bachelor’s degree in physics from William & Mary in Williamsburg, Virginia. His current projects include signal analysis for Electromagnetic control-flow attestation. His hobbies include watching movies, reading, and cooking.",
     socials: {
       email: "carson.stillman@ufl.edu",
-      website: "",
+      website: "https://carsonstillman.github.io/carson_stillman/",
       googleScholar: "",
       linkedin: "",
       github: "",
     },
-    researchInterests: [
-      "Embedded Systems Security",
-      "Electromagnetic Side-Channels Analysis",
-    ],
+    researchInterests: ["Embedded Systems Security"],
     papers: [],
     awards: [],
     hierarchy: 2,
@@ -243,6 +239,7 @@ const teamData = [
     id: 14,
     name: "Ozora Sako",
     designation: "Visiting Student",
+    university: "Keio University",
     image: null,
     description: "",
     socials: {

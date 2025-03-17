@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import "./ApplicationFormPage.css";
 import labLogo from "../../assets/images/cpsec_logo_2-removebg-preview.png";
 
@@ -10,10 +10,10 @@ const ApplicationForm = () => {
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
     const degreeFromURL = queryParams.get("degree");
-    setDegree(degreeFromURL || ""); // Default to empty if no degree is passed
+    setDegree(degreeFromURL || ""); // default to empty if no degree is passed
   }, [location]);
 
-  /* Add questions that are particular to a specific degree */
+  /* add questions that are particular to a specific degree */
   const renderAdditionalQuestions = () => {
     switch (degree) {
       case "PhD":
@@ -93,9 +93,9 @@ const ApplicationForm = () => {
       {/* Header Section */}
       <div className="application-header-container">
         <div className="header-row">
-          <a href="/join-lab" className="back-button">
-            <i className="fa-solid fa-arrow-left"></i> BACK TO JOIN THE LAB
-          </a>
+          <Link to="/join-lab" className="back-button">
+            <i className="fa-solid fa-arrow-left"></i> BACK
+          </Link>
         </div>
         <h1 className="application-form-header">APPLICATION FORM</h1>
         <p className="application-header-description">
@@ -134,7 +134,7 @@ const ApplicationForm = () => {
           />
         </div>
 
-        {/* Conditional Questions - degree specific questions will render here */}
+        {/* conditional Questions - degree specific questions will render here */}
         {renderAdditionalQuestions()}
 
         <div className="form-group file-upload">

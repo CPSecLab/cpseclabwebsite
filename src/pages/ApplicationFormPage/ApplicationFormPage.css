@@ -1,10 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
-
 .application-form-page {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 2rem 6rem;
-  font-family: "Inter", sans-serif;
+
   box-sizing: border-box;
 }
 
@@ -20,52 +18,86 @@
 
 /* Header Section */
 .application-header-container {
-  margin-bottom: 2rem;
-  text-align: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-top: 1rem;
 }
 
-/* Row for the back button */
 .header-row {
-  display: flex;
-  justify-content: flex-start;
-  margin-bottom: 1rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-bottom: 0;
+}
+
+.back-button {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+.application-form-header {
+  margin: 0 auto 1.5rem;
 }
 
 /* Back Button */
 .back-button {
-  background: var(--tmp-light);
-  border: 2px solid var(--tmp-primary);
+  border: 2px solid;
   text-decoration: none;
   color: var(--tmp-primary);
-  padding: 1rem 2rem;
   border-radius: 50px;
   font-weight: 600;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  margin-bottom: 3rem;
   backdrop-filter: blur(4px);
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  margin-bottom: 0;
 }
 
 .back-button:hover {
   background: var(--tmp-primary);
   color: white;
-  transform: translateY(-2px);
+  transform: translateY(-1px);
   box-shadow: 0 8px 24px rgba(74, 144, 226, 0.15);
 }
 
 /* Application Form Label */
 .application-form-header {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #003d6b;
+  font-size: 2.2rem;
+  font-weight: 600;
   text-align: center;
-  margin: 2rem auto 3rem;
-  border: 2px solid #e16938;
-  padding: 0.5rem 1.5rem;
+  margin: 3rem auto 3rem;
+  color: #003d6b;
+  position: relative;
+  padding: 1rem 2rem;
   display: inline-block;
-  background-color: #fff;
+}
+
+.application-form-header::before,
+.application-form-header::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 3px solid #e16938;
+  transition: all 0.4s ease;
+}
+
+.application-form-header::before {
+  top: 0;
+  left: 0;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.application-form-header::after {
+  bottom: 0;
+  right: 0;
+  border-left: 0;
+  border-top: 0;
 }
 
 /* Description below header */
