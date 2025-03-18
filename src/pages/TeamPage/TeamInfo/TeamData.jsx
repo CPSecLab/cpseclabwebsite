@@ -96,7 +96,7 @@ const teamData = [
     designation: "Research Assistant",
     image: carsonImage,
     description:
-      "Carson is currently pursuing his Ph.D. under the supervision of Dr. Kevin Butler at the University of Florida. He earned his bachelor’s degree in physics from William & Mary in Williamsburg, Virginia. His current projects include signal analysis for Electromagnetic control-flow attestation. His hobbies include watching movies, reading, and cooking.",
+      "Carson is currently pursuing his Ph.D. under the supervision of Dr. Kevin Butler and Dr. Sara Rampazzi at the University of Florida. He earned his bachelor’s degree in physics from William & Mary in Williamsburg, Virginia. His current projects include signal analysis for Electromagnetic control-flow attestation. His hobbies include watching movies, reading, and cooking.",
     socials: {
       email: "carson.stillman@ufl.edu",
       website: "https://carsonstillman.github.io/carson_stillman/",

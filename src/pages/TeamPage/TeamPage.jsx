@@ -13,7 +13,7 @@ const TeamPage = () => {
   // Active members (hierarchy 1 and 2)
   const activeMembers = teamData.filter((member) => member.hierarchy <= 2);
 
-  // Combine alumni (masters: hierarchy 3 & undergraduate: hierarchy 4)
+  // alumni (masters: hierarchy 3 & undergraduate: hierarchy 4)
   const alumni = teamData.filter(
     (member) => member.hierarchy === 3 || member.hierarchy === 4
   );
@@ -91,7 +91,7 @@ const TeamPage = () => {
                       <p className="alumni-degree">
                         {alumnus.hierarchy === 3
                           ? "Master's Graduate"
-                          : "Undergraduate Graduate"}
+                          : "Undergraduate"}
                       </p>
                     </div>
                     <div className="alumni-social-icons-stack">
