@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/cpseclabwebsite/static/css/main.59c54bd7.css",
-    "main.js": "/cpseclabwebsite/static/js/main.52946cff.js",
+    "main.js": "/cpseclabwebsite/static/js/main.041ca31b.js",
     "static/media/Dr_Sara_Rampazzi.jpg": "/cpseclabwebsite/static/media/Dr_Sara_Rampazzi.9ad55968e70f8ba6b121.jpg",
     "static/media/20230227_132410.jpg": "/cpseclabwebsite/static/media/20230227_132410.b145b91de5e1616eb38e.jpg",
     "static/media/20230227_103937.jpg": "/cpseclabwebsite/static/media/20230227_103937.644482e3a30cdd99d34e.jpg",
@@ -31,10 +31,10 @@
     "static/media/fa-v4compatibility.woff2": "/cpseclabwebsite/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/cpseclabwebsite/index.html",
     "main.59c54bd7.css.map": "/cpseclabwebsite/static/css/main.59c54bd7.css.map",
-    "main.52946cff.js.map": "/cpseclabwebsite/static/js/main.52946cff.js.map"
+    "main.041ca31b.js.map": "/cpseclabwebsite/static/js/main.041ca31b.js.map"
   },
   "entrypoints": [
     "static/css/main.59c54bd7.css",
-    "static/js/main.52946cff.js"
+    "static/js/main.041ca31b.js"
   ]
 }
