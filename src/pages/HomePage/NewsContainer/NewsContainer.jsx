@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import "./NewsContainer.css";
 import newsItems from "./NewsItemsData";
 
@@ -6,6 +7,7 @@ const NewsContainer = () => {
   const [startIndex, setStartIndex] = useState(0);
   const itemsPerView = 3;
   const carouselRef = useRef(null);
+  const navigate = useNavigate();
 
   const handleNext = () => {
     if (startIndex + itemsPerView < newsItems.length) {
@@ -45,7 +47,7 @@ const NewsContainer = () => {
                   </div>
                   <button
                     className="read-more-button"
-                    onClick={() => window.open(item.link, "_blank")}
+                    onClick={() => navigate("/news-awards")}
                   >
                     Read More <i className="fas fa-external-link-alt"></i>
                   </button>

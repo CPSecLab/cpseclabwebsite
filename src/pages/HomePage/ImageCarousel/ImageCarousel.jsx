@@ -50,11 +50,11 @@ const ImageCarousel = ({ images }) => {
         ))}
         <div className="slider-controller">
           <div className="swiper-button-prev slider-arrow">
-            <ion-icon name="arrow-back-outline"></ion-icon>
+            <i class="fa-solid fa-circle-arrow-left"></i>
           </div>
           <div className="swiper-pagination"></div>
           <div className="swiper-button-next slider-arrow">
-            <ion-icon name="arrow-forward-outline"></ion-icon>
+            <i class="fa-solid fa-circle-arrow-right"></i>
           </div>
         </div>
       </Swiper>

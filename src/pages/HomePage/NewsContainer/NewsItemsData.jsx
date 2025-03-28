@@ -1,30 +1,36 @@
+import news1 from "./NewsImages/Csaw_hrushikesh.jpeg";
+import news2 from "./NewsImages/Aquasonic.jpeg";
+import news3 from "./NewsImages/hwcoe_opengraph.png";
+
 const newsItems = [
   {
+    date: "11/09/2024",
     title:
-      "Huge shout out to Hrushikesh Varma for being one of the only 𝟏𝟓 𝐟𝐢𝐧𝐚𝐥𝐢𝐬𝐭𝐬 presenting their work to the 𝟐𝟎𝟐𝟒 𝐔𝐒 𝐂𝐒𝐀𝐖 𝐂𝐨𝐦𝐩𝐞𝐭𝐢𝐭𝐢𝐨𝐧 for the paper 𝗜𝗻𝘃𝗶𝘀𝗶𝗯𝗹𝗲 𝗥𝗲𝗳𝗹𝗲𝗰𝘁𝗶𝗼𝗻𝘀: 𝗟𝗲𝘃𝗲𝗿𝗮𝗴𝗶𝗻𝗴 𝗜𝗻𝗳𝗿𝗮𝗿𝗲𝗱 𝗟𝗮𝘀𝗲𝗿 𝗥𝗲𝗳𝗹𝗲𝗰𝘁𝗶𝗼𝗻𝘀 𝘁𝗼 𝗧𝗮𝗿𝗴𝗲𝘁 𝗧𝗿𝗮𝗳𝗳𝗶𝗰 𝗦𝗶𝗴𝗻 𝗣𝗲𝗿𝗰𝗲𝗽𝘁𝗶𝗼𝗻",
-    image:
-      "https://static.wixstatic.com/media/acbc49_eafea6908cc44274ace2f6c77e1efa92~mv2.jpg/v1/fill/w_400,h_400,al_c/acbc49_eafea6908cc44274ace2f6c77e1efa92~mv2.jpg",
+      "Hrushikesh Varma is one of the 15 finalists presenting their work at the 2024 US CSAW Competition for the paper 'Invisible Reflections: Leveraging Infrared Laser Reflections to Target Traffic Sign Perception.'",
+    image: news1,
     link: "https://www.csaw.io/",
+    category: "Award",
+    excerpt:
+      "Hrushikesh Varma's groundbreaking research has earned recognition at the prestigious CSAW Competition.",
   },
   {
+    date: "05/06/2024",
     title:
-      "Huge shout out to Hrushikesh Varma for being one of the only 𝟏𝟓 𝐟𝐢𝐧𝐚𝐥𝐢𝐬𝐭𝐬 presenting their work to the 𝟐𝟎𝟐𝟒 𝐔𝐒 𝐂𝐒𝐀𝐖 𝐂𝐨𝐦𝐩𝐞𝐭𝐢𝐭𝐢𝐨𝐧 for the paper 𝗜𝗻𝘃𝗶𝘀𝗶𝗯𝗹𝗲 𝗥𝗲𝗳𝗹𝗲𝗰𝘁𝗶𝗼𝗻𝘀: 𝗟𝗲𝘃𝗲𝗿𝗮𝗴𝗶𝗻𝗴 𝗜𝗻𝗳𝗿𝗮𝗿𝗲𝗱 𝗟𝗮𝘀𝗲𝗿 𝗥𝗲𝗳𝗹𝗲𝗰𝘁𝗶𝗼𝗻𝘀 𝘁𝗼 𝗧𝗮𝗿𝗴𝗲𝘁 𝗧𝗿𝗮𝗳𝗳𝗶𝗰 𝗦𝗶𝗴𝗻 𝗣𝗲𝗿𝗰𝗲𝗽𝘁𝗶𝗼𝗻",
-    image:
-      "https://static.wixstatic.com/media/acbc49_eafea6908cc44274ace2f6c77e1efa92~mv2.jpg/v1/fill/w_400,h_400,al_c/acbc49_eafea6908cc44274ace2f6c77e1efa92~mv2.jpg",
-    link: "https://www.csaw.io/",
+      "Can acoustic attacks manipulate underwater data center infrastructures? Yes, if we don't act now. Read our latest work in collab with @RoboPI_UF and UEC that will be presented on May 20 at @IEEESSP!",
+    image: news2,
+    link: "https://t.co/EjP502kyfX",
+    category: "",
+    excerpt: "",
   },
   {
+    date: "05/10/2024",
     title:
-      "Huge shout out to Hrushikesh Varma for being one of the only 𝟏𝟓 𝐟𝐢𝐧𝐚𝐥𝐢𝐬𝐭𝐬 presenting their work to the 𝟐𝟎𝟐𝟒 𝐔𝐒 𝐂𝐒𝐀𝐖 𝐂𝐨𝐦𝐩𝐞𝐭𝐢𝐭𝐢𝐨𝐧 https://www.csaw.io/ for the paper 𝗜𝗻𝘃𝗶𝘀𝗶𝗯𝗹𝗲 𝗥𝗲𝗳𝗹𝗲𝗰𝘁𝗶𝗼𝗻𝘀: 𝗟𝗲𝘃𝗲𝗿𝗮𝗴𝗶𝗻𝗴 𝗜𝗻𝗳𝗿𝗮𝗿𝗲𝗱 𝗟𝗮𝘀𝗲𝗿 𝗥𝗲𝗳𝗹𝗲𝗰𝘁𝗶𝗼𝗻𝘀 𝘁𝗼 𝗧𝗮𝗿𝗴𝗲𝘁 𝗧𝗿𝗮𝗳𝗳𝗶𝗰 𝗦𝗶𝗴𝗻 𝗣𝗲𝗿𝗰𝗲𝗽𝘁𝗶𝗼𝗻",
-    image:
-      "https://static.wixstatic.com/media/acbc49_eafea6908cc44274ace2f6c77e1efa92~mv2.jpg/v1/fill/w_400,h_400,al_c/acbc49_eafea6908cc44274ace2f6c77e1efa92~mv2.jpg",
-    link: "https://www.csaw.io/",
-  },
-  {
-    title: "Just checking the animation",
-    image:
-      "https://static.wixstatic.com/media/acbc49_eafea6908cc44274ace2f6c77e1efa92~mv2.jpg/v1/fill/w_400,h_400,al_c/acbc49_eafea6908cc44274ace2f6c77e1efa92~mv2.jpg",
-    link: "https://www.csaw.io/",
+      "Underwater data centers are the future. But a speaker system could cripple them. Watch our latest research presentation on underwater data center security.",
+    videoLink: "https://www.youtube.com/embed/latYGeVTQdc",
+    image: news3,
+    link: "https://news.ufl.edu/2024/05/underwater-data-center-security/",
+    category: "Research Presentation",
+    excerpt: "",
   },
 ];
 
