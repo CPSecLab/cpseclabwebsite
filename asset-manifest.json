@@ -1,19 +1,21 @@
 {
   "files": {
-    "main.css": "/cpseclabwebsite/static/css/main.59c54bd7.css",
-    "main.js": "/cpseclabwebsite/static/js/main.041ca31b.js",
+    "main.css": "/cpseclabwebsite/static/css/main.505c3dc1.css",
+    "main.js": "/cpseclabwebsite/static/js/main.e7287115.js",
     "static/media/Dr_Sara_Rampazzi.jpg": "/cpseclabwebsite/static/media/Dr_Sara_Rampazzi.9ad55968e70f8ba6b121.jpg",
     "static/media/20230227_132410.jpg": "/cpseclabwebsite/static/media/20230227_132410.b145b91de5e1616eb38e.jpg",
     "static/media/20230227_103937.jpg": "/cpseclabwebsite/static/media/20230227_103937.644482e3a30cdd99d34e.jpg",
     "static/media/20230531_151036.jpg": "/cpseclabwebsite/static/media/20230531_151036.ee021994cc9df9411ede.jpg",
     "static/media/20230709_104338.jpg": "/cpseclabwebsite/static/media/20230709_104338.ec9b1e0063992695fc2e.jpg",
     "static/media/Jennifer.jpeg": "/cpseclabwebsite/static/media/Jennifer.28e08b68c93d478a32b8.jpeg",
+    "static/media/Csaw_hrushikesh.jpeg": "/cpseclabwebsite/static/media/Csaw_hrushikesh.edc69b4dcf242b809f40.jpeg",
     "static/media/critical_infrastructures.png": "/cpseclabwebsite/static/media/critical_infrastructures.4da0cee7919bc4e2d5f6.png",
     "static/media/autonomous_system_area.png": "/cpseclabwebsite/static/media/autonomous_system_area.3d6c52dda615d4d31614.png",
     "static/media/20230709_210756.jpg": "/cpseclabwebsite/static/media/20230709_210756.8c192daecaeb1993ddbf.jpg",
     "static/media/PXL_20250117_155239501 (1).jpg": "/cpseclabwebsite/static/media/PXL_20250117_155239501 (1).f8871b1611a8c463d3fa.jpg",
     "static/media/20230709_210216.jpg": "/cpseclabwebsite/static/media/20230709_210216.642c6f5684df87b41c06.jpg",
     "static/media/fa-solid-900.ttf": "/cpseclabwebsite/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
+    "static/media/Aquasonic.jpeg": "/cpseclabwebsite/static/media/Aquasonic.ecd1f689213b2312402a.jpeg",
     "static/media/20230710_142148.jpg": "/cpseclabwebsite/static/media/20230710_142148.1256c046ff879796d4ba.jpg",
     "static/media/Weidong.jpg": "/cpseclabwebsite/static/media/Weidong.a7e35b8599fc052270cd.jpg",
     "static/media/fa-brands-400.ttf": "/cpseclabwebsite/static/media/fa-brands-400.1815e00441357e01619e.ttf",
@@ -30,11 +32,11 @@
     "static/media/fa-v4compatibility.ttf": "/cpseclabwebsite/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
     "static/media/fa-v4compatibility.woff2": "/cpseclabwebsite/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/cpseclabwebsite/index.html",
-    "main.59c54bd7.css.map": "/cpseclabwebsite/static/css/main.59c54bd7.css.map",
-    "main.041ca31b.js.map": "/cpseclabwebsite/static/js/main.041ca31b.js.map"
+    "main.505c3dc1.css.map": "/cpseclabwebsite/static/css/main.505c3dc1.css.map",
+    "main.e7287115.js.map": "/cpseclabwebsite/static/js/main.e7287115.js.map"
   },
   "entrypoints": [
-    "static/css/main.59c54bd7.css",
-    "static/js/main.041ca31b.js"
+    "static/css/main.505c3dc1.css",
+    "static/js/main.e7287115.js"
   ]
 }
