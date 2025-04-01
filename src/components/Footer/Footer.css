@@ -65,13 +65,116 @@
 }
 
 .footer-social .social-icons a {
-  color: #fff; /* Default icon color */
-  font-size: 1.5rem; /* Icon size */
+  color: #fff;
+  font-size: 1.5rem;
   text-decoration: none;
   transition: transform 0.3s, color 0.3s;
 }
 
 .footer-social .social-icons a:hover {
-  color: #f0e68c; /* Change icon color on hover */
-  transform: scale(1.1); /* Will slightly enlarge the icon on hover */
+  color: #f0e68c;
+  transform: scale(1.1);
+}
+
+/* Media Queries for Responsiveness */
+
+/* Large tablets and small desktops */
+@media screen and (max-width: 1200px) {
+  .footer {
+    padding: 2rem 5rem;
+  }
+
+  .footer-container {
+    gap: 3rem;
+  }
+}
+
+/* iPad and medium-sized tablets */
+@media screen and (max-width: 992px) {
+  .footer {
+    padding: 2rem 3rem;
+  }
+
+  .footer-container {
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  .footer-logo {
+    flex: 0 0 100%;
+    margin-bottom: 1rem;
+  }
+
+  .footer-logo img {
+    max-width: 250px;
+  }
+
+  .footer-address,
+  .footer-contact,
+  .footer-social {
+    flex: 1 0 30%;
+    min-width: 200px;
+  }
+}
+
+/* Mobile phones and small tablets */
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 2rem 1.5rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .footer-logo {
+    margin-bottom: 0;
+  }
+
+  .footer-logo img {
+    max-width: 200px;
+  }
+
+  .footer-address,
+  .footer-contact,
+  .footer-social {
+    text-align: center;
+    width: 100%;
+  }
+
+  .footer-social .social-icons {
+    justify-content: center;
+  }
+}
+
+/* Very small devices */
+@media screen and (max-width: 480px) {
+  .footer {
+    padding: 1.5rem 1rem;
+  }
+
+  .footer-logo img {
+    max-width: 150px;
+  }
+
+  .footer-address h4,
+  .footer-contact h4,
+  .footer-social h4 {
+    font-size: 1rem;
+  }
+
+  .footer-address p,
+  .footer-contact p {
+    font-size: 0.85rem;
+  }
+
+  .footer-social .social-icons {
+    gap: 1.5rem;
+  }
+
+  .footer-social .social-icons a {
+    font-size: 1.3rem;
+  }
 }

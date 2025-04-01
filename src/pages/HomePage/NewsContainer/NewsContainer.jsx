@@ -1,23 +1,43 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./NewsContainer.css";
 import newsItems from "./NewsItemsData";
 
 const NewsContainer = () => {
   const [startIndex, setStartIndex] = useState(0);
-  const itemsPerView = 3;
+  const [itemsPerView, setItemsPerView] = useState(3);
   const carouselRef = useRef(null);
   const navigate = useNavigate();
 
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 480) {
+        setItemsPerView(2); // Show 2 items on mobile
+      } else if (window.innerWidth <= 1024) {
+        setItemsPerView(2);
+      } else {
+        setItemsPerView(3);
+      }
+    };
+
+    // Run once on mount
+    handleResize();
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+    // Cleanup
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const handleNext = () => {
     if (startIndex + itemsPerView < newsItems.length) {
-      setStartIndex((prev) => prev + 1);
+      setStartIndex((prev) => prev + itemsPerView); 
     }
   };
 
   const handlePrev = () => {
     if (startIndex > 0) {
-      setStartIndex((prev) => prev - 1);
+      setStartIndex((prev) => Math.max(0, prev - itemsPerView)); 
     }
   };
 
@@ -43,7 +63,7 @@ const NewsContainer = () => {
                     />
                   </div>
                   <div className="card-content">
-                    <p className="news-title-text">{item.title}</p>
+                    <p className="news-title-text">{item.excerpt}</p>
                   </div>
                   <button
                     className="read-more-button"
@@ -58,28 +78,27 @@ const NewsContainer = () => {
         </div>
       </div>
 
-      {newsItems.length > itemsPerView && (
-        <div className="navigation-controls">
-          <button
-            className={`nav-arrow ${startIndex === 0 ? "disabled" : ""}`}
-            onClick={handlePrev}
-            disabled={startIndex === 0}
-            aria-label="Previous news items"
-          >
-            <i className="fas fa-chevron-left"></i>
-          </button>
-          <button
-            className={`nav-arrow ${
-              startIndex + itemsPerView >= newsItems.length ? "disabled" : ""
-            }`}
-            onClick={handleNext}
-            disabled={startIndex + itemsPerView >= newsItems.length}
-            aria-label="Next news items"
-          >
-            <i className="fas fa-chevron-right"></i>
-          </button>
-        </div>
-      )}
+      {/* Always display navigation controls*/}
+      <div className="navigation-controls">
+        <button
+          className={`nav-arrow ${startIndex === 0 ? "disabled" : ""}`}
+          onClick={handlePrev}
+          disabled={startIndex === 0}
+          aria-label="Previous news items"
+        >
+          <i className="fas fa-chevron-left"></i>
+        </button>
+        <button
+          className={`nav-arrow ${
+            startIndex + itemsPerView >= newsItems.length ? "disabled" : ""
+          }`}
+          onClick={handleNext}
+          disabled={startIndex + itemsPerView >= newsItems.length}
+          aria-label="Next news items"
+        >
+          <i className="fas fa-chevron-right"></i>
+        </button>
+      </div>
     </section>
   );
 };

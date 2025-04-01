@@ -9,7 +9,6 @@ const newsItems = [
       "Hrushikesh Varma is one of the 15 finalists presenting their work at the 2024 US CSAW Competition for the paper 'Invisible Reflections: Leveraging Infrared Laser Reflections to Target Traffic Sign Perception.'",
     image: news1,
     link: "https://www.csaw.io/",
-    category: "Award",
     excerpt:
       "Hrushikesh Varma's groundbreaking research has earned recognition at the prestigious CSAW Competition.",
   },
@@ -19,8 +18,7 @@ const newsItems = [
       "Can acoustic attacks manipulate underwater data center infrastructures? Yes, if we don't act now. Read our latest work in collab with @RoboPI_UF and UEC that will be presented on May 20 at @IEEESSP!",
     image: news2,
     link: "https://t.co/EjP502kyfX",
-    category: "",
-    excerpt: "",
+    excerpt: "Exploring risks of acoustic attacks on underwater data centers.",
   },
   {
     date: "05/10/2024",
@@ -29,8 +27,7 @@ const newsItems = [
     videoLink: "https://www.youtube.com/embed/latYGeVTQdc",
     image: news3,
     link: "https://news.ufl.edu/2024/05/underwater-data-center-security/",
-    category: "Research Presentation",
-    excerpt: "",
+    excerpt: "Learn about vulnerabilities in underwater data centers.",
   },
 ];
 

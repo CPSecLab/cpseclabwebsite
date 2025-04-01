@@ -134,3 +134,93 @@
   background-color: #c34717;
   transform: scale(1.05);
 }
+
+/* Media queries for tablets (iPad) */
+@media screen and (max-width: 992px) {
+  .intro-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .intro-text {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .intro-text h1 {
+    font-size: 1.3rem;
+  }
+
+  .intro-text h2 {
+    font-size: 2rem;
+  }
+
+  .intro-text p {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .lab-logo {
+    max-width: 350px;
+  }
+}
+
+/* Media queries for mobile phones */
+@media screen and (max-width: 768px) {
+  .intro-text h1 {
+    font-size: 1.2rem;
+  }
+
+  .intro-text h2 {
+    font-size: 1.75rem;
+  }
+
+  .intro-text p {
+    font-size: 1rem;
+  }
+
+  .lab-logo {
+    max-width: 280px;
+  }
+}
+
+/* Extra small devices */
+@media screen and (max-width: 480px) {
+  .intro-text h1 {
+    font-size: 1.1rem;
+  }
+
+  .intro-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .lab-logo {
+    max-width: 230px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .intro-section {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .lab-logo {
+    margin-bottom: 1rem;
+    max-width: 300px;
+  }
+
+  .intro-text {
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+/* smaller mobile devices */
+@media screen and (max-width: 480px) {
+  .lab-logo {
+    max-width: 230px;
+  }
+}

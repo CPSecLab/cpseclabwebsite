@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../../assets/images/cpsec_logo_2-removebg-preview.png";
@@ -7,8 +7,17 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  // Map the main route (or path prefix) to a label
+  // Track window size
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Path mapping
   const pathToItem = {
     "/news-awards": "News & Awards",
     "/research-areas": "Research Areas",
@@ -27,9 +36,20 @@ const Navbar = () => {
 
   const selectedItem = pathToItem[activePath];
 
+  // Toggle mobile dropdown for Research Areas
+  const toggleResearchDropdown = (e) => {
+    if (windowWidth <= 768) {
+      e.preventDefault();
+      e.stopPropagation();
+      setDropdownOpen(!isDropdownOpen);
+    }
+  };
+
   // Helper for navigation
   const handleNavigation = (path) => {
     navigate(path);
+    setMobileMenuOpen(false);
+    setDropdownOpen(false);
   };
 
   return (
@@ -39,7 +59,17 @@ const Navbar = () => {
         <div className="navbar-logo" onClick={() => handleNavigation("/")}>
           <img src={logo} alt="CPSEC Lab Logo" />
         </div>
-        <ul className="navbar-list">
+
+        {/* Mobile Menu Toggle */}
+        <div
+          className="mobile-menu-toggle"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
+          <i className={`fas ${mobileMenuOpen ? "fa-times" : "fa-bars"}`}></i>
+        </div>
+
+        {/* Navigation Items */}
+        <ul className={`navbar-list ${mobileMenuOpen ? "mobile-active" : ""}`}>
           <li
             className={`navbar-item ${
               selectedItem === "Home" ? "selected" : ""
@@ -50,10 +80,13 @@ const Navbar = () => {
           </li>
           <li
             className="navbar-item dropdown-container"
-            onMouseEnter={() => setDropdownOpen(true)}
-            onMouseLeave={() => setDropdownOpen(false)}
+            onMouseEnter={() => windowWidth > 768 && setDropdownOpen(true)}
+            onMouseLeave={() => windowWidth > 768 && setDropdownOpen(false)}
+            onClick={toggleResearchDropdown}
+            data-expanded={isDropdownOpen ? "true" : "false"}
           >
-            RESEARCH AREAS<i class="fa-solid fa-angle-down"></i>
+            RESEARCH AREAS
+            <i className="fa-solid fa-angle-down"></i>
             <div className={`dropdown ${isDropdownOpen ? "show" : ""}`}>
               <ul className="dropdown-list">
                 <li
@@ -127,7 +160,7 @@ const Navbar = () => {
           >
             TEAM
           </li>
-          <li>
+          <li className="join-lab-container">
             <button
               className={`join-lab-btn ${
                 selectedItem === "Join the Lab" ? "selected" : ""

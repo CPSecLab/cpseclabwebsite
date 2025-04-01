@@ -28,16 +28,17 @@ const ApplicationForm = () => {
                 placeholder="Provide details about your research experience."
               ></textarea>
             </div>
+
             <div className="form-group">
-              <label htmlFor="skills">
-                Technical Skills or Areas of Expertise
+              <label htmlFor="researchExperience">
+                why do you want to pursue the PHD program in the CPSEC lab?
+                Please summarize one of your past projects related to the CPSEC
+                Lab topics which you feel are relevant.
               </label>
-              <select id="skills">
-                <option value="">Select Options</option>
-                <option value="cybersecurity">Cybersecurity</option>
-                <option value="iot">IoT</option>
-                <option value="hardware-security">Hardware Security</option>
-              </select>
+              <textarea
+                id="researchExperience"
+                placeholder="Provide details about your research experience."
+              ></textarea>
             </div>
           </>
         );
@@ -46,23 +47,12 @@ const ApplicationForm = () => {
           <>
             <div className="form-group">
               <label htmlFor="projects">
-                Share details about any academic or industry projects.
+                Which topic of the lab are of your interests and why?
               </label>
               <textarea
                 id="projects"
                 placeholder="Describe your projects and roles."
               ></textarea>
-            </div>
-            <div className="form-group">
-              <label htmlFor="skills">
-                Technical Skills or Areas of Expertise
-              </label>
-              <select id="skills">
-                <option value="">Select Options</option>
-                <option value="cybersecurity">Cybersecurity</option>
-                <option value="iot">IoT</option>
-                <option value="hardware-security">Hardware Security</option>
-              </select>
             </div>
           </>
         );
@@ -70,7 +60,7 @@ const ApplicationForm = () => {
         return (
           <div className="form-group">
             <label htmlFor="interests">
-              Why are you interested in starting out in cybersecurity?
+              Which topic of the lab are of your interests and why?
             </label>
             <textarea
               id="interests"
@@ -86,8 +76,8 @@ const ApplicationForm = () => {
   return (
     <div className="application-form-page">
       {/* Logo Section */}
-      <div className="form-logo">
-        <img src={labLogo} alt="CPSEC Lab Logo" />
+      <div className="lab-logo-container">
+        <img src={labLogo} alt="CPSEC Lab Logo" className="homepage-lab-logo" />
       </div>
 
       {/* Header Section */}
@@ -105,7 +95,7 @@ const ApplicationForm = () => {
         </p>
       </div>
 
-      {/* Application Form - Add questions that are common to all */}
+      {/* application Form - add questions that are common to all */}
       <form className="application-form">
         <div className="form-group">
           <label htmlFor="fullName">Full Name</label>
@@ -115,14 +105,7 @@ const ApplicationForm = () => {
           <label htmlFor="email">Email</label>
           <input type="email" id="email" placeholder="Enter email" />
         </div>
-        <div className="form-group">
-          <label htmlFor="phoneNumber">Phone Number</label>
-          <input type="tel" id="phoneNumber" placeholder="Enter phone number" />
-        </div>
-        <div className="form-group">
-          <label htmlFor="linkedin">LinkedIn</label>
-          <input type="url" id="linkedin" placeholder="Enter LinkedIn" />
-        </div>
+
         <div className="form-group">
           <label htmlFor="degree">Degree</label>
           <input
@@ -134,16 +117,34 @@ const ApplicationForm = () => {
           />
         </div>
 
+        <div className="form-group">
+          <label htmlFor="skills">Technical Skills or Areas of Expertise</label>
+          <select id="skills">
+            <option value="">Select Options</option>
+            <option value="IOT security">IOT security</option>
+            <option value="Autonomous vehicles security">
+              Autonomous vehicles security
+            </option>
+            <option value="Medical device/ healthcare device security">
+              Medical/ Healthcare device security
+            </option>
+            <option value="Critical infrastructure security">
+              Critical infrastructure security
+            </option>
+            <option value="Side channels">Side channels</option>
+          </select>
+        </div>
+
         {/* conditional Questions - degree specific questions will render here */}
         {renderAdditionalQuestions()}
 
         <div className="form-group file-upload">
-          <label htmlFor="resume">Upload Resume & Cover Letter</label>
+          <label htmlFor="resume">Upload Resume</label>
           <div className="upload-box">
             <input type="file" id="resume" className="upload-input" />
             <div className="upload-content">
               <i className="fa-solid fa-arrow-up-from-bracket upload-icon"></i>
-              <span className="upload-text">Upload Resume & Cover Letter</span>
+              <span className="upload-text">Upload Resume</span>
             </div>
           </div>
         </div>

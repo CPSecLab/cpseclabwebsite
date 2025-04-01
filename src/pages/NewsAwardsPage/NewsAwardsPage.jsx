@@ -14,6 +14,9 @@ const NewsAwardsPage = () => {
 
     return dateObjB - dateObjA;
   });
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     const options = {
@@ -91,16 +94,20 @@ const NewsAwardsPage = () => {
               </div>
 
               <div className="news-card-content">
-                <h2 className="news-title">{item.title}</h2>
-
+                <h2 className="news-title">{item.excerpt}</h2>
+                <p className="news-desc">{item.title}</p>
                 <div className="card-actions">
                   <button
                     className="read-more"
                     onClick={() => window.open(item.link, "_blank")}
                   >
-                    Read More <span className="arrow">→</span>
+                    Full Article{" "}
+                    <span className="arrow">
+                      <i className="fa-solid fa-arrow-right"></i>
+                    </span>
                   </button>
                 </div>
+                <div></div>
               </div>
             </article>
           </div>

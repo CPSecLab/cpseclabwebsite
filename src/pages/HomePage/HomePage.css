@@ -170,3 +170,126 @@
 .research-area-section {
   width: 100%;
 }
+
+/* Large tablets and small desktops (up to 1200px) */
+@media screen and (max-width: 1200px) {
+  .homepage-section-container {
+    padding: 0 1.5rem;
+  }
+
+  .about-section {
+    gap: 1.5rem;
+  }
+
+  .about-text {
+    margin-right: -40px;
+  }
+}
+
+/* Medium tablets (up to 992px) */
+@media screen and (max-width: 992px) {
+  .lab-logo-container {
+    width: 350px;
+    margin: 0.5rem 0 2rem;
+  }
+
+  .homepage-lab-logo {
+    max-width: 350px;
+  }
+
+  .section-heading {
+    font-size: 2rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .section-heading::before,
+  .section-heading::after {
+    width: 30px;
+    height: 30px;
+  }
+
+  .about-text {
+    font-size: 1.1rem;
+    margin-right: -20px;
+  }
+}
+
+/* Small tablets and mobile phones (up to 768px) */
+@media screen and (max-width: 768px) {
+  .homepage-container {
+    padding: 15px;
+  }
+
+  .lab-logo-container {
+    width: 280px;
+    margin: 0.5rem 0 1.5rem;
+  }
+
+  .homepage-lab-logo {
+    max-width: 280px;
+  }
+
+  .section-heading {
+    font-size: 1.8rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .section-heading::before,
+  .section-heading::after {
+    width: 25px;
+    height: 25px;
+    border-width: 2px;
+  }
+
+  .homepage-section-container {
+    padding: 0 1rem;
+  }
+
+  .about-section {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .about-text {
+    margin-right: 0;
+    padding: 1.2rem;
+    font-size: 1rem;
+  }
+
+  .about-image-container {
+    width: 100%;
+  }
+}
+
+/* Small mobile phones (up to 576px) */
+@media screen and (max-width: 576px) {
+  .lab-logo-container {
+    width: 220px;
+    margin: 0.5rem 0 1rem;
+  }
+
+  .homepage-lab-logo {
+    max-width: 220px;
+  }
+
+  .section-heading {
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem auto 1.5rem;
+  }
+
+  .section-heading::before,
+  .section-heading::after {
+    width: 20px;
+    height: 20px;
+  }
+
+  .about-text {
+    padding: 1rem;
+  }
+
+  .homepage-section-container {
+    padding: 0 0.8rem;
+    margin: 0.5rem auto;
+  }
+}

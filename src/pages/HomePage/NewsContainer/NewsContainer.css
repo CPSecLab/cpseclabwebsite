@@ -30,7 +30,7 @@
   overflow: hidden;
 }
 
-/* Carousel that holds the cards */
+/* Carousel */
 .news-carousel {
   display: flex;
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -53,10 +53,10 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 350px;
+  /* height: 350px; */
 }
 
-/* Card Image Container: Fixed 16:9 ratio */
+/* Card Image Container */
 .card-image-container {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -89,7 +89,7 @@
   margin: 0;
 }
 
-/* Read More Button: Smaller button styles */
+/* Read More Button*/
 .read-more-button {
   background-color: var(--primary-color);
   color: white;
@@ -142,13 +142,113 @@
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
+  .news-section {
+    max-width: 100%;
+    padding: 15px;
+  }
+
   .news-card-wrapper {
     flex: 0 0 calc((100% - var(--card-spacing)) / 2);
+  }
+
+  .card-content {
+    height: 90px;
+  }
+
+  :root {
+    --card-spacing: 20px;
   }
 }
 
 @media (max-width: 768px) {
+  .news-section {
+    padding: 10px;
+  }
+
   .news-card-wrapper {
-    flex: 0 0 100%;
+    flex: 0 0 calc((100% - var(--card-spacing)) / 2) !important;
+  }
+
+  .card-content {
+    height: 70px;
+    padding: 10px;
+  }
+
+  .news-title-text {
+    font-size: 0.85rem;
+  }
+
+  .news-card {
+    min-height: 250px;
+  }
+
+  .card-content {
+    height: 100px;
+    padding: 12px;
+  }
+
+  .navigation-controls {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    bottom: auto;
+    right: auto;
+    width: 100%;
+  }
+
+  .nav-arrow {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    color: white;
+    margin: 0 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 50%;
+  }
+
+  .nav-arrow:not(.disabled):hover {
+    transform: scale(1.1);
+  }
+
+  :root {
+    --card-spacing: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .news-section {
+    padding: 10px 5px;
+  }
+  .news-card-wrapper {
+    flex: 0 0 calc((100% - var(--card-spacing)) / 2) !important;
+  }
+
+  .card-image-container {
+    aspect-ratio: 16 / 10;
+  }
+
+  .card-content {
+    padding: 10px;
+    height: 70px;
+  }
+
+  .news-title-text {
+    font-size: 0.8rem;
+  }
+
+  .read-more-button {
+    font-size: 0.8rem;
+    padding: 6px 0;
+  }
+
+  .nav-arrow {
+    width: 35px;
+    height: 35px;
+  }
+
+  :root {
+    --border-radius: 10px;
   }
 }

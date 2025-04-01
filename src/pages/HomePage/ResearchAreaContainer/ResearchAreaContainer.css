@@ -135,3 +135,107 @@
 .tab-content a:hover::before {
   opacity: 1;
 }
+
+/* Media queries for responsiveness */
+/* For tablets and small laptops (up to 1200px) */
+@media screen and (max-width: 1200px) {
+  .research-area-container {
+    width: 100%;
+    padding: 25px;
+    margin: 25px 0;
+  }
+
+  .tab-button {
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+/* For tablets (up to 992px) */
+@media screen and (max-width: 992px) {
+  .research-area-container {
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .research-title {
+    font-size: 1.3rem;
+  }
+
+  .research-summary {
+    font-size: 0.95rem;
+  }
+
+  .tabs {
+    width: 70%;
+  }
+
+  .tab-button {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* For mobile phones and small tablets (up to 768px) */
+@media screen and (max-width: 768px) {
+  .research-area-container {
+    flex-direction: column;
+    padding: 15px;
+    margin: 20px 0;
+  }
+
+  .left-section,
+  .right-section {
+    flex: none;
+    width: 100%;
+  }
+
+  .tabs {
+    width: 100%;
+  }
+
+  .tab-button {
+    flex: 1;
+    padding: 0.6rem 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .tab-content {
+    min-height: 150px;
+  }
+
+  .tab-content a {
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+  }
+}
+
+/* For small mobile phones (up to 480px) */
+@media screen and (max-width: 480px) {
+  .research-area-container {
+    padding: 12px;
+    margin: 15px 0;
+  }
+
+  .research-title {
+    font-size: 1.2rem;
+  }
+
+  .research-summary {
+    font-size: 0.9rem;
+  }
+
+  .tab-button {
+    padding: 0.5rem 0.3rem;
+    font-size: 0.8rem;
+  }
+
+  .tab-content {
+    padding: 0.75rem;
+    min-height: 120px;
+  }
+
+  .tab-content a {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+}

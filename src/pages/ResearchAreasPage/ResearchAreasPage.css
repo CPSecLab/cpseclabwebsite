@@ -85,7 +85,7 @@
   margin-bottom: 0.5rem;
 }
 
-/* Updated Project Images - Dynamically display one or more images using flex-wrap */
+/* Project Images */
 .project-images {
   display: flex;
   flex-wrap: wrap;
@@ -102,7 +102,7 @@
   object-fit: cover;
 }
 
-/* For larger screens, allow three images per row */
+/* For larger screens, three images per row */
 @media (min-width: 768px) {
   .project-images img {
     width: calc(33.33% - 0.66rem);
@@ -156,4 +156,130 @@
 .publication-card h4:hover {
   text-decoration: underline;
   color: #2e5c8a;
+}
+
+/* Mobile and Tablet Responsive Styles */
+@media (max-width: 1024px) {
+  .research-area-page {
+    padding: 1.5rem;
+    margin: 1rem;
+    border-radius: 12px;
+  }
+
+  .research-header h1 {
+    font-size: 2rem;
+  }
+
+  .research-content-wrapper {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .research-content {
+    font-size: 1.1rem;
+    padding: 0;
+    order: 1;
+  }
+
+  .research-images {
+    max-width: 100%;
+    justify-content: center;
+    order: 2;
+  }
+
+  .research-images img {
+    max-width: 100%;
+    height: auto;
+    max-height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .research-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .project-card {
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .project-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .project-images img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .award-badge {
+    font-size: 0.9rem;
+  }
+
+  .publication-card h4 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .research-area-page {
+    padding: 1rem;
+    margin: 0.5rem;
+    box-shadow: none;
+  }
+
+  .research-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .research-content {
+    font-size: 1rem;
+  }
+
+  .project-card {
+    padding: 0.75rem;
+  }
+
+  .project-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .project-images {
+    gap: 0.5rem;
+  }
+
+  .publication-card {
+    padding: 0.5rem 0;
+  }
+
+  .publication-card h4 {
+    font-size: 1rem;
+  }
+
+  .award-badge {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Specific iPad adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .research-content-wrapper {
+    gap: 2rem;
+  }
+
+  .research-images {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .research-images img {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .project-images img {
+    width: calc(50% - 0.5rem);
+  }
 }
