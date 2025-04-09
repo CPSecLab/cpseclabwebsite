@@ -9,8 +9,7 @@ import NewsContainer from "./NewsContainer/NewsContainer";
 import labLogo from "../../assets/images/cpsec_logo_2-removebg-preview.png";
 import aboutImage from "../../assets/images/PXL_20250117_155239501 (1).jpg";
 
-const GOOGLE_SHEET_URL =
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQH3NbRdgO0YGlWcf1kxF_kwE5qKel5P7jXbk1En4mepLXlwvLJswPQzP8aOgEdSIAyHIeRMofmOxYn/pub?output=csv";
+const CSV_URL = process.env.PUBLIC_URL + "/CPSec-lab-publications.csv";
 
 const HomePage = () => {
   const [researchAreas, setResearchAreas] = useState([]);
@@ -18,13 +17,9 @@ const HomePage = () => {
   useEffect(() => {
     const fetchResearchData = async () => {
       try {
-        // Fetch CSV data
-        const response = await fetch(
-          `${GOOGLE_SHEET_URL}&timestamp=${Date.now()}`
-        );
+        const response = await fetch(`${CSV_URL}?timestamp=${Date.now()}`);
         const csvText = await response.text();
 
-        // Parse CSV data
         Papa.parse(csvText, {
           header: true,
           skipEmptyLines: true,
@@ -42,14 +37,14 @@ const HomePage = () => {
 
               if (!researchArea) return; // Skip rows without a research area
 
-              // Normalize research area key
+              // Normalize research area key.
               const normalizedKey = researchArea
-                .trim() // Remove leading/trailing spaces
+                .trim()
                 .toLowerCase()
-                .replace(/[^a-z0-9\s-]/g, "") // Remove special characters
-                .replace(/[-\s]+/g, "-"); // Replace spaces and hyphens with a single hyphen
+                .replace(/[^a-z0-9\s-]/g, "")
+                .replace(/[-\s]+/g, "-");
 
-              // Initialize data structure for this research area
+              // Initialize data structure for this research area.
               if (!researchDataMap[normalizedKey]) {
                 researchDataMap[normalizedKey] = {
                   publications: [],
@@ -57,7 +52,7 @@ const HomePage = () => {
                 };
               }
 
-              // Add publication if title and paper link exist
+              // Add publication if title and paper link exist.
               if (title && paperLink) {
                 researchDataMap[normalizedKey].publications.push({
                   title,
@@ -65,7 +60,7 @@ const HomePage = () => {
                 });
               }
 
-              // Add project if project title and website exist
+              // Add project if project title and website exist.
               if (projectTitle && projectWebsite) {
                 researchDataMap[normalizedKey].projects.push({
                   title: projectTitle,
@@ -74,9 +69,7 @@ const HomePage = () => {
               }
             });
 
-            console.log("Processed Research Data Map:", researchDataMap); // Log processed map
-
-            // Map parsed data to research areas
+            // Map parsed data to research areas.
             const mappedResearchAreas = Object.keys(researchAreasData).map(
               (key) => {
                 const normalizedKey = key.toLowerCase().replace(/[-\s]+/g, "-");
@@ -95,13 +88,11 @@ const HomePage = () => {
               }
             );
 
-            console.log("Mapped Research Areas:", mappedResearchAreas); // Log final mapped areas
-
             setResearchAreas(mappedResearchAreas);
           },
         });
       } catch (error) {
-        console.error("Error fetching or parsing Google Sheet data:", error);
+        console.error("Error fetching or parsing CSV file:", error);
       }
     };
 

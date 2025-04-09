@@ -4,8 +4,8 @@ import Papa from "papaparse";
 import researchAreasData from "../../data/researchAreasData";
 import "./ResearchAreasPage.css";
 
-const SHEET_URL =
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQH3NbRdgO0YGlWcf1kxF_kwE5qKel5P7jXbk1En4mepLXlwvLJswPQzP8aOgEdSIAyHIeRMofmOxYn/pub?output=csv";
+// Fetch the CSV file from the public folder.
+const CSV_URL = process.env.PUBLIC_URL + "/CPSec-lab-publications.csv";
 
 const areaMappings = {
   "healthcare security & privacy": "healthcare-security-privacy",
@@ -21,9 +21,14 @@ const ResearchAreaPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${SHEET_URL}&timestamp=${Date.now()}`);
+        // Fetch CSV data from the public folder with a cache-busting timestamp.
+        const response = await fetch(`${CSV_URL}?timestamp=${Date.now()}`);
         const csvData = await response.text();
 
         Papa.parse(csvData, {
@@ -32,7 +37,7 @@ const ResearchAreaPage = () => {
           complete: (results) => {
             const allPapers = results.data;
 
-            // Find the matching research area using area mappings
+            // Find the matching research area using area mappings.
             const normalizedArea = Object.keys(areaMappings).find(
               (key) => areaMappings[key] === area.toLowerCase()
             );
@@ -43,7 +48,7 @@ const ResearchAreaPage = () => {
               return;
             }
 
-            // Filter papers that match the normalized research area
+            // Filter papers that match the normalized research area.
             const filteredPapers = allPapers.filter((paper) => {
               return (
                 (paper["Research Area"] || "").trim().toLowerCase() ===
@@ -51,7 +56,7 @@ const ResearchAreaPage = () => {
               );
             });
 
-            // Group the filtered papers by project title
+            // Group the filtered papers by project title.
             const projectsByTitle = {};
             filteredPapers.forEach((paper) => {
               const projectTitle = (
@@ -64,7 +69,7 @@ const ResearchAreaPage = () => {
               projectsByTitle[projectTitle].push(paper);
             });
 
-            // **Sorting Papers by Year (Descending Order)**
+            // Sorting Papers by Year (Descending Order)
             Object.keys(projectsByTitle).forEach((title) => {
               projectsByTitle[title].sort((a, b) => {
                 const yearA = parseInt(a["Year"] || "0", 10);
@@ -112,9 +117,6 @@ const ResearchAreaPage = () => {
       </div>
 
       <div className="projects-section">
-        {/* {Object.keys(researchProjects).length > 0 && (
-          <h2>Projects in {researchInfo.name}</h2>
-        )} */}
         {loading ? (
           <p>Loading projects...</p>
         ) : Object.keys(researchProjects).length > 0 ? (

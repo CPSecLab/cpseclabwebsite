@@ -1,0 +1,108 @@
+Year,Title,Authors,Conference,Paper,BibTeX,Award,Project Website,Research Area,Project Title,Image
+2023,Deep Note: Can Acoustic Interference Damage the Availability of Hard Disk Storage in Underwater Data Centers?,"Jennifer Sheldon, Weidong Zhu, Adnan Abdullah, Kevin Butler, Md Jahidul Islam, Sara Rampazzi","In Proceedings of the 15th ACM Workshop on Hot Topics in Storage and File Systems, 2023",https://www.hotstorage.org/2023/papers/hotstorage23-final22.pdf,"@inproceedings{sheldon2023deep,
+  title={Deep Note: Can Acoustic Interference Damage the Availability of Hard Disk Storage in Underwater Data Centers?},
+  author={Sheldon, Jennifer and Zhu, Weidong and Abdullah, Adnan and Butler, Kevin and Islam, Md Jahidul and Rampazzi, Sara},
+  booktitle={Proceedings of the 15th ACM Workshop on Hot Topics in Storage and File Systems},
+  pages={51--57},
+  year={2023}
+}",SK Hynix Best Paper Award,,Critical Infrastructure Security,Critical Infrastructure Security,
+2023,EMI-LiDAR: Uncovering Vulnerabilities of LiDAR Sensors in Autonomous Driving Setting using Electromagnetic Interference,"Sri Hrushikesh Varma Bhupathiraju, Jennifer Sheldon, Luke A Bauer, Vincent Bindschaedler, Takeshi Sugawara, Sara Rampazzi","In Proceedings of the 16th ACM Conference on Security and Privacy in Wireless and Mobile Networks (WiSec 2023), 2023",https://dl.acm.org/doi/abs/10.1145/3558482.3590192,"@inproceedings{bhupathiraju2023emi,
+  title={EMI-LiDAR: Uncovering Vulnerabilities of LiDAR Sensors in Autonomous Driving Setting Using Electromagnetic Interference},
+  author={Bhupathiraju, Sri Hrushikesh Varma and Sheldon, Jennifer and Bauer, Luke A and Bindschaedler, Vincent and Sugawara, Takeshi and Rampazzi, Sara},
+  booktitle={Proceedings of the 16th ACM Conference on Security and Privacy in Wireless and Mobile Networks},
+  pages={329--340},
+  year={2023}
+}",,https://dl.acm.org/doi/abs/10.1145/3558482.3590192,"Autonomous Systems Security
+",Physical attacks on autonomous vehicles perception,https://sararampazzi.com/img/traffic.png
+2023,Shimware: Toward Practical Security Retrofitting for Monolithic Firmware Images,"Eric Gustafson, Paul Grosen, Nilo Redini, Saagar Jha, Ruoyu Wang, Kevin Fu, Sara Rampazzi, Giovanni Vigna","In Proceedings of the 26th International Symposium on Research in Attacks, Intrusions and Defenses (RAID 2023), 2023",https://sites.cs.ucsb.edu/~vigna/publications/2023_RAID_Shimware.pdf,"@article{gustafson2023shimware,
+  title={Shimware: Toward Practical Security Retrofitting for Monolithic Firmware Images},
+  author={Gustafson, Eric and Grosen, Paul and Redini, Nilo and Jha, Saagar and Wang, Ruoyu and Fu, Kevin and Rampazzi, Sara and Vigna, Giovanni},
+  journal={the 26th International Symposium on Research in Attacks, Intrusions and Defenses (RAID 2023)}
+  year={2023}
+}",,,,,
+2023,You can't see me: physical removal attacks on LiDAR-based autonomous vehicles driving frameworks,"Yulong Cao, S Hrushikesh Bhupathiraju, Pirouz Naghavi, Takeshi Sugawara, Z Morley Mao, Sara Rampazzi","In Proceeding of the 32nd USENIX Security Symposium (USENIX Security 23), 2023",https://www.usenix.org/system/files/usenixsecurity23-cao.pdf,"@inproceedings {285475,
+author = {Yulong Cao and S. Hrushikesh Bhupathiraju and Pirouz Naghavi and Takeshi Sugawara and Z. Morley Mao and Sara Rampazzi},
+title = {You Can{\textquoteright}t See Me: Physical Removal Attacks on {LiDAR-based} Autonomous Vehicles Driving Frameworks},
+booktitle = {32nd USENIX Security Symposium (USENIX Security 23)},
+year = {2023},
+isbn = {978-1-939133-37-3},
+address = {Anaheim, CA},
+pages = {2993--3010},
+url = {https://www.usenix.org/conference/usenixsecurity23/presentation/cao},
+publisher = {USENIX Association},
+month = aug,
+}",,https://www.usenix.org/system/files/sec23summer_349-cao-prepub.pdf,"Autonomous Systems Security
+",Physical attacks on autonomous vehicles perception,
+2023,WIP: Infrared Laser Reflection Attack Against Traffic Sign Recognition Systems,"Takami Sato, Sri Hrushikesh Varma Bhupathiraju, Michael Clifford, Takeshi Sugawara, Qi Alfred Chen, Sara Rampazzi","In Proceedings Inaugural International Symposium on Vehicle Security & Privacy (VehicleSec 2023), 2023",https://www.ndss-symposium.org/wp-content/uploads/2023/02/vehiclesec2023-23055-paper.pdf,"@inproceedings{sato2023wip,
+  title={WIP: Infrared Laser Reflection Attack Against Traffic Sign Recognition Systems},
+  author={Sato, Takami and Bhupathiraju, Sri Hrushikesh Varma and Clifford, Michael and Sugawara, Takeshi and Chen, Qi Alfred and Rampazzi, Sara},
+  booktitle={Proceedings Inaugural International Symposium on Vehicle Security \& Privacy. San Diego, CA, USA: Internet Society},
+  year={2023}
+}",Ethas Best Short/WIP Paper Award and Qualcomm Best Demo Award,https://www.ndss-symposium.org/wp-content/uploads/2023/02/vehiclesec2023-23055-paper.pdf,"Autonomous Systems Security
+",Physical attacks on autonomous vehicles perception,
+2022,VeriMask: Sensor Platform for Decontamination of N95 Masks,"Yan Long, Alexander Curtiss, Sara Rampazzi, Josiah Hester, Kevin Fu","In GetMobile: Mobile Computing and Communications 26, no. 2, 2022",https://dl.acm.org/doi/10.1145/3551670.3551679,"@article{long2022verimask,
+  title={VeriMask: Sensor Platform for Decontamination of N95 Masks},
+  author={Long, Yan and Curtiss, Alexander and Rampazzi, Sara and Hester, Josiah and Fu, Kevin},
+  journal={GetMobile: Mobile Computing and Communications},
+  volume={26},
+  number={2},
+  pages={25--28},
+  year={2022},
+  publisher={ACM New York, NY, USA}
+}",Research Highlight Selected,,,,
+2022,Analyzing the Monetization Ecosystem of Stalkerware,"Cassidy Gibson, Vanessa Frost, Katie Platt, Washington Garcia, Luis Vargas, Sara Rampazzi, Vincent Bindschaedler, Patrick Traynor, Kevin Butler","In Proceedings on Privacy Enhancing Technologies 4: 105-119, 2022",https://ipvtechbib.randhome.io/pdf/gibson2022.pdf,"@article{gibson2022analyzing,
+  title={Analyzing the Monetization Ecosystem of Stalkerware},
+  author={Gibson, Cassidy and Frost, Vanessa and Platt, Katie and Garcia, Washington and Vargas, Luis and Rampazzi, Sara and Bindschaedler, Vincent and Traynor, Patrick and Butler, Kevin},
+  journal={Proceedings on Privacy Enhancing Technologies},
+  volume={4},
+  pages={105--119},
+  year={2022}
+}",,https://stopstalkerware.org/,,,
+2022,Explaining RADAR features for detecting spoofing attacks in Connected Autonomous Vehicles,"Nidhi Rastogi, Sara Rampazzi, Michael Clifford, Miriam Heller, Matthew Bishop, Karl Levitt","In Proceedings of the AAAI 2022 Workshop on Explainable Agency in Artificial Intelligence, 2022",https://arxiv.org/pdf/2203.00150.pdf,"@article{rastogi2022explaining,
+  title={Explaining RADAR features for detecting spoofing attacks in Connected Autonomous Vehicles},
+  author={Rastogi, Nidhi and Rampazzi, Sara and Clifford, Michael and Heller, Miriam and Bishop, Matthew and Levitt, Karl},
+  journal={arXiv preprint arXiv:2203.00150},
+  year={2022}
+}",,,,,
+2021,Protecting COVID-19 Vaccine Transportation and Storage from Analog Cybersecurity Threats,"Yan Long, Sara Rampazzi, Takeshi Sugawara, Kevin Fu","In Biomedical Instrumentation & Technology 55, no. 3, 2021",https://meridian.allenpress.com/bit/article-abstract/55/3/112/469795/Protecting-COVID-19-Vaccine-Transportation-and?redirectedFrom=fulltext,"@article{long2021protecting,
+  title={Protecting COVID-19 Vaccine Transportation and Storage from Analog Cybersecurity Threats},
+  author={Long, Yan and Rampazzi, Sara and Sugawara, Takeshi and Fu, Kevin},
+  journal={Biomedical Instrumentation \& Technology},
+  volume={55},
+  number={3},
+  pages={112--117},
+  year={2021}
+}",,https://meridian.allenpress.com/bit/article-abstract/55/3/112/469795/Protecting-COVID-19-Vaccine-Transportation-and?redirectedFrom=fulltext,Healthcare Security & Privacy,Signal injection attacks on safety-critical medical devices,
+2021,"VeriMask: Facilitating Decontamination of N95 Masks in the COVID-19 Pandemic: Challenges, Lessons Learned, and Safeguarding the Future","Yan Long, Alexander Curtiss, Sara Rampazzi, Josiah Hester, Kevin Fu","In Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (ACM IMWUT), September 2021",https://spqrlab1.github.io/papers/long-verimask-imwut21.pdf,"@inproceedings{long2021verimask,
+  title={VeriMask: Facilitating Decontamination of N95 Masks in the COVID-19 Pandemic: Challenges, Lessons Learned, and Safeguarding the Future},
+  author={Long, Yan and Curtiss, Alexander and Rampazzi, Sara and Hester, Josiah and Fu, Kevin},
+  booktitle={Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies)},
+  year={2021}
+}",,https://spqrlab1.github.io/N95deconProject.html,Healthcare Security & Privacy,"Safe wireless sensor technology for decontamination process verification
+",
+2020,Light Commands: Laser-Based Audio Injection on Voice-Controllable Systems,"Takeshi Sugawara, Ben Cyr, Sara Rampazzi, Daniel Genkin, Kevin Fu","In Proceedings of USENIX Security Symposium 2020, August 2020",https://www.usenix.org/conference/usenixsecurity20/presentation/sugawara,"@inproceedings{sugawara2020light,
+  title={Light Commands: Laser-Based Audio Injection Attacks on Voice-Controllable Systems},
+  author={Sugawara, Takeshi and Cyr, Benjamin and Rampazzi, Sara and Genkin, Daniel and Fu, Kevin},
+  booktitle={29th {USENIX} Security Symposium ({USENIX} Security 20)},
+  year={2020}
+}",,https://lightcommands.com/,,,
+2024,AquaSonic: Acoustic Manipulation of Underwater Data Center Operations and Resource Management,"Jennifer Sheldon, Weidong Zhu, Adnan Abdullah, Sri Hrushikesh Varma Bhupathiraju, Takeshi Sugawara, Kevin R. B. Butler, Md Jahidul Islam, Sara Rampazzi","Proceedings of the IEEE Symposium on Security & Privacy (IEEE S&P), May 20, 2024 ",,,,https://cpseclab.github.io/aquasonic/,"Critical Infrastructure Security
+",Critical Infrastructure Security,
+2024,Minding the Semantic Gap for Effective Storage-Based Ransomware Defense,"Weidong Zhu, Grant Hernandez, Washington Garcia, Dave (Jing) Tian, Sara Rampazzi, Kevin Butler",Proceedings of the 38th International Conference on Massive Storage Systems and Technology (MSST 2024),,,,,,,
+2024,PASA: Attack Agnostic Unsupervised Adversarial Detection using Prediction & Attribution Sensitivity Analysis,"Dipkamal Bhusal, Md Tanvirul Alam, Monish Kumar Manikya Veerabhadran, Michael Clifford, Sara Rampazzi, Nidhi Rastogi",Proceedings of the IEEE European Symposium on Security and Privacy 2024 (Euro S&P 2024),,,,,,,
+2024,On the Vulnerability of Traffic Light Recognition Systems to Laser Illumination Attacks,"Sri Hrushikesh Varma Bhupathiraju, Takami Sato, Michael Clifford, Takeshi Sugawara, Qi Alfred Chen, Sara Rampazzi",In Proceedings of VehicleSec Symposium 2024,,,,,,,
+2024,Invisible Reflections: Leveraging Infrared Laser Reflections to Target Traffic Sign Perception,"Takami Sato, Sri Hrushikesh Varma Bhupathiraju, Michael Clifford, Takeshi Sugawara, Qi Alfred Chen, Sara Rampazzi",Proceedings of the Network and Distributed System Security Symposium (NDSS 2024),,,,https://sites.google.com/view/cav-sec/ilr-attack,"Autonomous Systems Security
+",Physical attacks on autonomous vehicles perception,
+,Adversarial Sensor Attack on LiDAR-based Perception in Autonomous Driving,,,,,,https://dl.acm.org/ft_gateway.cfm?id=3339815&ftid=2095245&dwn=1&CFID=86989710&CFTOKEN=73ce75bf20c2654a-3A118308-F375-21FE-632998338ACEB49F,"Autonomous Systems Security
+",Physical attacks on autonomous vehicles perception,
+,Automated Tracking System For LiDAR Spoofing Attacks On Moving Targets,,,,,Best Demo Award Runner up,https://sites.google.com/view/lidarspoofingattack,"Autonomous Systems Security
+",Physical attacks on autonomous vehicles perception,
+,Manipulating Critical Temperature-Based Control Systems Using Rectification Attacks,,,,,,https://dl.acm.org/ft_gateway.cfm?id=3354195&ftid=2095322&dwn=1&CFID=86989835&CFTOKEN=676ed7d5ba1e9014-3A1CDCE7-FF67-A6C6-620941082C17A7C0,Healthcare Security & Privacy,Signal injection attacks on safety-critical medical devices,
+,Automating Decontamination of N95 Masks for Frontline Workers in the COVID 19 Pandemic,,,,,,https://dl.acm.org/doi/10.1145/3384419.3430613,Healthcare Security & Privacy,"Safe wireless sensor technology for decontamination process verification
+",
+,IoT Two Factor Neurometric Authentication System using Wearable EEG,,,,,,https://sararampazzi.com/doc/Rodriguez_eeg_SafeThings2019.pdf,IOT security & privacy,IoT Security & Privacy,
+,Blue Note: How intentional acoustic interference damages availability and integrity in hard disk drives and operating systems,,,,,,https://spqr.eecs.umich.edu/papers/bolton-blue-note-IEEESSP-2018.pdf,"Critical Infrastructure Security
+","Critical Infrastructure Security
+",
+2024,The Elephant in the Room: Software and Hardware Security Vulnerabilities of Portable Sequencing Devices,"Carson Stillman, Jonathan E Bravo, Christina Boucher, Sara Rampazzi",,,,,,,,
+2022,Side Eye: Characterizing the Limits of POV Acoustic Eavesdropping from Smartphone Cameras with Rolling Shutters and Movable Lenses,"Yan Long, Pirouz Naghavi, Blas Kojusner, Kevin Butler, Sara Rampazzi, Kevin Fu",2023 IEEE Symposium on Security and Privacy (SP),,,,https://ieeexplore.ieee.org/abstract/document/10179313,,,

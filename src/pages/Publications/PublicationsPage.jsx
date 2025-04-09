@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Papa from "papaparse";
+import * as XLSX from "xlsx";
 import "./PublicationsPage.css";
-
-// const SHEET_URL = process.env.REACT_APP_SPREADSHEET_URL;
-const SHEET_URL =
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQH3NbRdgO0YGlWcf1kxF_kwE5qKel5P7jXbk1En4mepLXlwvLJswPQzP8aOgEdSIAyHIeRMofmOxYn/pub?output=csv";
 
 const areaMappings = {
   "healthcare security & privacy": "healthcare-security-privacy",
@@ -23,30 +19,39 @@ const PublicationsPage = () => {
 
   const fetchPublications = async () => {
     try {
-      const cacheBustingURL = `${SHEET_URL}&timestamp=${Date.now()}`;
-      const response = await fetch(cacheBustingURL);
-      const csvData = await response.text();
+      // Use process.env.PUBLIC_URL to construct the absolute URL
+      const csvUrl = process.env.PUBLIC_URL + "/CPSec-lab-publications.csv";
+      const response = await fetch(csvUrl);
 
-      Papa.parse(csvData, {
-        header: true,
-        skipEmptyLines: true,
-        complete: (results) => {
-          console.log("Parsed Data:", results.data);
-          setPublications(results.data);
-        },
-      });
+      if (!response.ok) {
+        throw new Error(`Network response was not ok: ${response.status}`);
+      }
+
+      const csvText = await response.text();
+      // Check if the content is HTML instead of CSV text
+      if (
+        csvText.trim().startsWith("<!DOCTYPE html") ||
+        csvText.trim().startsWith("<html")
+      ) {
+        throw new Error(
+          "Fetched file appears to be HTML. Please verify that '/CPSec-lab-publications.csv' exists in the public folder."
+        );
+      }
+
+      // Parse the CSV text using SheetJS
+      const workbook = XLSX.read(csvText, { type: "string" });
+      const sheetName = workbook.SheetNames[0];
+      const worksheet = workbook.Sheets[sheetName];
+      const data = XLSX.utils.sheet_to_json(worksheet, { defval: "" });
+      console.log("Parsed Data:", data);
+      setPublications(data);
     } catch (error) {
-      console.error("Error fetching spreadsheet data:", error);
+      console.error("Error loading CSV file:", error);
     }
   };
 
   useEffect(() => {
-    // Initial fetch
     fetchPublications();
-
-    const intervalId = setInterval(fetchPublications, 1000);
-
-    return () => clearInterval(intervalId);
   }, []);
 
   const handleCopy = (bibtex) => {
@@ -82,50 +87,44 @@ const PublicationsPage = () => {
                 .filter((paper) => paper.Year === year)
                 .map((paper, index) => (
                   <div className="publication-card" key={index}>
-                    {/* Award Badge */}
                     {paper.Award && (
-                      <div class="award-container">
-                        <div class="award-sticker">
-                          <i class="fas fa-medal"></i>
+                      <div className="award-container">
+                        <div className="award-sticker">
+                          <i className="fas fa-medal"></i>
                         </div>
-                        <span class="award-details">{paper.Award}</span>
+                        <span className="award-details">{paper.Award}</span>
                       </div>
                     )}
 
-                    {/* Title */}
                     <h3 className="publication-title">{paper.Title}</h3>
 
-                    {/* Authors */}
                     <p className="publication-authors">
-                      {paper.Authors.split(", ").map((author, i) => (
-                        <span key={i}>
-                          {author.includes("Sara Rampazzi") ? (
-                            <strong>{author}</strong>
-                          ) : (
-                            author
-                          )}
-                          {i < paper.Authors.split(", ").length - 1 && ", "}
-                        </span>
-                      ))}
+                      {paper.Authors.split(", ").map(
+                        (author, i, allAuthors) => (
+                          <span key={i}>
+                            {author.includes("Sara Rampazzi") ? (
+                              <strong>{author}</strong>
+                            ) : (
+                              author
+                            )}
+                            {i < allAuthors.length - 1 && ", "}
+                          </span>
+                        )
+                      )}
                     </p>
 
-                    {/* Conference */}
                     <p className="publication-conference">{paper.Conference}</p>
 
-                    {/* Research Area Tag */}
                     {paper["Research Area"] && (
                       <span
                         className="research-area-tag"
                         onClick={() => {
-                          // Convert the CSV value to lowercase and trim it
                           const researchAreaLower = paper["Research Area"]
                             .trim()
                             .toLowerCase();
-                          // Use the mapping to get the URL slug
                           const mappedArea =
                             areaMappings[researchAreaLower] ||
                             encodeURIComponent(researchAreaLower);
-                          // Navigate to the research area route
                           navigate(`/research-areas/${mappedArea}`);
                         }}
                         style={{ cursor: "pointer" }}
@@ -134,9 +133,7 @@ const PublicationsPage = () => {
                       </span>
                     )}
 
-                    {/* Actions */}
                     <div className="publication-actions">
-                      {/* View Paper Button */}
                       <a
                         href={paper.Paper}
                         target="_blank"
@@ -145,16 +142,12 @@ const PublicationsPage = () => {
                       >
                         View Paper
                       </a>
-
-                      {/* BibTeX Button */}
                       <button
                         className="bibtex-btn"
                         onClick={() => setActiveBibtex(paper.BibTeX)}
                       >
                         View BibTeX
                       </button>
-
-                      {/* Project Button */}
                       {paper["Project Website"] &&
                         paper["Project Website"].trim() !== "" && (
                           <a

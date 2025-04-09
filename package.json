@@ -27,7 +27,8 @@
     "swiper": "^11.2.6",
     "web-vitals": "^2.1.4",
     "webpack": "^4.42.0",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^3.3.12",
+    "xlsx": "^0.18.5"
   },
   "scripts": {
     "start": "react-scripts --openssl-legacy-provider start",
