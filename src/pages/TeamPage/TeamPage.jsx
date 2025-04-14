@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import teamData from "./TeamInfo/TeamData";
+import teamData from "../../data/TeamData";
 import "./TeamPage.css";
-import labLogo from "../../assets/images/cpsec_logo_2-removebg-preview.png";
+import labLogo from "../../assets/images/HomePageImages/cpsec_logo_2-removebg-preview.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";

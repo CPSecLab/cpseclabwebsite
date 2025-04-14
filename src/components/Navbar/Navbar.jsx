@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./Navbar.css";
-import logo from "../../assets/images/cpsec_logo_2-removebg-preview.png";
+import logo from "../../assets/images/HomePageImages/cpsec_logo_2-removebg-preview.png";
 
 const Navbar = () => {
   const location = useLocation();

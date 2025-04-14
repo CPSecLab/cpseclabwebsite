@@ -13,7 +13,7 @@ Year,Title,Authors,Conference,Paper,BibTeX,Award,Project Website,Research Area,P
   pages={329--340},
   year={2023}
 }",,https://dl.acm.org/doi/abs/10.1145/3558482.3590192,"Autonomous Systems Security
-",Physical attacks on autonomous vehicles perception,https://sararampazzi.com/img/traffic.png
+",Physical attacks on autonomous vehicles perception,traffic.png
 2023,Shimware: Toward Practical Security Retrofitting for Monolithic Firmware Images,"Eric Gustafson, Paul Grosen, Nilo Redini, Saagar Jha, Ruoyu Wang, Kevin Fu, Sara Rampazzi, Giovanni Vigna","In Proceedings of the 26th International Symposium on Research in Attacks, Intrusions and Defenses (RAID 2023), 2023",https://sites.cs.ucsb.edu/~vigna/publications/2023_RAID_Shimware.pdf,"@article{gustafson2023shimware,
   title={Shimware: Toward Practical Security Retrofitting for Monolithic Firmware Images},
   author={Gustafson, Eric and Grosen, Paul and Redini, Nilo and Jha, Saagar and Wang, Ruoyu and Fu, Kevin and Rampazzi, Sara and Vigna, Giovanni},

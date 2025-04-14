@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 import "./ApplicationFormPage.css";
-import labLogo from "../../assets/images/cpsec_logo_2-removebg-preview.png";
+import labLogo from "../../assets/images/HomePageImages/cpsec_logo_2-removebg-preview.png";
 
 const ApplicationForm = () => {
   const location = useLocation();
   const [degree, setDegree] = useState("");
+  const [fullName, setFullName] = useState("");
 
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
     const degreeFromURL = queryParams.get("degree");
-    setDegree(degreeFromURL || ""); // default to empty if no degree is passed
+    setDegree(degreeFromURL || ""); // Default to empty if no degree is passed
   }, [location]);
 
-  /* add questions that are particular to a specific degree */
+  /* Add questions that are particular to a specific degree */
   const renderAdditionalQuestions = () => {
     switch (degree) {
       case "PhD":
@@ -25,19 +26,34 @@ const ApplicationForm = () => {
               </label>
               <textarea
                 id="researchExperience"
+                name="Research Experience"
                 placeholder="Provide details about your research experience."
+                required
               ></textarea>
             </div>
 
             <div className="form-group">
-              <label htmlFor="researchExperience">
-                why do you want to pursue the PHD program in the CPSEC lab?
+              <label htmlFor="whyPhD">
+                Why do you want to pursue the PhD program in the CPSEC lab?
+              </label>
+              <textarea
+                id="whyPhD"
+                name="Why PhD"
+                placeholder="Explain your interest."
+                required
+              ></textarea>
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="pastProjects">
                 Please summarize one of your past projects related to the CPSEC
                 Lab topics which you feel are relevant.
               </label>
               <textarea
-                id="researchExperience"
-                placeholder="Provide details about your research experience."
+                id="pastProjects"
+                name="Past Projects"
+                placeholder="Provide details about your previous projects."
+                required
               ></textarea>
             </div>
           </>
@@ -51,7 +67,9 @@ const ApplicationForm = () => {
               </label>
               <textarea
                 id="projects"
+                name="Projects"
                 placeholder="Describe your projects and roles."
+                required
               ></textarea>
             </div>
           </>
@@ -64,7 +82,9 @@ const ApplicationForm = () => {
             </label>
             <textarea
               id="interests"
+              name="Interests"
               placeholder="Share your interests and goals."
+              required
             ></textarea>
           </div>
         );
@@ -90,66 +110,69 @@ const ApplicationForm = () => {
         <h1 className="application-form-header">APPLICATION FORM</h1>
         <p className="application-header-description">
           Thank you for your interest in joining the Cyber-Physical System
-          Security Lab! Please fill out the following form and attach your CV
-          and cover letter.
+          Security Lab! Please fill out the following form and attach your CV.
         </p>
       </div>
 
-      {/* application Form - add questions that are common to all */}
-      <form className="application-form">
+      {/* Application Form */}
+      <form
+        action="https://formsubmit.co/saatvik.tripathy22@gmail.com"
+        method="POST"
+        encType="multipart/form-data"
+        className="application-form"
+      >
+        {/* Common Questions */}
+
+        <input
+          type="hidden"
+          name="_subject"
+          value={`[${degree}] Application Form CPSec Lab - ${fullName}`}
+        />
+        <input type="hidden" name="_captcha" value="false" />
+
+        {/* Full Name */}
         <div className="form-group">
           <label htmlFor="fullName">Full Name</label>
-          <input type="text" id="fullName" placeholder="Enter name" />
-        </div>
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input type="email" id="email" placeholder="Enter email" />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="degree">Degree</label>
           <input
             type="text"
-            id="degree"
-            value={degree}
-            readOnly
-            placeholder="Selected degree"
+            id="fullName"
+            name="Full Name"
+            placeholder="Enter name"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+            required
           />
         </div>
 
+        {/* Email */}
         <div className="form-group">
-          <label htmlFor="skills">Technical Skills or Areas of Expertise</label>
-          <select id="skills">
-            <option value="">Select Options</option>
-            <option value="IOT security">IOT security</option>
-            <option value="Autonomous vehicles security">
-              Autonomous vehicles security
-            </option>
-            <option value="Medical device/ healthcare device security">
-              Medical/ Healthcare device security
-            </option>
-            <option value="Critical infrastructure security">
-              Critical infrastructure security
-            </option>
-            <option value="Side channels">Side channels</option>
-          </select>
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="_replyto"
+            placeholder="Enter email"
+            required
+          />
         </div>
 
-        {/* conditional Questions - degree specific questions will render here */}
+        {/* Degree-Specific Questions */}
         {renderAdditionalQuestions()}
 
-        <div className="form-group file-upload">
+        {/* File Upload Section */}
+        <div className={`form-group file-upload`}>
           <label htmlFor="resume">Upload Resume</label>
-          <div className="upload-box">
-            <input type="file" id="resume" className="upload-input" />
-            <div className="upload-content">
-              <i className="fa-solid fa-arrow-up-from-bracket upload-icon"></i>
-              <span className="upload-text">Upload Resume</span>
-            </div>
-          </div>
+          <input
+            type="file"
+            id="resume"
+            name="_attachment"
+            accept=".pdf,.png,.jpg,.docx"
+            required
+          />
         </div>
 
-        <button type="submit" className="submit-btn">
+        {/* Submit Button */}
+        <button type={`submit`} className={`submit-btn`}>
           Submit
         </button>
       </form>

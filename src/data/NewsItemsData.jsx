@@ -1,6 +1,6 @@
-import news1 from "./NewsImages/Csaw_hrushikesh.jpeg";
-import news2 from "./NewsImages/Aquasonic.jpeg";
-import news3 from "./NewsImages/hwcoe_opengraph.png";
+import news1 from "../assets/images/NewsImages/Csaw_hrushikesh.jpeg";
+import news2 from "../assets/images/NewsImages/Aquasonic.jpeg";
+import news3 from "../assets/images/NewsImages/hwcoe_opengraph.png";
 
 const newsItems = [
   {

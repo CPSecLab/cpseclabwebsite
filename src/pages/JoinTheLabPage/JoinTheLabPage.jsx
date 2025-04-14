@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./JoinTheLab.css";
-import labLogo from "../../assets/images/cpsec_logo_2-removebg-preview.png";
+import labLogo from "../../assets/images/HomePageImages/cpsec_logo_2-removebg-preview.png";
 
 const JoinTheLabPage = () => {
   return (
@@ -33,11 +33,8 @@ const JoinTheLabPage = () => {
           <hr className="positions-line" />
           <div className="positions-grid">
             <div className="position-card">
-              <h4>PhD Students</h4>
-              <p>
-                Pursue advanced, semester-based research in cyber-physical
-                system security.
-              </p>
+              <h4>Prospective PhD Students</h4>
+              <p>Pursue advanced research in cyber-physical system security.</p>
               <Link to={`/application-form?degree=PhD`}>
                 <button className="apply-form-btn">APPLY TODAY</button>
               </Link>
@@ -45,8 +42,7 @@ const JoinTheLabPage = () => {
             <div className="position-card">
               <h4>Masters Students</h4>
               <p>
-                Enhance your cybersecurity skills through hands-on projects.
-                Gain advanced expertise.
+                Enhance your cybersecurity skills through hands-on semester-based projects. Gain advanced expertise.
               </p>
               <Link to={`/application-form?degree=Masters`}>
                 <button className="apply-form-btn">APPLY TODAY</button>

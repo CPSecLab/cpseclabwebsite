@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./NewsContainer.css";
-import newsItems from "./NewsItemsData";
+import newsItems from "../../../data/NewsItemsData";
 
 const NewsContainer = () => {
   const [startIndex, setStartIndex] = useState(0);

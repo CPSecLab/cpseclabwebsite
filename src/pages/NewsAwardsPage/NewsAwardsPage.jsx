@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import newsItems from "../HomePage/NewsContainer/NewsItemsData";
+import newsItems from "../../data/NewsItemsData";
 import "./NewsAwardsPage.css";
 
 const NewsAwardsPage = () => {

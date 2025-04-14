@@ -1,8 +1,8 @@
-import healthcareImage from "./images/Healthcare_area.png";
-import sideChannelImage from "./images/Side_channel.png";
-import autonomousImage from "./images/autonomous_system_area.png";
-import iotImage from "./images/iot.png";
-import criticalInfraImage from "./images/critical_infrastructures.png";
+import healthcareImage from "../assets/images/ResearchAreaImages/Healthcare_area.png";
+import sideChannelImage from "../assets/images/ResearchAreaImages/Side_channel.png";
+import autonomousImage from "../assets/images/ResearchAreaImages/autonomous_system_area.png";
+import iotImage from "../assets/images/ResearchAreaImages/iot.png";
+import criticalInfraImage from "../assets/images/ResearchAreaImages/critical_infrastructures.png";
 
 const researchAreasData = {
   "healthcare-security-privacy": {

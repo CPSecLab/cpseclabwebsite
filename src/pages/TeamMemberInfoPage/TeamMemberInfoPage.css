@@ -73,7 +73,7 @@
 
 @media (max-width: 768px) {
   .tmp-image-container {
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
     border-radius: 12px;
     box-shadow: none;
   }
@@ -227,7 +227,7 @@
   }
 
   .tmp-content-wrapper {
-    padding: 3rem;
+    padding: 1rem 3rem;
   }
 }
 
@@ -247,19 +247,17 @@
 
 @media (max-width: 768px) {
   .tmp-social-link {
-    padding: 0.75rem 1.5rem; /* Slightly smaller padding on smaller screens */
-    font-size: 1rem; /* Adjust text size for smaller screens */
-    gap: 0.75rem; /* Adjust spacing between icon and text */
-    border-radius: 8px; /* Slightly less rounded corners for compact design */
-    box-shadow: none; /* Remove shadow for a cleaner look on mobile devices */
-    transform: none; /* Remove hover transform effect for mobile simplicity */
-    transition: none; /* Simplify transitions on smaller screens */
-    background-color: var(--tmp-light); /* Ensure consistent background color */
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    gap: 0.75rem;
+    border-radius: 8px;
+    box-shadow: none;
+    transform: none;
+    transition: none;
+    background-color: var(--tmp-light);
     color: var(--tmp-primary);
     justify-content: center;
-    width: calc(
-      100% - (2 * var(--gap))
-    ); /* Ensure full width on small screens */
+    width: calc(100% - (2 * var(--gap)));
     text-align: center;
   }
 }

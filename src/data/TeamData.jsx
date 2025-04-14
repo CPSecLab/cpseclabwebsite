@@ -1,8 +1,8 @@
-import directorImage from "./TeamImages/Dr_Sara_Rampazzi.jpg";
-import hrushiImage from "./TeamImages/HrushikeshProfile.jpg";
-import jenniferImage from "./TeamImages/Jennifer.jpeg";
-import weidongImage from "./TeamImages/Weidong.jpg";
-import carsonImage from "./TeamImages/Carson.jpg";
+import directorImage from "../assets/images/TeamImages/Dr_Sara_Rampazzi.jpg";
+import hrushiImage from "../assets/images/TeamImages/HrushikeshProfile.jpg";
+import jenniferImage from "../assets/images/TeamImages/Jennifer.jpeg";
+import weidongImage from "../assets/images/TeamImages/Weidong.jpg";
+import carsonImage from "../assets/images/TeamImages/Carson.jpg";
 
 const teamData = [
   {
@@ -14,7 +14,7 @@ const teamData = [
       "Sara Rampazzi, Ph.D., is an assistant professor at the University of Florida since 2021. She is a member of the Florida Institute for Cybersecurity Research (FICS), Warren B. Nelms Institute, and Florida Institute for National Security (FINS). Several media outlets covered her works on injecting inaudible and invisible light commands into smart home devices and protecting underwater datacenters from acoustic attacks. She is currently Associate Chair of IEEE Security & Privacy 2025 and 2026, and Program Co-Chair of the USENIX VehicleSec Symposium 2025. She also chaired the 2023 IEEE Workshop on Offensive Technologies (WOOT’23) and the 2nd Annual Embedded Security Workshop (EmSec 2020). Dr. Rampazzi received the Medtronic Outstanding Research Contributor Recognition for medical device security in 2020. Her work is sponsored by NSF, ONR, Meta, and Toyota Info Tech Lab. More info: https://scholar.google.com/citations?user=I9d0CrAAAAAJ&hl=eng",
     socials: {
       email: "",
-      website: "",
+      website: "https://sararampazzi.com/",
       googleScholar:
         "https://scholar.google.com/citations?user=I9d0CrAAAAAJ&hl=eng",
       linkedin: "",

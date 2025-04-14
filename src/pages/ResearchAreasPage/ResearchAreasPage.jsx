@@ -4,7 +4,7 @@ import Papa from "papaparse";
 import researchAreasData from "../../data/researchAreasData";
 import "./ResearchAreasPage.css";
 
-// Fetch the CSV file from the public folder.
+
 const CSV_URL = process.env.PUBLIC_URL + "/CPSec-lab-publications.csv";
 
 const areaMappings = {
@@ -37,7 +37,7 @@ const ResearchAreaPage = () => {
           complete: (results) => {
             const allPapers = results.data;
 
-            // Find the matching research area using area mappings.
+            // Finding the matching research area using area mappings.
             const normalizedArea = Object.keys(areaMappings).find(
               (key) => areaMappings[key] === area.toLowerCase()
             );
@@ -48,7 +48,7 @@ const ResearchAreaPage = () => {
               return;
             }
 
-            // Filter papers that match the normalized research area.
+            // Filtering papers that match the normalized research area.
             const filteredPapers = allPapers.filter((paper) => {
               return (
                 (paper["Research Area"] || "").trim().toLowerCase() ===
@@ -128,27 +128,35 @@ const ResearchAreaPage = () => {
                 <h3>Project : {projectTitle}</h3>
                 <div className="project-images">
                   {(() => {
+                    const getImageSource = (imgName) => {
+                      try {
+                        return require(`../../assets/images/ResearchAreaProjectImages/${imgName}`);
+                      } catch (err) {
+                        console.error("Image not found:", imgName);
+                        return "";
+                      }
+                    };
+
+                    // Mapping  each image name from the CSV to its corresponding module.
                     const imageUrls = Array.from(
                       new Set(
                         project.flatMap((paper) =>
                           paper["Image"] && paper["Image"].trim() !== ""
-                            ? paper["Image"].split(",").map((url) => url.trim())
+                            ? paper["Image"]
+                                .split(",")
+                                .map((imgName) =>
+                                  getImageSource(imgName.trim())
+                                )
                             : []
                         )
                       )
                     );
-                    return imageUrls.map((url, idx) => (
+
+                    return imageUrls.map((src, idx) => (
                       <img
                         key={idx}
-                        src={url}
+                        src={src}
                         alt={`${idx + 1} for ${projectTitle}`}
-                        onClick={() => {
-                          handlePaperClick(
-                            project[0]["Project Website"],
-                            project[0]["Paper Link"]
-                          );
-                        }}
-                        style={{ cursor: "pointer" }}
                       />
                     ));
                   })()}

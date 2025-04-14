@@ -3,11 +3,11 @@ import Papa from "papaparse";
 import ImageCarousel from "./ImageCarousel/ImageCarousel";
 import ResearchAreaContainer from "./ResearchAreaContainer/ResearchAreaContainer";
 import "./HomePage.css";
-import imagesData from "./ImagesData";
+import imagesData from "../../data/ImageCarouselData";
 import researchAreasData from "../../data/researchAreasData";
 import NewsContainer from "./NewsContainer/NewsContainer";
-import labLogo from "../../assets/images/cpsec_logo_2-removebg-preview.png";
-import aboutImage from "../../assets/images/PXL_20250117_155239501 (1).jpg";
+import labLogo from "../../assets/images/HomePageImages/cpsec_logo_2-removebg-preview.png";
+import aboutImage from "../../assets/images/HomePageImages/PXL_20250117_155239501 (1).jpg";
 
 const CSV_URL = process.env.PUBLIC_URL + "/CPSec-lab-publications.csv";
 
