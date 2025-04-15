@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./JoinTheLab.css";
+import "./JoinTheLabPage.css";
 import labLogo from "../../assets/images/HomePageImages/cpsec_logo_2-removebg-preview.png";
 
 const JoinTheLabPage = () => {

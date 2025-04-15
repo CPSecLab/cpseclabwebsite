@@ -8,8 +8,7 @@ import researchAreasData from "../../data/researchAreasData";
 import NewsContainer from "./NewsContainer/NewsContainer";
 import labLogo from "../../assets/images/HomePageImages/cpsec_logo_2-removebg-preview.png";
 import aboutImage from "../../assets/images/HomePageImages/PXL_20250117_155239501 (1).jpg";
-
-const CSV_URL = process.env.PUBLIC_URL + "/CPSec-lab-publications.csv";
+import publicationsCsv from "../../data/CPSec-lab-publications.csv";
 
 const HomePage = () => {
   const [researchAreas, setResearchAreas] = useState([]);
@@ -17,7 +16,11 @@ const HomePage = () => {
   useEffect(() => {
     const fetchResearchData = async () => {
       try {
-        const response = await fetch(`${CSV_URL}?timestamp=${Date.now()}`);
+        const response = await fetch(publicationsCsv);
+        if (!response.ok) {
+          throw new Error(`Network response was not ok: ${response.status}`);
+        }
+
         const csvText = await response.text();
 
         Papa.parse(csvText, {

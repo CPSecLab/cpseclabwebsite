@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import * as XLSX from "xlsx";
 import "./PublicationsPage.css";
+import publicationsCsv from "../../data/CPSec-lab-publications.csv";
 
 const areaMappings = {
   "healthcare security & privacy": "healthcare-security-privacy",
@@ -19,26 +20,12 @@ const PublicationsPage = () => {
 
   const fetchPublications = async () => {
     try {
-      // Use process.env.PUBLIC_URL to construct the absolute URL
-      const csvUrl = process.env.PUBLIC_URL + "/CPSec-lab-publications.csv";
-      const response = await fetch(csvUrl);
-
+      const response = await fetch(publicationsCsv);
       if (!response.ok) {
         throw new Error(`Network response was not ok: ${response.status}`);
       }
-
       const csvText = await response.text();
-      // Check if the content is HTML instead of CSV text
-      if (
-        csvText.trim().startsWith("<!DOCTYPE html") ||
-        csvText.trim().startsWith("<html")
-      ) {
-        throw new Error(
-          "Fetched file appears to be HTML. Please verify that '/CPSec-lab-publications.csv' exists in the public folder."
-        );
-      }
 
-      // Parse the CSV text using SheetJS
       const workbook = XLSX.read(csvText, { type: "string" });
       const sheetName = workbook.SheetNames[0];
       const worksheet = workbook.Sheets[sheetName];

@@ -1,20 +1,57 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useLocation, Link } from "react-router-dom";
 import "./ApplicationFormPage.css";
 import labLogo from "../../assets/images/HomePageImages/cpsec_logo_2-removebg-preview.png";
 
 const ApplicationForm = () => {
   const location = useLocation();
-  const [degree, setDegree] = useState("");
   const [fullName, setFullName] = useState("");
+  const [applicantEmail, setApplicantEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [degree, setDegree] = useState("");
+
+  const formRef = useRef(null);
+  const fullNameInputRef = useRef(null);
+
+  const isGitHubPages = window.location.hostname === "cpseclab.github.io";
+  const redirectURL = isGitHubPages ? "/cpseclabwebsite/#/" : "/";
 
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
-    const degreeFromURL = queryParams.get("degree");
-    setDegree(degreeFromURL || ""); // Default to empty if no degree is passed
+    const degreeFromURL = queryParams.get("degree") || "";
+    setDegree(degreeFromURL);
+    console.log("Fetched degree from URL:", degreeFromURL);
   }, [location]);
 
-  /* Add questions that are particular to a specific degree */
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const latestFullName = fullNameInputRef.current.value;
+    const computedSubject = `[${degree}] Application Form CPSec Lab - ${latestFullName}`;
+
+    // Remove any previous _subject input if it exists
+    const oldInput = formRef.current.querySelector('input[name="_subject"]');
+    if (oldInput) {
+      oldInput.remove();
+    }
+
+    // Create a new hidden input with the correct value
+    const input = document.createElement("input");
+    input.type = "hidden";
+    input.name = "_subject";
+    input.value = computedSubject;
+    formRef.current.appendChild(input);
+
+    setIsSubmitting(true);
+    formRef.current.submit();
+  };
+
+  const handleIframeLoad = () => {
+    if (isSubmitting) {
+      alert("Application submitted successfully!");
+      window.location.href = redirectURL;
+    }
+  };
+
   const renderAdditionalQuestions = () => {
     switch (degree) {
       case "PhD":
@@ -31,7 +68,6 @@ const ApplicationForm = () => {
                 required
               ></textarea>
             </div>
-
             <div className="form-group">
               <label htmlFor="whyPhD">
                 Why do you want to pursue the PhD program in the CPSEC lab?
@@ -43,7 +79,6 @@ const ApplicationForm = () => {
                 required
               ></textarea>
             </div>
-
             <div className="form-group">
               <label htmlFor="pastProjects">
                 Please summarize one of your past projects related to the CPSEC
@@ -60,19 +95,17 @@ const ApplicationForm = () => {
         );
       case "Masters":
         return (
-          <>
-            <div className="form-group">
-              <label htmlFor="projects">
-                Which topic of the lab are of your interests and why?
-              </label>
-              <textarea
-                id="projects"
-                name="Projects"
-                placeholder="Describe your projects and roles."
-                required
-              ></textarea>
-            </div>
-          </>
+          <div className="form-group">
+            <label htmlFor="projects">
+              Which topic of the lab are of your interests and why?
+            </label>
+            <textarea
+              id="projects"
+              name="Projects"
+              placeholder="Describe your projects and roles."
+              required
+            ></textarea>
+          </div>
         );
       case "Undergraduate":
         return (
@@ -95,12 +128,16 @@ const ApplicationForm = () => {
 
   return (
     <div className="application-form-page">
-      {/* Logo Section */}
+      <iframe
+        title="hidden_iframe"
+        name="hidden_iframe"
+        style={{ display: "none" }}
+        onLoad={handleIframeLoad}
+      ></iframe>
       <div className="lab-logo-container">
         <img src={labLogo} alt="CPSEC Lab Logo" className="homepage-lab-logo" />
       </div>
 
-      {/* Header Section */}
       <div className="application-header-container">
         <div className="header-row">
           <Link to="/join-lab" className="back-button">
@@ -114,23 +151,18 @@ const ApplicationForm = () => {
         </p>
       </div>
 
-      {/* Application Form */}
       <form
+        ref={formRef}
         action="https://formsubmit.co/saatvik.tripathy22@gmail.com"
         method="POST"
         encType="multipart/form-data"
         className="application-form"
+        target="hidden_iframe"
+        onSubmit={handleSubmit}
+        autoComplete="off"
       >
-        {/* Common Questions */}
-
-        <input
-          type="hidden"
-          name="_subject"
-          value={`[${degree}] Application Form CPSec Lab - ${fullName}`}
-        />
         <input type="hidden" name="_captcha" value="false" />
 
-        {/* Full Name */}
         <div className="form-group">
           <label htmlFor="fullName">Full Name</label>
           <input
@@ -139,12 +171,15 @@ const ApplicationForm = () => {
             name="Full Name"
             placeholder="Enter name"
             value={fullName}
-            onChange={(e) => setFullName(e.target.value)}
+            onChange={(e) => {
+              console.log("Updated fullName:", e.target.value);
+              setFullName(e.target.value);
+            }}
+            ref={fullNameInputRef}
             required
           />
         </div>
 
-        {/* Email */}
         <div className="form-group">
           <label htmlFor="email">Email</label>
           <input
@@ -152,15 +187,38 @@ const ApplicationForm = () => {
             id="email"
             name="_replyto"
             placeholder="Enter email"
+            value={applicantEmail}
+            onChange={(e) => {
+              console.log("Updated applicantEmail:", e.target.value);
+              setApplicantEmail(e.target.value);
+            }}
             required
           />
         </div>
 
-        {/* Degree-Specific Questions */}
+        <input type="hidden" name="Email" value={applicantEmail} />
+
+        <div className="form-group">
+          <label htmlFor="skills">Technical Skills or Areas of Expertise</label>
+          <select id="skills" name="Technical Skills" required>
+            <option value="">Select Options</option>
+            <option value="iot-security">IOT security</option>
+            <option value="autonomous-vehicles-security">
+              Autonomous Vehicles Security
+            </option>
+            <option value="Medical/Healthcare-device-security">
+              Medical/Healthcare Device Security
+            </option>
+            <option value="critical-infrastructure-security">
+              Critical Infrastructure Security
+            </option>
+            <option value="side-channels">Side Channels</option>
+          </select>
+        </div>
+
         {renderAdditionalQuestions()}
 
-        {/* File Upload Section */}
-        <div className={`form-group file-upload`}>
+        <div className="form-group file-upload">
           <label htmlFor="resume">Upload Resume</label>
           <input
             type="file"
@@ -171,8 +229,7 @@ const ApplicationForm = () => {
           />
         </div>
 
-        {/* Submit Button */}
-        <button type={`submit`} className={`submit-btn`}>
+        <button type="submit" className="submit-btn">
           Submit
         </button>
       </form>

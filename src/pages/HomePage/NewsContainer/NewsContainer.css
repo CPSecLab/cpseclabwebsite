@@ -224,30 +224,24 @@
   .news-card-wrapper {
     flex: 0 0 calc((100% - var(--card-spacing)) / 2) !important;
   }
-
   .card-image-container {
     aspect-ratio: 16 / 10;
   }
-
   .card-content {
     padding: 10px;
     height: 70px;
   }
-
   .news-title-text {
     font-size: 0.8rem;
   }
-
   .read-more-button {
     font-size: 0.8rem;
     padding: 6px 0;
   }
-
   .nav-arrow {
     width: 35px;
     height: 35px;
   }
-
   :root {
     --border-radius: 10px;
   }

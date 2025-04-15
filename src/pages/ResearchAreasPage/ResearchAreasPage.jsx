@@ -2,10 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Papa from "papaparse";
 import researchAreasData from "../../data/researchAreasData";
+import publicationsCsv from "../../data/CPSec-lab-publications.csv";
 import "./ResearchAreasPage.css";
-
-
-const CSV_URL = process.env.PUBLIC_URL + "/CPSec-lab-publications.csv";
 
 const areaMappings = {
   "healthcare security & privacy": "healthcare-security-privacy",
@@ -27,8 +25,10 @@ const ResearchAreaPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Fetch CSV data from the public folder with a cache-busting timestamp.
-        const response = await fetch(`${CSV_URL}?timestamp=${Date.now()}`);
+        const response = await fetch(publicationsCsv);
+        if (!response.ok) {
+          throw new Error(`Network response was not ok: ${response.status}`);
+        }
         const csvData = await response.text();
 
         Papa.parse(csvData, {
