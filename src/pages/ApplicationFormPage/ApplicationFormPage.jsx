@@ -20,7 +20,6 @@ const ApplicationForm = () => {
     const queryParams = new URLSearchParams(location.search);
     const degreeFromURL = queryParams.get("degree") || "";
     setDegree(degreeFromURL);
-    // console.log("Fetched degree from URL:", degreeFromURL);
   }, [location]);
 
   const handleSubmit = (e) => {
@@ -153,7 +152,7 @@ const ApplicationForm = () => {
 
       <form
         ref={formRef}
-        action="https://formsubmit.co/saatvik.tripathy22@gmail.com"
+        // action="https://formsubmit.co/srampazzi@ufl.edu"
         method="POST"
         encType="multipart/form-data"
         className="application-form"
