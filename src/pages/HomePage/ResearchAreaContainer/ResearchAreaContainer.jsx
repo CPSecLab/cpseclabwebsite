@@ -1,14 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./ResearchAreaContainer.css";
-
-const areaMappings = {
-  "healthcare security & privacy": "healthcare-security-privacy",
-  "oversensing & side channels": "oversensing-side-channels",
-  "autonomous systems security": "autonomous-systems-security",
-  "iot security & privacy": "iot-security-privacy",
-  "critical infrastructure security": "critical-infrastructure-security",
-};
+import areaMappings from "../../../data/ResearchAreaMappings";
 
 const ResearchAreaContainer = ({ title, imageSrc, summary, data }) => {
   const [activeTab, setActiveTab] = useState("publications");

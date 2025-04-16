@@ -20,7 +20,7 @@ const ApplicationForm = () => {
     const queryParams = new URLSearchParams(location.search);
     const degreeFromURL = queryParams.get("degree") || "";
     setDegree(degreeFromURL);
-    console.log("Fetched degree from URL:", degreeFromURL);
+    // console.log("Fetched degree from URL:", degreeFromURL);
   }, [location]);
 
   const handleSubmit = (e) => {

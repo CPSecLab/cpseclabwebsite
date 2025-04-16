@@ -3,14 +3,7 @@ import { useNavigate } from "react-router-dom";
 import * as XLSX from "xlsx";
 import "./PublicationsPage.css";
 import publicationsCsv from "../../data/CPSec-lab-publications.csv";
-
-const areaMappings = {
-  "healthcare security & privacy": "healthcare-security-privacy",
-  "oversensing & side channels": "oversensing-side-channels",
-  "autonomous systems security": "autonomous-systems-security",
-  "iot security & privacy": "iot-security-privacy",
-  "critical infrastructure security": "critical-infrastructure-security",
-};
+import areaMappings from "../../data/ResearchAreaMappings";
 
 const PublicationsPage = () => {
   const [publications, setPublications] = useState([]);
